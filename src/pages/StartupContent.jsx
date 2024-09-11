@@ -1,10 +1,11 @@
-import React from 'react'
-import { useRef, useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import banner from "../assets/img/pitcher-startup.jpg"
-import cal from "../assets/img/calender.png"
-import img1 from "../assets/img/blockhead.png"
-import review from "../assets/img/reviews.png"
+import React from "react";
+import { useRef, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import banner from "../assets/img/pitcher-startup.jpg";
+import cal from "../assets/img/calender.png";
+import img1 from "../assets/img/blockhead.png";
+import review from "../assets/img/reviews.png";
+import rePurchase from "../assets/img/review-purchase.png";
 import { CiStar } from "react-icons/ci";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
@@ -12,24 +13,25 @@ import { IoIosArrowDown } from "react-icons/io";
 import { MdLocationPin } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa6";
 import { PiFlagPennantFill } from "react-icons/pi";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { RiFileCopyFill } from "react-icons/ri";
-
-
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { FaPlus } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa6";
+import { PiCurrencyInr } from "react-icons/pi";
 
 export default function StartupContent() {
-
   const [isActive, setIsActive] = useState(false);
   const inputRef = useRef(null);
 
   const handleCopy = () => {
     inputRef.current.select();
-    document.execCommand('copy');
+    document.execCommand("copy");
     setIsActive(true);
     window.getSelection().removeAllRanges(); // Clear the selection
     setTimeout(() => {
@@ -37,11 +39,14 @@ export default function StartupContent() {
     }, 2500);
   };
 
+  const [show, setShow] = useState(false);
 
-  // const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-  //   const handleClose = () => setShow(false);
-  //   const handleShow = () => setShow(true);
+  const [map, setMap] = useState(false);
+
+  const handleMap = () => setMap(!map);
   return (
     <div className="gradeint-bg padding-sec startup-sec">
       <div className="banner">
@@ -56,12 +61,90 @@ export default function StartupContent() {
             <Col lg={9}>
               <div className="flex">
                 <h6 className="txt-blue mb-4">Friday, September 13</h6>
-                <CiStar />
-                <IoShareSocialOutline />
+                <button onClick={handleCopy}>
+                  <CiStar />
+                </button>
+                <button onClick={handleCopy}>
+                  <IoShareSocialOutline />
+                </button>
               </div>
             </Col>
             <Col lg={3} className="text-end">
-              <button className="theme-btn light-blue ">Register Now</button>
+              <button className="theme-btn" onClick={handleShow}>
+                Get Ticket
+              </button>
+
+              <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+                className="register-popup"
+              >
+                <Modal.Header>
+                  <Modal.Title>
+                    <img src={rePurchase} width="50" className="review-icn" />
+                    <span>Review Purchase</span>
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <h5>Friday AfterHours: Sufi Unplugged</h5>
+                  <h6 className="txt-blue">Friday, September 13</h6>
+                  <img src={banner} className="w-100" />
+                  <div className="d-flex justify-content-between">
+                    <h5 className="mt-3">Amount (₹) </h5>
+                    <h5 className="mt-3">Quantity </h5>
+                  </div>
+                  <div className="input-num">
+                    <div className="amt-input">
+                      <input type="num" className="amount" placeholder="100" />
+                      {/* <div className="rs-icon">
+                  <PiCurrencyInr />
+                  </div> */}
+                    </div>
+                    <div className="ince-btns">
+                      <button className="decrr">
+                        <FaMinus />
+                      </button>
+                      <input
+                        type="num"
+                        className="text-center"
+                        placeholder="1"
+                      />
+                      <button className="incrr active">
+                        <FaPlus />
+                      </button>
+                    </div>
+                  </div>
+                  <p className="desc-line">Sales end on September 28</p>
+
+                  <hr />
+                  <div className="total-amt">
+                    <div className="flex">
+                      <h6>Subtotal</h6>
+                      <p>₹500.00</p>
+                    </div>
+                    <div className="flex">
+                      <h6>Tax</h6>
+                      <p>₹4.00</p>
+                    </div>
+                    <div className="flex">
+                      <h6>
+                        <b>Total</b>
+                      </h6>
+                      <p>
+                        <b>₹504.00</b>
+                      </p>
+                    </div>
+                  </div>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button className="theme-btn-light" onClick={handleClose}>
+                    Cancel
+                  </Button>
+                  <Button className="theme-btn">Proceed to checkout</Button>
+                </Modal.Footer>
+              </Modal>
             </Col>
           </Row>
 
@@ -101,7 +184,7 @@ export default function StartupContent() {
                             Ashok Vatika, Ahmedabad, Gujarat 380058, India
                           </p>
                         </div>
-                        <a href="/">Show Map </a>
+                        <a onClick={handleMap}>Show Map</a>
                         <span>
                           <IoIosArrowDown />
                         </span>
@@ -121,10 +204,8 @@ export default function StartupContent() {
                         </div>
 
                         <div className="btns">
-                          <button className="theme-btn">Register Now</button>
-                          <button className="theme-btn-light">
-                            Register Now
-                          </button>
+                          <button className="theme-btn">Follow</button>
+                          <button className="theme-btn-light">Contact</button>
                         </div>
                       </div>
                     </div>
@@ -136,7 +217,19 @@ export default function StartupContent() {
             <Col lg={12}>
               <Row className="mt-5 ">
                 <Col lg={8}>
-                  <div className="detail-right">
+                  <div className="iframe-map">
+                    {map && (
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3086.551930808391!2d72.4961889187413!3d23.076971500290245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9dd1d3d9cd79%3A0xe620538d49e61b0b!2sVigyan%20Bhawan%20Science%20City!5e0!3m2!1sen!2sus!4v1726029670292!5m2!1sen!2sus"
+                        width="100%"
+                        height="300"
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    )}
+                  </div>
+                  <div className="detail-right mt-3">
                     <h4>About Event</h4>
                     <p>
                       Get ready for a mesmerizing evening with "Sufi Unplugged"
@@ -172,7 +265,9 @@ export default function StartupContent() {
                       booked here
                     </p>
 
-                    <button className="theme-btn">Register Now</button>
+                    <button className="theme-btn" onClick={handleShow}>
+                      Get Ticket
+                    </button>
                   </div>
 
                   <div className="tags">
@@ -186,7 +281,7 @@ export default function StartupContent() {
                     <p className="big-btns">
                       <button className="square">
                         <FaPlus />
-                        Add to curated list{" "}
+                        Add to curated list
                       </button>
                       <button className="square">
                         <PiFlagPennantFill />
@@ -248,24 +343,31 @@ export default function StartupContent() {
                         </div>
                         <div className="detail">
                           <div className="social">
-                            <button><FaTwitter /></button>
-                            <button><FaFacebookF /></button>
-                            <button><FaInstagram /></button>
-                            <button><FaGithub /></button>
+                            <button>
+                              <FaTwitter />
+                            </button>
+                            <button>
+                              <FaFacebookF />
+                            </button>
+                            <button>
+                              <FaInstagram />
+                            </button>
+                            <button>
+                              <FaGithub />
+                            </button>
                           </div>
                         </div>
 
-                        
                         <div class="copy-text">
                           <input
-                          ref={inputRef}
+                            ref={inputRef}
                             type="text"
                             class="text"
-                            value="https://allevents.in/ahmedabad/80001308636400"
-                            readOnly 
+                            value="https://startupfest.barodaweb.org/startup"
+                            readOnly
                           />
                           <button onClick={handleCopy}>
-                            <RiFileCopyFill/>
+                            <RiFileCopyFill />
                           </button>
                         </div>
                       </div>
