@@ -20,6 +20,7 @@ import Contact from './pages/Contact';
 import Sponser from './pages/Sponser';
 import Awardsnight from './pages/Awardsnight';
 import Startup from './pages/Startup';
+import Faq from './pages/Faq';
 
 
 
@@ -44,6 +45,7 @@ function App() {
           <Route path='/sponser' element ={<Sponser />} />
           <Route path='/awards' element ={<Awardsnight />} />
           <Route path='/start-up' element ={<Startup />} />
+          <Route path='/faq' element ={<Faq />} />
 
         </Routes>
         <Footer/>
