@@ -11,6 +11,8 @@ import Register from './pages/Register';
 import Footer from './components/Footer';
 import Participants from './pages/Participants';
 import StartupContent from './pages/StartupContent';
+import Contact from './pages/Contact';
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <Route path='/register' element ={<Register />} />
           <Route path='/participants' element ={<Participants />} />
           <Route path='/startup' element ={<StartupContent />} />
+          <Route path='/contact' element ={<Contact />} />
         </Routes>
         <Footer/>
       </BrowserRouter>
