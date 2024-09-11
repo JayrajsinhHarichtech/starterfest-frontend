@@ -9,6 +9,7 @@ import about from "../assets/img/about-img.png";
 import banner from "../assets/img/banner.png";
 import funding from "../assets/img/funding.png";
 import img3 from "../assets/img/image.png";
+import { Link } from "react-router-dom";
 
 
 function Startup() {
@@ -57,7 +58,7 @@ connections.
       </section>
 
       <section>
-        <section className="container-bg padding-sec">
+        <section className="padding-sec">
           <Container>
             <Row>
               <Col className="sfg ">
@@ -137,7 +138,7 @@ to unlock your startup's potential and secure the resources to scale your <br />
 business.
               </p>
 
-              <button className="theme-btn">Register Now</button>
+              <Link to="/register" className="theme-btn">Register Now</Link>
             </Col>
             <Col lg="6">
               <img src={funding} className="w-100" />

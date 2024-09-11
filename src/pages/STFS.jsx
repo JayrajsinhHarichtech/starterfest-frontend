@@ -13,7 +13,7 @@ const STFS = () => {
   return (
     <>
 
-<section className="padding-sec light-bg">
+<section className="padding-sec">
         <Container>
           <Row className="justify-content-center align-items-center">
             <Col lg={4}>
@@ -106,7 +106,7 @@ const STFS = () => {
           </Row>
           <Row className='g-4'>
             <Col lg={4} className='speaker-card'>
-            <img src={pabi} alt="" className='w-100' style={{objectFit:"contain", objectPosition:"center"}}/>
+            <img src={pabi} alt="" className='w-100' style={{objectFit:"contain", objectPosition:"center" , background:"#fff"}}/>
             <div className='speaker-card-div' style={{visibility:"hidden"}}>
                 <div>
             <p className='mb-0'>Piyalee</p>

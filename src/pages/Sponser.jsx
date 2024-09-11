@@ -44,7 +44,7 @@ function Sponser() {
 
       {/* Add Speakers Heading */}
       <section className="register-bg">
-        <Container className="register-bg">
+        <Container className="register-bg py-5">
           <h2
             style={{
               fontWeight: "bold",

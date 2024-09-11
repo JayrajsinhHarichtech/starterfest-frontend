@@ -61,10 +61,9 @@ function Contact() {
               </h3>
               <h5 className="para-custom">
                 For any questions or inquiries about the event, please
-                <br />
                 fill out the form below. Our team will be delighted to
-                <br /> assist you. Contact us now and be a part of an
-                <br /> extraordinary experience.
+                assist you. Contact us now and be a part of an
+                extraordinary experience.
               </h5>
 
               <iframe

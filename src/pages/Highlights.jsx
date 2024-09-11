@@ -34,7 +34,9 @@ import event2 from "../assets/img/event2.png";
 import event3 from "../assets/img/event3.png";
 import { IoArrowDown } from "react-icons/io5";
 import venue from "../assets/img/venue.png";
-
+import { FaArrowDown } from "react-icons/fa6";
+import auth1 from "../assets/img/blockhead.png"
+import highbg from "../assets/img/highlights-bg.png"
 
 export default function Highlights() {
 
@@ -90,7 +92,7 @@ export default function Highlights() {
 
       <section className="container-bg padding-sec">
         <Container>
-          <Row className="d-flex">
+          {/* <Row className="d-flex">
             <Col className="flex-grow-1">
               <h3 className="title mb-5">Event Showcases</h3>
             </Col>
@@ -152,25 +154,114 @@ export default function Highlights() {
                 <h6>Blockheads vinyl cafe</h6>
               </div>
             </Col>
+          </Row> */}
+           <Row className="mt-5">
+            <Col lg={12}>
+              <div className="heading-one d-flex justify-content-between">
+                <h4 className="title">Event Showcases</h4>
+                <div className="view-mre">
+                  <FaArrowDown />
+                  <a href="/">View more</a>
+                </div>
+              </div>
+            </Col>
+            <Col lg={4}>
+              <div className="event-box">
+                <div className="img-area">
+                  <img src={img1} className="w-100" />
+                </div>
+
+                <div className="txt-area">
+                  <p className="eve-date">Friday, September 13</p>
+                  <a href="/" className="name-line">
+                    <h5>Friday AfterHours: Sufi Unplugged</h5>
+                    <MdArrowOutward />
+                  </a>
+                  <p className="desc">
+                    Get ready for a mesmerizing evening with "Sufi Unplugged" at
+                    Blockheads featuring the incredible talent of Ayush! Known
+                  </p>
+                </div>
+                <div className="auth-area">
+                  <img src={auth1} className="img" />
+                  <span>Blockheads vinyl cafe</span>
+                </div>
+              </div>
+            </Col>
+            <Col lg={4}>
+              <div className="event-box">
+                <div className="img-area">
+                  <img src={img2} className="w-100" />
+                </div>
+
+                <div className="txt-area">
+                  <p className="eve-date">Monday, September 25</p>
+                  <a href="/" className="name-line">
+                    <h5>
+                      Ahmedabad Startup Networking Event (Invite Only) by AY
+                      Ventures
+                    </h5>
+                    <MdArrowOutward />
+                  </a>
+                  <p className="desc">
+                    Get ready for Engiexpo Industrial Engineering Exhibition
+                    2024, a mind-blowing in-person event showcasing the latest
+                    advancements.
+                  </p>
+                </div>
+                <div className="auth-area">
+                  <img src={auth1} className="img" />
+                  <span>Blockheads vinyl cafe</span>
+                </div>
+              </div>
+            </Col>
+            <Col lg={4}>
+              <div className="event-box">
+                <div className="img-area">
+                  <img src={img3} className="w-100" />
+                </div>
+
+                <div className="txt-area">
+                  <p className="eve-date">Tuesday, September 30</p>
+                  <a href="/" className="name-line">
+                    <h5>
+                      14th Engiexpo Industrial Engineering Exhibition Ahmedabad-
+                      2024
+                    </h5>
+                    <MdArrowOutward />
+                  </a>
+                  <p className="desc">
+                    This exhibition is a must-attend for all industrial
+                    engineering enthusiasts, professionals, and students...
+                  </p>
+                </div>
+                <div className="auth-area">
+                  <img src={auth1} className="img" />
+                  <span>Blockheads vinyl cafe</span>
+                </div>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
 
-      <section className="register-sec dark-bg padding-sec bg-img">
+      
+      <section className="register-sec padding-sec showcase">
         <Container>
-          <div className="w-70 m-auto">
-            <h3 className="title text-center text-white mb-0">
-              It’s not about ideas.
-            </h3>
-            <h3 className="title text-center text-white">
-              It’s about making ideas happen.
-            </h3>
-            <h3></h3>
-            <h3 className="title text-center text-white">~ Scott Belsky</h3>
+        <img src={highbg} />
+          <div className="overlay padding-sec">
+            <div className="w-70 m-auto content">
+              <h5 className="title text-center text-white">
+              It’s not about ideas. <br/> It’s about making ideas happen.
+              </h5>
+              <h3>
+              ~ Scott Belsky  
+              </h3>
+            </div>
+           
           </div>
         </Container>
       </section>
-
       <section className="padding-sec light-bg">
         <Container>
           <Row className="justify-content-center">
