@@ -52,7 +52,7 @@ export default function Header() {
                     <NavDropdown.Item href="/start-up">
                       For Startups
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="/">
+                    <NavDropdown.Item href="/investor">
                       For Investors And Accelerators 
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/sponser">
@@ -64,7 +64,7 @@ export default function Header() {
                     title="Info"
                     id="navbarScrollingDropdown"
                   >
-                    <NavDropdown.Item href="/">
+                    <NavDropdown.Item href="/about">
                       About Event
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/">
