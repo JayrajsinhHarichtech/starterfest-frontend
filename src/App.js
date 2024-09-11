@@ -14,6 +14,8 @@ import StartupContent from './pages/StartupContent';
 import Contact from './pages/Contact';
 import Sponser from './pages/Sponser';
 import Awardsnight from './pages/Awardsnight';
+import Startup from './pages/Startup';
+
 
 
 
@@ -31,6 +33,7 @@ function App() {
           <Route path='/contact' element ={<Contact />} />
           <Route path='/sponser' element ={<Sponser />} />
           <Route path='/awards' element ={<Awardsnight />} />
+          <Route path='/start-up' element ={<Startup />} />
         </Routes>
         <Footer/>
       </BrowserRouter>
