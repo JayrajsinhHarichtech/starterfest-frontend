@@ -8,6 +8,7 @@ import { MdLocationPin } from "react-icons/md";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { TabContent } from "reactstrap";
 
+
 function Contact() {
   const apiURL = process.env.REACT_APP_URL || "http://localhost:5000";
 
@@ -52,32 +53,31 @@ function Contact() {
 
   return (
     <>
-      <div className="">
+      <Container className="">
         <Row style={{ overflow: "hidden" }}>
           <Col lg={6}>
-            <div className="form-padding pb-4">
+            <div className="">
               <h3 className="title mt-4 mb-1 pt-4">
                 Get In Touch For Event Inquiries
               </h3>
               <h5 className="para-custom">
-                For any questions or inquiries about the event, please
-                fill out the form below. Our team will be delighted to
-                assist you. Contact us now and be a part of an
-                extraordinary experience.
+                For any questions or inquiries about the event, please fill out
+                the form below. Our team will be delighted to assist you.
+                Contact us now and be a part of an extraordinary experience.
               </h5>
 
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.1458120123953!2d73.14790037488885!3d22.310324579679392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc9a3e3743327%3A0x6f57e791de3dc0be!2sHarmonY%20ShivaaY!5e0!3m2!1sen!2sin!4v1726032528168!5m2!1sen!2sin"
-                width="700"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3086.551930808391!2d72.4961889187413!3d23.076971500290245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9dd1d3d9cd79%3A0xe620538d49e61b0b!2sVigyan%20Bhawan%20Science%20City!5e0!3m2!1sen!2sus!4v1726029670292!5m2!1sen!2sus"
+                width="100%"
                 height="300"
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </Col>
           <Col lg={6}>
-            <div className="form-padding pb-4">
+            <div className="">
               <TabContent>
                 <form onSubmit={formik.handleSubmit}>
                   <div className="mb-3 mt-5">
@@ -93,8 +93,11 @@ function Contact() {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
-                    {formik.touched.contactPersonName && formik.errors.contactPersonName ? (
-                      <div className="text-danger">{formik.errors.contactPersonName}</div>
+                    {formik.touched.contactPersonName &&
+                    formik.errors.contactPersonName ? (
+                      <div className="text-danger">
+                        {formik.errors.contactPersonName}
+                      </div>
                     ) : null}
                   </div>
                   <div className="mb-3">
@@ -163,7 +166,9 @@ function Contact() {
                     />
                   </div>
                   {formik.errors.submit && (
-                    <div className="alert alert-danger">{formik.errors.submit}</div>
+                    <div className="alert alert-danger">
+                      {formik.errors.submit}
+                    </div>
                   )}
                   <div>
                     <Button
@@ -180,7 +185,7 @@ function Contact() {
             </div>
           </Col>
         </Row>
-      </div>
+      </Container>
 
       <section className="padding-sec" style={{ overflow: "hidden" }}>
         <Container>
