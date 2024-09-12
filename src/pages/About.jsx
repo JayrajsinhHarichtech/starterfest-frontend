@@ -47,7 +47,7 @@ export default function About() {
             {React.createElement('div', { dangerouslySetInnerHTML: { __html: faq.ContentUpload } })}
 
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={about} className="w-100" />
             </Col>
           </Row>
@@ -98,8 +98,8 @@ export default function About() {
 
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">Science city </h3>
               <p className="para">
                 Located off the Sarkhej Gandhinagar Highway, Science City is an
@@ -121,7 +121,7 @@ export default function About() {
                 technology to the common man
               </p>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={sciencecity} className="w-100" />
             </Col>
           </Row>

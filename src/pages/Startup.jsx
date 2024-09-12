@@ -32,8 +32,8 @@ function Startup() {
 
      <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">Empowering Tomorrow's 
 Innovators</h3>
               <p className="para">
@@ -47,10 +47,11 @@ key players and resources, Startup Fest Gujarat Season I was a launchpad
 for startups to accelerate their growth and make meaningful industry 
 connections.
               </p>
-
+              <div className="mt-5">
               <Link to="/register" className="theme-btn">Register Now</Link>
+              </div>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={about} className="w-100 img-padding" />
             </Col>
           </Row>
@@ -120,8 +121,8 @@ connections.
 
       <section className="padding-sec">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">Over Crore In Funding 
 Opportunities!</h3>
               <p className="para">
@@ -135,10 +136,11 @@ pitch your vision, Startup Fest Gujarat Season 1 was the ultimate platform
 to unlock your startup's potential and secure the resources to scale your 
 business.
               </p>
-
+              <div className="mt-5">
               <Link to="/register" className="theme-btn">Register Now</Link>
+              </div>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={funding} className="w-100 img-padding" />
             </Col>
           </Row>
