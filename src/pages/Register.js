@@ -387,7 +387,7 @@ const Register = () => {
     };
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const handleShow = () => {
         setShow(true)
         // setRegisterData([])
@@ -943,7 +943,7 @@ const Register = () => {
                             )}
 
 <div>
-                <Button type="button" color="primary" className="mt-3 register-btn">Proceed to CHeckout</Button>
+                <Button type="button" color="primary" className="mt-3 register-btn">Proceed to Checkout</Button>
             </div>
 
                         </Col>
