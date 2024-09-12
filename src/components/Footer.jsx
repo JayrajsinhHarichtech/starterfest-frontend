@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/img/logo.png'
+import logo from '../assets/img/footer-logo.png'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -40,9 +40,9 @@ export default function Footer() {
                         <h4>Fest</h4>
                     </div>
                     <ul className="footer-list">
-                        <li><a href="/startup">Pitcher</a></li>
+                        <li><a href="/pitcher">Pitcher</a></li>
                         <li><a href="/startup">Start-Up</a></li>
-                        <li><a href="/startup">Investor</a></li>
+                        <li><a href="/investor">Investor</a></li>
                         <li><a href="/visitor">Visitor</a></li>
                     </ul>
                     </div>

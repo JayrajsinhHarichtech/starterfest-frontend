@@ -24,35 +24,36 @@ import Modal from "react-bootstrap/Modal";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { PiCurrencyInr } from "react-icons/pi";
-import about from "../assets/img/start-upImg.png";
+import investor from "../assets/img/investor.png";
 import { Link } from "react-router-dom";
 
 
-export default function StartupContent() {
-  const [isActive, setIsActive] = useState(false);
-  const inputRef = useRef(null);
+export default function InvestorContent() {
 
-  const handleCopy = () => {
-    inputRef.current.select();
-    document.execCommand("copy");
-    setIsActive(true);
-    window.getSelection().removeAllRanges(); // Clear the selection
-    setTimeout(() => {
-      setIsActive(false);
-    }, 2500);
-  };
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const [map, setMap] = useState(false);
-
-  const handleMap = () => setMap(!map);
-
-  const [quantity, setQuantity] = useState(1)
-
+    const [isActive, setIsActive] = useState(false);
+    const inputRef = useRef(null);
+  
+    const handleCopy = () => {
+      inputRef.current.select();
+      document.execCommand("copy");
+      setIsActive(true);
+      window.getSelection().removeAllRanges(); // Clear the selection
+      setTimeout(() => {
+        setIsActive(false);
+      }, 2500);
+    };
+  
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    const [map, setMap] = useState(false);
+  
+    const handleMap = () => setMap(!map);
+  
+    const [quantity, setQuantity] = useState(1)
+  
   return (
     <div className="gradeint-bg padding-sec startup-sec">
       <div className="banner">
@@ -68,11 +69,11 @@ export default function StartupContent() {
               <div className="flex">
                 <h6 className="txt-blue mb-4">Friday, September 13</h6>
                 {/* <button onClick={handleCopy}>
-                  <CiStar />
-                </button>
-                <button onClick={handleCopy}>
-                  <IoShareSocialOutline />
-                </button> */}
+                <CiStar />
+              </button>
+              <button onClick={handleCopy}>
+                <IoShareSocialOutline />
+              </button> */}
               </div>
             </Col>
             <Col lg={3} className="text-end">
@@ -105,8 +106,8 @@ export default function StartupContent() {
                     <div className="amt-input">
                       <input type="num" className="amount" placeholder="100" />
                       {/* <div className="rs-icon">
-                  <PiCurrencyInr />
-                  </div> */}
+                <PiCurrencyInr />
+                </div> */}
                     </div>
                     <div className="ince-btns">
                       <button
@@ -228,24 +229,24 @@ export default function StartupContent() {
                   </div>
 
                   {/* <div className="tags">
-                    <h4>Tags</h4>
-                    <p>
-                      <button className="square">Performance</button>
-                      <button className="round">Music</button>
-                      <button className="round">Art</button>
-                    </p>
+                  <h4>Tags</h4>
+                  <p>
+                    <button className="square">Performance</button>
+                    <button className="round">Music</button>
+                    <button className="round">Art</button>
+                  </p>
 
-                    <p className="big-btns">
-                      <button className="square">
-                        <FaPlus />
-                        Add to curated list
-                      </button>
-                      <button className="square">
-                        <PiFlagPennantFill />
-                        Report this event
-                      </button>
-                    </p>
-                  </div> */}
+                  <p className="big-btns">
+                    <button className="square">
+                      <FaPlus />
+                      Add to curated list
+                    </button>
+                    <button className="square">
+                      <PiFlagPennantFill />
+                      Report this event
+                    </button>
+                  </p>
+                </div> */}
                 </Col>
                 <Col lg={4}>
                   <Row className="mt-4">
@@ -315,88 +316,88 @@ export default function StartupContent() {
                   </Row>
                 </Col>
                 {/* <Col lg={4}>
-                  <Row>
-                    <Col lg={12}>
-                      <div className="box-content reviews">
-                        <div className="flex">
-                          <h6 className="box-title">
-                            Host reviews by attendees
-                          </h6>
-                          <div className="star">
-                            <p className="mb-0">4.5</p>
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStarHalfAlt />
-                          </div>
+                <Row>
+                  <Col lg={12}>
+                    <div className="box-content reviews">
+                      <div className="flex">
+                        <h6 className="box-title">
+                          Host reviews by attendees
+                        </h6>
+                        <div className="star">
+                          <p className="mb-0">4.5</p>
+                          <FaStar />
+                          <FaStar />
+                          <FaStar />
+                          <FaStar />
+                          <FaStarHalfAlt />
                         </div>
-                        <div className="detail">
-                          <img src={review} />
-                          <div className="txt">
-                            <div className="details-sec">
-                              <h6 className="mb-1"> Samantha Payne </h6>
-                              <div className="star">
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStarHalfAlt />
-                              </div>
+                      </div>
+                      <div className="detail">
+                        <img src={review} />
+                        <div className="txt">
+                          <div className="details-sec">
+                            <h6 className="mb-1"> Samantha Payne </h6>
+                            <div className="star">
+                              <FaStar />
+                              <FaStar />
+                              <FaStar />
+                              <FaStar />
+                              <FaStarHalfAlt />
                             </div>
                           </div>
                         </div>
-                        <p className="comment">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit ut aliquam, purus sit amet luctus venenatis,
-                          lectus magna fringilla urna
-                        </p>
-                        <a className="show-map" href="/">
-                          View More
-                        </a>
-                        <span className="show">
-                          <IoIosArrowDown />
-                        </span>
                       </div>
-                    </Col>
-                    <Col lg={12}>
-                      <div className="box-content reviews mt-3">
-                        <div className="flex">
-                          <h6 className="box-title">Share Event</h6>
-                        </div>
-                        <div className="detail">
-                          <div className="social">
-                            <button>
-                              <FaTwitter />
-                            </button>
-                            <button>
-                              <FaFacebookF />
-                            </button>
-                            <button>
-                              <FaInstagram />
-                            </button>
-                            <button>
-                              <FaGithub />
-                            </button>
-                          </div>
-                        </div>
-
-                        <div class="copy-text">
-                          <input
-                            ref={inputRef}
-                            type="text"
-                            class="text"
-                            value="https://startupfest.barodaweb.org/startup"
-                            readOnly
-                          />
-                          <button onClick={handleCopy}>
-                            <RiFileCopyFill />
+                      <p className="comment">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit ut aliquam, purus sit amet luctus venenatis,
+                        lectus magna fringilla urna
+                      </p>
+                      <a className="show-map" href="/">
+                        View More
+                      </a>
+                      <span className="show">
+                        <IoIosArrowDown />
+                      </span>
+                    </div>
+                  </Col>
+                  <Col lg={12}>
+                    <div className="box-content reviews mt-3">
+                      <div className="flex">
+                        <h6 className="box-title">Share Event</h6>
+                      </div>
+                      <div className="detail">
+                        <div className="social">
+                          <button>
+                            <FaTwitter />
+                          </button>
+                          <button>
+                            <FaFacebookF />
+                          </button>
+                          <button>
+                            <FaInstagram />
+                          </button>
+                          <button>
+                            <FaGithub />
                           </button>
                         </div>
                       </div>
-                    </Col>
-                  </Row>
-                </Col> */}
+
+                      <div class="copy-text">
+                        <input
+                          ref={inputRef}
+                          type="text"
+                          class="text"
+                          value="https://startupfest.barodaweb.org/startup"
+                          readOnly
+                        />
+                        <button onClick={handleCopy}>
+                          <RiFileCopyFill />
+                        </button>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Col> */}
               </Row>
             </Col>
           </Row>
@@ -406,7 +407,7 @@ export default function StartupContent() {
           <Container>
             <Row className="justify-content-center">
               <Col lg={6} className="align-content-center">
-                <h3 className="title">Register Yourself As StartUp</h3>
+                <h3 className="title">Register Yourself As Investor</h3>
                 <p className="para">
                   People who register for the Start-Up Fest will be allotted a
                   5-minute time slot to present their startup in front of
@@ -414,18 +415,18 @@ export default function StartupContent() {
                 </p>
 
                 <p className="para">
-                  Startups/ franchises will get a 2/2 stall and visibility in
-                  front of all the investors coming in.
+                  Investors will get a chance to talk to all the startups and an
+                  opportunity to multiply their money by 2-3 times.
                 </p>
 
                 <div className="mt-5">
-                <Link to="/register" className="theme-btn">
+                  <Link to="/register" className="theme-btn">
                     Register Now
                   </Link>
                 </div>
               </Col>
               <Col lg="6">
-                <img src={about} className="w-100" />
+                <img src={investor} className="w-100" />
               </Col>
             </Row>
           </Container>
