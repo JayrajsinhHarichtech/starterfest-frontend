@@ -63,10 +63,10 @@ export default function StartupContent() {
             </Col>
           </Row>
 
-          <Row>
-            <Col lg={9}>
+          <Row className="justify-content-center">
+            <Col lg={9} xs={7}>
               <div className="flex">
-                <h6 className="txt-blue mb-4">Saturday ,28 September</h6>
+                <h6 className="txt-blue">Saturday ,28 September</h6>
                 {/* <button onClick={handleCopy}>
                   <CiStar />
                 </button>
@@ -75,7 +75,7 @@ export default function StartupContent() {
                 </button> */}
               </div>
             </Col>
-            <Col lg={3} className="text-end">
+            <Col lg={3} xs={5} className="text-end">
               {/* <button className="theme-btn" onClick={handleShow}> */}
               <Link to="/register" className="theme-btn">
                 Get Ticket
