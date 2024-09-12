@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useEffect, useState} from 'react'
 import about from "../assets/img/about-img.png";
 import sciencecity from "../assets/img/science-city.jpg";
 import g20 from "../assets/img/g20.jpg";
@@ -10,34 +10,41 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import Timer from '../components/Timer';
+import axios from 'axios';
+
 
 export default function About() {
 
     const [map, setMap] = useState(false);
 
     const handleMap = () => setMap(!map);
+    const [faq, setFaq] = useState([])
+
+    useEffect(()=>{
+      
+  const fetchAbout = async () => {
+    try {
+      const res = await axios.get(`${process.env.REACT_APP_URL}/api/auth/cms/get-content/66e2c092b91cb37980f500b1`)
+      console.log(res.data)
+
+      setFaq(res.data);
+    }
+    catch (error) {
+      console.error(error)
+    }
+  }
+
+  fetchAbout()
+    },[])
+
   return (
     <>
       <section className="padding-sec light-bg">
         <Container>
           <Row className="justify-content-center">
             <Col lg={6}>
-              <h6 className="txt-blue sm-title">About us</h6>
-              <h3 className="title">The Largest Business Expert </h3>
-              <p className="para">
-                Welcome to Startup Fest Gujarat, presented by the Snehshilp
-                Foundation! Get ready to immerse yourself in a dynamic ecosystem
-                where innovation and entrepreneurship converge. With over 300
-                startups, visionary investors, and renowned keynote speakers,
-                we're setting the stage for an event that celebrates Gujarat's
-                thriving business landscape.
-              </p>
-              <p className="para">
-                Join us in Ahmedabad, the heart of entrepreneurial brilliance,
-                for an unforgettable experience that amplifies business ideas
-                and fosters collaboration. Embrace the future of business at
-                Startup Fest Gujarat.
-              </p>
+            {React.createElement('div', { dangerouslySetInnerHTML: { __html: faq.ContentUpload } })}
 
             </Col>
             <Col lg="6">
@@ -82,38 +89,8 @@ export default function About() {
               </Row>
             </Col>
 
-            <Col lg={6} xs={12}>
-              <div className="counter-box">
-                <Row>
-                  <Col lg={6} xs={6}>
-                    <div className="count border-right">
-                      <h3>22</h3>
-                      <h5 className="subtitle">Days</h5>
-                    </div>
-                  </Col>
-                  <Col lg={6} xs={6}>
-                    <div className="count">
-                      <h3>21</h3>
-                      <h5 className="subtitle">Hours</h5>
-                    </div>
-                  </Col>
-                </Row>
-                <hr className="gradient-line" />
-                <Row>
-                  <Col lg={6} xs={6}>
-                    <div className="count border-right">
-                      <h3>52</h3>
-                      <h5 className="subtitle">Seconds</h5>
-                    </div>
-                  </Col>
-                  <Col lg={6} xs={6}>
-                    <div className="count">
-                      <h3>57</h3>
-                      <h5 className="subtitle">Minutes</h5>
-                    </div>
-                  </Col>
-                </Row>
-              </div>
+            <Col lg={6}>
+            <Timer />
             </Col>
           </Row>
         </Container>

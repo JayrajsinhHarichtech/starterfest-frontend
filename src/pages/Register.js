@@ -332,10 +332,26 @@ const Register = () => {
         }
 
     }
+
+    const [stages, setStages] = useState([])
+    const fetchStages= async () => {
+        try {
+            const res = await axios.get(`${process.env.REACT_APP_URL}/api/auth/list/StageOfStartup`)
+            console.log(res)
+            setStages(res.data);
+        }
+        catch (error) {
+            console.error(error)
+        }
+
+    }
+
+
     useEffect(() => {
 
         fetchData()
         fetchCountry()
+        fetchStages()
 
     }, [])
 
@@ -371,9 +387,14 @@ const Register = () => {
     };
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
+    const [show, setShow] = useState(true);
+    const handleShow = () => {
+        setShow(true)
+        // setRegisterData([])
+    };
+    const handleClose = () => {
+        setShow(false)
+    setRegisterData([])};
 
     const validateForm = () => {
         let errors = {};
@@ -428,6 +449,9 @@ const Register = () => {
         }
         if (!values.description) {
             errors.description = 'Brief About Startup is required';
+        }
+        if (!values.City) {
+            errors.City = 'City is required';
         }
         if (!values.legalName) {
             errors.legalName = 'Legal Name Startup is required';
@@ -609,6 +633,7 @@ const Register = () => {
                 }
                 if (res.data.isOk) {
                     setAddMore(false)
+                    console.log(res)
                     alert("Form submitted successfully")
                     setInvestorValues(investorInitialValue)
                     setRegisterData((prevData) => [...prevData, res.data.data]);
@@ -626,13 +651,13 @@ const Register = () => {
             }
         }
     };
-    const stages = [
-        { value: 'Ideation', label: 'Ideation' },
-        { value: 'PoC/MVP', label: 'PoC/MVP' },
-        { value: 'Early Revenue', label: 'Early Revenue' },
-        { value: 'Revenue', label: 'Revenue' },
-        { value: 'Growth', label: 'Growth' },
-    ]
+    // const stages = [
+    //     { value: 'Ideation', label: 'Ideation' },
+    //     { value: 'PoC/MVP', label: 'PoC/MVP' },
+    //     { value: 'Early Revenue', label: 'Early Revenue' },
+    //     { value: 'Revenue', label: 'Revenue' },
+    //     { value: 'Growth', label: 'Growth' },
+    // ]
 
     return (
         <React.Fragment>
@@ -827,17 +852,18 @@ const Register = () => {
                                                     <div className="tick-name">
                                                         <h6>Event Name </h6>
                                                         <p>
-                                                            <b>Friday AfterHours: Sufi Unplugged</b>
+                                                            <b>{items.Event.name}</b>
                                                         </p>
                                                     </div>
-                                                    <img src={frame} className="frame-img" />
+                                                    {/* <img src={frame} className="frame-img" /> */}
                                                 </div>
 
                                                 <div className="txt-ixon two">
                                                     <div className="tick-name">
-                                                        <h6>Time </h6>
+                                                        <h6>Date </h6>
                                                         <p>
-                                                            <b>28,29 September</b>
+                                                        <b>{new Date(items.Event.startDate).toLocaleDateString()} - {new Date(items.Event.endDate).toLocaleDateString()}</b>
+
                                                         </p>
                                                     </div>
                                                 </div>
@@ -846,7 +872,7 @@ const Register = () => {
                                         <Col lg={4}>
                                             <div className="txt-ixon two h-100 align-content-center">
                                                 <div className='name'>
-                                                    <h5>{items.contactPersonNam}</h5>
+                                                    <h5>{items.contactPersonName}</h5>
                                                     <hr />
                                                 </div>
                                                 <div className="tick-name">
@@ -915,6 +941,10 @@ const Register = () => {
                                     </div>
                                 )
                             )}
+
+<div>
+                <Button type="button" color="primary" className="mt-3 register-btn">Proceed to Checkout</Button>
+            </div>
 
                         </Col>
                     </Row>

@@ -7,6 +7,7 @@ import caleder from "../assets/img/calender-icon.png";
 import { MdLocationPin } from "react-icons/md";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { TabContent } from "reactstrap";
+import Timer from "../components/Timer";
 
 
 function Contact() {
@@ -222,38 +223,8 @@ function Contact() {
               </Row>
             </Col>
 
-            <Col lg={6} xs={12}>
-              <div className="counter-box">
-                <Row>
-                  <Col lg={6} xs={6}>
-                    <div className="count border-right">
-                      <h3>22</h3>
-                      <h5 className="subtitle">Days</h5>
-                    </div>
-                  </Col>
-                  <Col lg={6} xs={6}>
-                    <div className="count">
-                      <h3>21</h3>
-                      <h5 className="subtitle">Hours</h5>
-                    </div>
-                  </Col>
-                </Row>
-                <hr className="gradient-line" />
-                <Row>
-                  <Col lg={6} xs={6}>
-                    <div className="count border-right">
-                      <h3>52</h3>
-                      <h5 className="subtitle">Seconds</h5>
-                    </div>
-                  </Col>
-                  <Col lg={6} xs={6}>
-                    <div className="count">
-                      <h3>57</h3>
-                      <h5 className="subtitle">Minutes</h5>
-                    </div>
-                  </Col>
-                </Row>
-              </div>
+            <Col lg={6}>
+             <Timer />
             </Col>
           </Row>
         </Container>

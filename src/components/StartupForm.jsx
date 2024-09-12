@@ -167,8 +167,8 @@ const StartupForm = ({ values, handleChange, handleFileChange, formErrors, isSub
                         })
                     }}
                     options={stages.map((item) => ({
-                        value: item.value,
-                        label: item.label,
+                        value: item._id,
+                        label: item.StageOfStartup,
                     }))}
                 >
                     {/* <option value=""></option>
@@ -264,7 +264,7 @@ const StartupForm = ({ values, handleChange, handleFileChange, formErrors, isSub
             <div className="row mb-3">
                 <div className="col">
                     <label className="f-13 fw-bold" htmlFor="City">
-                        City of Operation
+                        City of Operation<span className="text-danger">*</span>
                     </label>
                     <input
                         type="text"
@@ -329,7 +329,7 @@ const StartupForm = ({ values, handleChange, handleFileChange, formErrors, isSub
             <div className="mb-3">
 
                 <label className="f-13 fw-bold" htmlFor="yearFounded">
-                    Year of Establishment
+                    Year of Establishment<span className="text-danger">*</span>
                 </label>
                 <input
                     type="date"

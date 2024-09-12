@@ -622,9 +622,11 @@ gap: 24px; */
 }
 
 
-.register-btn:hover{background: #fff;
-    color: #003777;
-    border: 2px solid #003777;
+.register-btn:hover,
+.register-btn:active {
+    background: #fff !important;
+    color: #003777 !important;
+    border: 2px solid #003777 !important;
 }
 
 .register-sec .title {
