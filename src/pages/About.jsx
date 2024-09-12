@@ -21,9 +21,9 @@ export default function About() {
     <>
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
-              <h6 className="txt-blue sm-title">About us</h6>
+        <h6 className="txt-blue sm-title">About us</h6>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">The Largest Business Expert </h3>
               <p className="para">
                 Welcome to Startup Fest Gujarat, presented by the Snehshilp
@@ -41,7 +41,7 @@ export default function About() {
               </p>
 
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={about} className="w-100" />
             </Col>
           </Row>
@@ -108,8 +108,8 @@ export default function About() {
 
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">Science city </h3>
               <p className="para">
                 Located off the Sarkhej Gandhinagar Highway, Science City is an
@@ -131,7 +131,7 @@ export default function About() {
                 technology to the common man
               </p>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={sciencecity} className="w-100" />
             </Col>
           </Row>

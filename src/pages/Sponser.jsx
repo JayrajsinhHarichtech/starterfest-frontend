@@ -53,7 +53,7 @@ function Sponser() {
             //   textAlign: "center",
             }}
           >
-            Speakers
+            Sponsers
           </h2> {/* Added paddingTop and paddingBottom for heading */}
           <Row className="m-0 p-0">
             <Col lg="4" className=""> {/* Added padding for cards */}

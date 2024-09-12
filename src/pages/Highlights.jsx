@@ -64,33 +64,32 @@ export default function Highlights() {
 
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">
                 Startup Fest Gujarat: Where Innovation Meets Investment
               </h3>
               <p className="para">
-                SNEHSHILP FOUNDATION’S “START-UP FEST GUJARAT” HIGHLIGHTS THE
-                THRIVING SPIRIT OF ENTREPRENEURSHIP AND INNOVATION IN THE
-                REGION. FOUNDED AND DRIVEN BY THE VISIONARY MRS. SNEHAL
-                BRAHMBHATT, THE EVENT AIMS TO FILL THE VOID IN START-UP SUPPORT
-                BY PROVIDING A COMPREHENSIVE PLATFORM FOR FRESH IDEAS TO
-                FLOURISH.
+                Snehshilp Foundation’s “Start-Up Fest Gujarat” Highlights the
+                Thriving Spirit of Entrepreneurship and Innovation in the Region
+                Founded and driven by the visionary Mrs. Snehal Brahmbhatt, the
+                event aims to fill the void in start-up support by providing a
+                comprehensive platform for fresh ideas to flourish.
               </p>
               <p className="para">
-                THE ANNUAL EVENT BRINGS TOGETHER START-UPS, INVESTORS, AND
-                INDUSTRY COLLABORATION.LEADERS FOR TWO DAYS, CREATING AN
-                ATMOSPHERE OF INSPIRATION AND FRUITFUL COLLABORATION.
+                The annual event brings together start-ups, investors, and
+                industry leaders for two days, creating an atmosphere of
+                inspiration and fruitful collaboration.
               </p>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={about} className="w-100" />
             </Col>
           </Row>
         </Container>
       </section>
 
-      <section className="container-bg padding-sec">
+      <section className="padding-sec">
         <Container>
           {/* <Row className="d-flex">
             <Col className="flex-grow-1">
@@ -155,7 +154,7 @@ export default function Highlights() {
               </div>
             </Col>
           </Row> */}
-           <Row className="mt-5">
+          <Row className="mt-5">
             <Col lg={12}>
               <div className="heading-one d-flex justify-content-between">
                 <h4 className="title">Event Showcases</h4>
@@ -245,27 +244,23 @@ export default function Highlights() {
         </Container>
       </section>
 
-      
       <section className="register-sec padding-sec showcase">
         <Container>
-        <img src={highbg} />
+          <img src={highbg} />
           <div className="overlay padding-sec">
             <div className="w-70 m-auto content">
               <h5 className="title text-center text-white">
-              It’s not about ideas. <br/> It’s about making ideas happen.
+                It’s not about ideas. <br /> It’s about making ideas happen.
               </h5>
-              <h3>
-              ~ Scott Belsky  
-              </h3>
+              <h3>~ Scott Belsky</h3>
             </div>
-           
           </div>
         </Container>
       </section>
-      <section className="padding-sec light-bg">
+      <section className="padding-sec">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">2023 Venue</h3>
               <p className="para">
                 Located off the Sarkhej Gandhinagar Highway, Science City is an
@@ -287,7 +282,7 @@ export default function Highlights() {
                 technology to the common man
               </p>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={venue} className="w-100 br-20" />
             </Col>
           </Row>
