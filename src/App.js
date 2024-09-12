@@ -51,7 +51,7 @@ function App() {
 
           <Route path='/visitor' element ={<Visitor/>} />
           <Route path='/about' element ={<About/>} />
-          <Route path='/investor' element ={<InvestorAccelator/>} />
+          <Route path='/investor-accelator' element ={<InvestorAccelator/>} />
 
           <Route path='/contact' element ={<Contact />} />
           <Route path='/sponser' element ={<Sponser />} />
