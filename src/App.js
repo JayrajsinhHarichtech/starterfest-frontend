@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import '../src/assets/css/style.css';
+import '../src/assets/css/responsive.css';
 // import '../src/assets/scss/_nav.scss';
 import Home from './components/Home';
 import Register from './pages/Register';
@@ -25,6 +26,8 @@ import Awardsnight from './pages/Awardsnight';
 import Startup from './pages/Startup';
 import Faq from './pages/Faq';
 import StartUpShowCase from './pages/StartupShowCase';
+import PitcherContent from './pages/PitcherContent';
+import InvestorContent from './pages/InvestorContent';
 import PrivacyPolicy from './components/PrivacyPolicy';
 
 
@@ -41,6 +44,8 @@ function App() {
           <Route path='/register' element ={<Register />} />
           <Route path='/participants' element ={<Participants />} />
           <Route path='/startup' element ={<StartupContent />} />
+          <Route path='/investor' element ={<InvestorContent />} />
+          <Route path='/pitcher' element ={<PitcherContent />} />
           <Route path='/highlights' element ={<Highlights />} />
           <Route path='/speakers' element ={<Speakers />} />
           <Route path='/sharkTank' element ={<STFS />} />

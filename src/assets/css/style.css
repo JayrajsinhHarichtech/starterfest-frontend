@@ -14,7 +14,6 @@
 
 body {
     font-family: 'Inter';
-    /* overflow: hidden; */
 }
 
 .header {
@@ -53,6 +52,7 @@ body {
 
 .header .menubar .flex {
     display: flex;
+    align-items: center;
 }
 
 .header .menubar .container {
@@ -623,9 +623,11 @@ footer {
     padding: 70px 0 40px 0;
     font-family: "Poppins", sans-serif;
 }
-
+footer .footer-logo{
+    text-align: left;
+}
 footer .footer-logo img {
-    max-width: 200px;
+    max-width: 120px;
     margin-bottom: 30px;
 }
 
@@ -749,6 +751,7 @@ footer .copyright a:hover {
     border-radius: 12px;
     box-shadow: 2px 4px 8px #E5EEF0;
     min-height: 200px;
+    margin-bottom: 20px;
 }
 
 .startup-sec .box-content.reviews {

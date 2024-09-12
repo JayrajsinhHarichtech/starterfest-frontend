@@ -31,6 +31,13 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
 
+  const handleScroll = () => {
+    window.scrollTo({
+      top: document.getElementById("target-section").offsetTop,
+      behavior: "smooth",
+    });
+  };
+
     const [settings] = useState({
       dots: true,
       infinite: true,
@@ -66,7 +73,7 @@ export default function Home() {
             <Col lg="12">
               <div className="banner-btns">
                 <Link to="/register" className="theme-btn">Register Now</Link>
-                <button className="theme-btn-light">
+                <button className="theme-btn-light" onClick={handleScroll}>
                   <IoIosArrowRoundDown /> Explore More
                 </button>
               </div>
@@ -74,7 +81,7 @@ export default function Home() {
           </Row>
         </Container>
       </section>
-      <section className="">
+      <section className="" id="target-section">
         <Container>
           <Row className="justify-content-center">
             <Col lg="12">
