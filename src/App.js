@@ -25,6 +25,7 @@ import Awardsnight from './pages/Awardsnight';
 import Startup from './pages/Startup';
 import Faq from './pages/Faq';
 import StartUpShowCase from './pages/StartupShowCase';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 
 
@@ -54,6 +55,7 @@ function App() {
           <Route path='/start-up' element ={<Startup />} />
           <Route path='/faq' element ={<Faq />} />
           <Route path='/start-up-showcase' element ={<StartUpShowCase />} />
+          <Route path='/privacypolicy' element ={<PrivacyPolicy />} />
 
 
         </Routes>

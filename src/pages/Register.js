@@ -372,8 +372,13 @@ const Register = () => {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const [show, setShow] = useState(false);
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
+    const handleShow = () => {
+        setShow(true)
+        // setRegisterData([])
+    };
+    const handleClose = () => {
+        setShow(false)
+    setRegisterData([])};
 
     const validateForm = () => {
         let errors = {};
@@ -428,6 +433,9 @@ const Register = () => {
         }
         if (!values.description) {
             errors.description = 'Brief About Startup is required';
+        }
+        if (!values.City) {
+            errors.City = 'City is required';
         }
         if (!values.legalName) {
             errors.legalName = 'Legal Name Startup is required';
@@ -609,6 +617,7 @@ const Register = () => {
                 }
                 if (res.data.isOk) {
                     setAddMore(false)
+                    console.log(res)
                     alert("Form submitted successfully")
                     setInvestorValues(investorInitialValue)
                     setRegisterData((prevData) => [...prevData, res.data.data]);
@@ -827,17 +836,18 @@ const Register = () => {
                                                     <div className="tick-name">
                                                         <h6>Event Name </h6>
                                                         <p>
-                                                            <b>Friday AfterHours: Sufi Unplugged</b>
+                                                            <b>{items.Event.name}</b>
                                                         </p>
                                                     </div>
-                                                    <img src={frame} className="frame-img" />
+                                                    {/* <img src={frame} className="frame-img" /> */}
                                                 </div>
 
                                                 <div className="txt-ixon two">
                                                     <div className="tick-name">
-                                                        <h6>Time </h6>
+                                                        <h6>Date </h6>
                                                         <p>
-                                                            <b>28,29 September</b>
+                                                        <b>{new Date(items.Event.startDate).toLocaleDateString()} - {new Date(items.Event.endDate).toLocaleDateString()}</b>
+
                                                         </p>
                                                     </div>
                                                 </div>
