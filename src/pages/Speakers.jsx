@@ -25,7 +25,7 @@ const Speakers = () => {
         <Container>
           <Row className="d-flex">
             <Col className="flex-grow-1">
-              <h3 className="title mb-5">Speakers</h3>
+              <h3 className="title">Speakers</h3>
             </Col>
           </Row>
           <Row className='g-4'>
@@ -73,13 +73,10 @@ const Speakers = () => {
             </Col>
           </Row>
         </Container>
-      </section>
-
-      <section className="container-bg padding-sec">
-        <Container>
+        <Container className='pt-5'>
           <Row className="d-flex">
             <Col className="flex-grow-1">
-              <h3 className="title mb-5">Mentors</h3>
+              <h3 className="title">Mentors</h3>
             </Col>
           </Row>
           <Row className='g-4'>
@@ -112,13 +109,11 @@ const Speakers = () => {
             </Col>
           </Row>
         </Container>
-      </section>
-
-      <section className="container-bg padding-sec">
-        <Container>
+     
+        <Container className='pt-5'>
           <Row className="d-flex">
             <Col className="flex-grow-1">
-              <h3 className="title mb-5">Moderator</h3>
+              <h3 className="title">Moderator</h3>
             </Col>
           </Row>
           <Row className='g-4'>
