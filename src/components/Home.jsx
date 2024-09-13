@@ -172,19 +172,12 @@ export default function Home() {
             <Col xs={12} md={12} lg={5}>
               <h3 className="title">About StartUp Fest</h3>
               <p className="para">
-                Welcome to Startup Fest Gujarat, presented by the Snehshilp
-                Foundation! Get ready to immerse yourself in a dynamic ecosystem
-                where innovation and entrepreneurship converge. With over 300
-                startups, visionary investors, and renowned keynote speakers,
-                we're setting the stage for an event that celebrates Gujarat's
-                thriving business landscape.
+              Snehshilp Foundation's "Start-Up Fest Gujarat" highlights the thriving spirit of entrepreneurship and innovation in the region. Founded and driven by the visionary Mrs. Snehal Brahmbhatt, the event aims to fill the void in start-up support by providing a comprehensive platform for fresh ideas to flourish.
               </p>
               <p className="para">
-                Join us in Ahmedabad, the heart of entrepreneurial brilliance,
-                for an unforgettable experience that amplifies business ideas
-                and fosters collaboration. Embrace the future of business at
-                Startup Fest Gujarat.
+              The annual event brings together start-ups, investors, and industry collaboration. Leaders for two days, creating an atmosphere of inspiration and fruitful collaboration.
               </p>
+              
 
               <div className="padding-btn">
                 <Link to="/about" className="theme-btn">
