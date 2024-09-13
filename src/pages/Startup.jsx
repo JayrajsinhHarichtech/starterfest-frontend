@@ -62,12 +62,12 @@ connections.
         <section className="padding-sec">
           <Container>
             <Row>
-              <Col lg={4}  xs={12} className="sfg ">
+              <Col lg={5}  xs={12} className="sfg ">
                 <h3 className="title mt-5">
                   Startupfest At  A Glance
                 </h3>
               </Col>
-              <Col lg={6}  xs={12} className="offset-lg-2">
+              <Col lg={6}  xs={12} className="offset-lg-1">
                 <Row className="text-center border-custom">
                   <Col>
                     <img src={agry} />

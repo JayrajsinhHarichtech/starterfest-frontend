@@ -28,7 +28,9 @@ export default function InvestorAccelator() {
                 next level
               </p>
 
+              <div className="mt-5">
               <Link to="/register" className="theme-btn">Register Now</Link>
+              </div>
             </Col>
             <Col lg="6">
               <img src={img1} className="w-100 img-padding" />
@@ -56,17 +58,15 @@ export default function InvestorAccelator() {
         <Container>
           <Row className="justify-content-between">
             <Col xs={12} md={5} lg={5}>
-              <h3 className="title">Where Startups Meet Leading Investors</h3>
+              <h3 className="title">Engage with Leading Startups from Elite Programs</h3>
               <p className="para">
-                We’ve curated a range of opportunities specifically designed to
-                connect you with the key players in the industry. Whether you’re
-                looking to meet with venture capitalists, incubators, angel
-                investors, or industry leaders, Startup Fest Gujarat is your
-                gateway to the connections you need to take your startup to the
-                next level
+              At Startup Fest Gujarat, you’ll encounter a diverse array of startups spanning multiple industries and growth stages, all eager to connect 
+              with investors, incubators, and mentors. From cutting-edge Fintech to innovative AI, and from early-stage ventures to those seeking Series A funding, this event is designed to bring together companies across sectors, providing them with the opportunity to secure mentorship, networking, and potential investment to drive their growth forward
               </p>
 
+              <div className="mt-5">
               <Link to="/register" className="theme-btn">Register Now</Link>
+              </div>
             </Col>
             <Col xs={12} md={6} lg={6}>
               <img src={img2} className="w-100 img-padding" />

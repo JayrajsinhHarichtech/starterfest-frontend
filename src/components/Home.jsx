@@ -323,7 +323,7 @@ export default function Home() {
                       <FaRegCheckCircle />
                     </div>
 
-                    <p>135+</p>
+                    <p>15000+</p>
                     <h4>Visitors</h4>
                   </div>
                 </Col>

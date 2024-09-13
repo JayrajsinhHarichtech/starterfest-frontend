@@ -174,7 +174,7 @@ export default function Participants() {
               <Link to="/startup" className="no-design">
                 <h3><a href="/investor" className='pitcher-card-a'>Investors</a></h3>
               <a href="/investor" className='pitcher-card-a'> <MdArrowOutward style={{fontSize:"25px"}}/></a>
-                  </div>
+                 
                 <p>
                   Investors will get a chance to talk to all the startups and an
                   opportunity to
@@ -184,6 +184,7 @@ export default function Participants() {
                 </p>
                 <img src={img3} className="w-100" />
               </Link>
+              </div>
             </Col>
           </Row>
         </Container>
