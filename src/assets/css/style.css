@@ -161,9 +161,6 @@ body {
     border-radius: 10px;
     transition: 0.05s ease all;
     text-decoration: none;
-    display: block;
-    width: fit-content;
-    margin-top: 20px;
 }
 
 .theme-btn.light-blue {
@@ -761,7 +758,9 @@ footer .copyright a:hover {
     gap: 20px;
     font-family: "Poppins", sans-serif;
 }
-
+.startup-sec .flex h6{
+    margin-bottom:20px
+}
 .startup-sec .flex button {
     padding: 0;
     background-color: transparent;

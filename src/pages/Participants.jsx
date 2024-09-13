@@ -41,29 +41,29 @@ export default function Participants() {
               </div>
             </Col>
             <Col xs={12} md={6} lg={6}>
-              <img src={parti1} className="w-100" />
+              <img src={parti1} className="w-100 img-padding" />
             </Col>
           </Row>
         </Container>
       </section>
       <section className="padding-sec">
         <Container>
-          <Row>
-            <Col lg={6}>
+          <Row className="count-box">
+            <Col lg={6} xs={12}>
               <h3 className="title mb-5">
                 India <span className="gradient">Startup Revolution </span> is
                 here and now!
               </h3>
 
               <Row>
-                <Col lg={4}>
+                <Col lg={4} xs={12}>
                   <div className="box">
                     <MdLocationPin />
                     <h4>Venue</h4>
                     <p>Vigyan Bhavanm, Science City, Ahmedabad.</p>
                   </div>
                 </Col>
-                <Col lg={4}>
+                <Col lg={4} xs={12}>
                   <div className="box">
                     {/* <SlCalender /> */}
                     <img src={caleder} width={45} />
@@ -71,7 +71,7 @@ export default function Participants() {
                     <p>28 & 29 September, 2024</p>
                   </div>
                 </Col>
-                <Col lg={4}>
+                <Col lg={4} xs={12}>
                   <div className="box">
                     <img src={clock} width={45} />
                     <h4>Time</h4>
@@ -81,11 +81,11 @@ export default function Participants() {
               </Row>
             </Col>
 
+
             <Col lg={6}>
-              {/* <img src={parti3} className="w-100" /> */}
               <Timer />
-            </Col>
-          </Row>
+              </Col>
+                 </Row>
         </Container>
       </section>
 
@@ -110,7 +110,7 @@ export default function Participants() {
               </div>
             </Col>
             <Col xs={12} md={6} lg={6}>
-              <img src={parti2} className="w-100" />
+              <img src={parti2} className="w-100 img-padding" />
             </Col>
           </Row>
         </Container>
@@ -118,9 +118,16 @@ export default function Participants() {
 
       <section className="padding-sec">
         <Container>
-          <Row className="d-flex">
-            <Col className="flex-grow-1">
-              <h3 className="title mb-5">Register Yourself</h3>
+          <Row>
+            <Col lg={8} xs={6}>
+              <h3 className="title">Register Yourself</h3>
+            </Col>
+            <Col lg={4} xs={6} className="text-end">
+              <Link to="/register" className="theme-btn">
+                Register Now
+              </Link>
+            </Col>
+            <Col lg={6} xs={12}>
               <h5 className="para-custom">
                 People who register for the Start-Up Fest will be allotted a
                 5-minute time slot to present their startup in front of
@@ -131,41 +138,53 @@ export default function Participants() {
               <Link to="/register" className="theme-btn">Register Now</Link>
             </Col> */}
           </Row>
-          <Row>
-            <Col className="col-card margin-between">
+          <Row className="justify-content-between">
+            <Col lg={3} xs={12} className="col-card">
+              <Link to="/startup" className="no-design">
               <div className="name-line pitcher-card-div">
-              <h3><a href="/pitcher" className='pitcher-card-a'>Pitcher</a></h3>
+                <h3><a href="/pitcher" className='pitcher-card-a'>Pitcher</a></h3>
               <a href="/pitcher" className='pitcher-card-a'> <MdArrowOutward style={{fontSize:"25px"}}/></a>
                   </div>
-              <p>
-                Pitchers will get a 3 by 3 stall and a chance to 
-                 <span className="yellow-bg">present their project/idea/ </span> 
-                 startup on stage in front of all the investors.
-              </p>
-              <img src={img1} className="w-100" />
+                <p>
+                  Pitchers will get a 3 by 3 stall and a chance to
+                  <span className="yellow-bg">present their project/idea/</span>
+                  startup on stage in front of all the investors.
+                </p>
+                <img src={img1} className="w-100" />
+              </Link>
             </Col>
-            <Col className="col-card margin-between">
+            <Col lg={3} xs={12} className="col-card">
+              <Link to="/startup" className="no-design">
             <div className="name-line pitcher-card-div">
-              <h3><a href="/startup" className='pitcher-card-a'>Startup</a></h3>
+                <h3><a href="/startup" className='pitcher-card-a'>Startup</a></h3>
               <a href="/startup" className='pitcher-card-a'> <MdArrowOutward style={{fontSize:"25px"}}/></a>
                   </div>
-              <p>
-                Startups/ franchises will get a 2/2 stall and <span className="yellow-bg">visibility in front of all the investors</span> coming in.
-              </p>
-              <img src={img2} className="w-100" />
+                <p>
+                  Startups/ franchises will get a 2/2 stall and
+                  <span className="yellow-bg">
+                    visibility in front of all the investors
+                  </span>
+                  coming in.
+                </p>
+                <img src={img2} className="w-100" />
+              </Link>
             </Col>
-            <Col className="col-card">
+            <Col lg={3} xs={12} className="col-card">
             <div className="name-line pitcher-card-div">
-              <h3><a href="/investor" className='pitcher-card-a'>Investors</a></h3>
+              <Link to="/startup" className="no-design">
+                <h3><a href="/investor" className='pitcher-card-a'>Investors</a></h3>
               <a href="/investor" className='pitcher-card-a'> <MdArrowOutward style={{fontSize:"25px"}}/></a>
-                  </div>
-              <p>
-                Investors will get a chance to talk to all the startups and an
-                opportunity to <span className="yellow-bg">
-                  multiply their money by 2-3 times.
-                </span>
-              </p>
-              <img src={img3} className="w-100" />
+                 
+                <p>
+                  Investors will get a chance to talk to all the startups and an
+                  opportunity to
+                  <span className="yellow-bg">
+                    multiply their money by 2-3 times.
+                  </span>
+                </p>
+                <img src={img3} className="w-100" />
+              </Link>
+              </div>
             </Col>
           </Row>
         </Container>

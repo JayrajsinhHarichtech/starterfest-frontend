@@ -29,6 +29,7 @@
 
     .theme-btn {
         padding: 10px 14px;
+        margin: 0;
     }
 
     .play-btn {
@@ -69,7 +70,9 @@
 
     .register-sec .title {
         font-size: 20px;
+        text-align: center;
         line-height: 35px;
+        margin-bottom: 30px !important;
     }
 
     .register-sec.dark-bg .w-70{
@@ -106,6 +109,19 @@
     }
     .showcase .content h3 {
         font-size: 24px;
+    }
+    .startup-sec .box-content .detail img{
+        height:max-content !important ;
+        flex-basis:content;
+        max-height:max-content !important ;
+        min-width: 50px;
+    }
+
+    .startup-sec .box-content .detail{
+        align-items: center;
+    }
+    .startup-sec .box-content .detail .txt .details-sec , .startup-sec .box-content.third .detail .txt .details-sec{
+        min-height: fit-content;
     }
 }
 
