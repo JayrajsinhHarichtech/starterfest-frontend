@@ -663,7 +663,7 @@ const Register = () => {
                 <Modal.Body>
                     Here is your pass for event access
                     <Row className='scroll-hori'>
-                        {console.log(registerData)}
+                        {/* {console.log(registerData)} */}
                         <Col lg={6}>
                             {registerData.map((items, index) => {
                                 return (
