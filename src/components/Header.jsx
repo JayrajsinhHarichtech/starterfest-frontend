@@ -53,7 +53,7 @@ export default function Header() {
               </NavDropdown>
 
               <NavDropdown
-                title="Reasons To Participate"
+                title="Why Attend"
                 id="navbarScrollingDropdown"
               >
                 <NavDropdown.Item href="/start-up">

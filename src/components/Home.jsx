@@ -6,7 +6,8 @@ import Col from "react-bootstrap/Col";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { IoIosArrowRoundDown } from "react-icons/io";
-import video from "../assets/img/video-img.png";
+// import video from "../assets/img/video-img.png";
+import video from "../assets/img/video-home.png";
 import about from "../assets/img/about-img.png";
 import clock from "../assets/img/clock-icon.png";
 import caleder from "../assets/img/calender-icon.png";
@@ -83,33 +84,6 @@ export default function Home() {
 
   return (
     <>
-      <section className="top-banner">
-        <Container>
-          <Row>
-            <Col lg={12}>
-              <div className="text-center">
-                <h5 className="subheading">
-                  Connecting Innovators and Investors.
-                </h5>
-                <h3 className="banner-text">
-                  Join the Junction of Vision and Opportunity at
-                  <span className="gradient">Startup Fest</span> Gujarat!
-                </h3>
-              </div>
-            </Col>
-            <Col lg={12}>
-              <div className="banner-btns">
-                <Link to="/register" className="theme-btn">
-                  Register Now
-                </Link>
-                <button className="theme-btn-light" onClick={handleScroll}>
-                  <IoIosArrowRoundDown /> Explore More
-                </button>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
       <section className="" id="target-section">
         <Container>
           <Row className="justify-content-center">
@@ -138,6 +112,33 @@ export default function Home() {
                     ></iframe>
                   </Modal.Body>
                 </Modal>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section className="top-banner">
+        <Container>
+          <Row>
+            <Col lg={12}>
+              <div className="text-center">
+                <h5 className="subheading">
+                  Connecting Innovators and Investors.
+                </h5>
+                <h3 className="banner-text">
+                  Join the Junction of Vision and Opportunity at
+                  <span className="gradient">Startup Fest</span> Gujarat!
+                </h3>
+              </div>
+            </Col>
+            <Col lg={12}>
+              <div className="banner-btns">
+                <Link to="/register" className="theme-btn">
+                  Register Now
+                </Link>
+                {/* <button className="theme-btn-light" onClick={handleScroll}>
+                  <IoIosArrowRoundDown /> Explore More
+                </button> */}
               </div>
             </Col>
           </Row>

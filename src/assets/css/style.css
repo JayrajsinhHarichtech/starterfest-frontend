@@ -82,12 +82,15 @@ body {
 .header .menubar .container {
     display: block;
 }
-
+.header .navbar-brand{
+    margin-right: 0;
+}
 .header .menubar .navbar-item a {
     color: #000;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
+    padding: 0 0 0 14px;
 }
 
 .header .menubar .navbar-item a:hover {
@@ -135,7 +138,7 @@ body {
     color: #000;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .header .menubar ul.navbar-item-left li a svg {
@@ -248,7 +251,7 @@ body {
     height: 100px;
     width: 100px;
     background-size: cover;
-    top: 43%;
+    top: 40%;
     left: 45%;
     cursor: pointer;
     animation: zoom-in-zoom-out 3s ease infinite;
@@ -385,14 +388,17 @@ hr.gradient-line {
 
 .container-bg {
     background-color: var(--light-blue);
-    /* width: Fill (1,920px)px; */
-    /* height: 710px; */
-    /* padding: 80px 120px ;
-gap: 24px; */
-    /* opacity: 0px; */
 
 }
+.inner-banner {
+    max-height: 350px;
+    object-fit: cover;
+}
 
+section.banner-img-top img {
+    max-height: 450px;
+    object-fit: cover;
+}
 .col-card {
     background-color: #F1F5F9;
 
@@ -693,7 +699,7 @@ footer .footer-list li {
     color: #090914;
     text-decoration: none;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     transition: 0.2s ease-in all;
 }
 
@@ -1750,4 +1756,18 @@ a.no-design {
 
 .text-gray{
     color: #667085;
+}
+
+.box-opp {
+    padding: 20px;
+    background: #fff;
+    box-shadow: 1px 2px 4px 2px #eee;
+    margin-bottom: 20px;
+}
+
+.box-opp .text-opp h6 {
+    font-size: 18px;
+    margin: 0;
+    padding-top: 15px;
+    font-weight: 600;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import banner from "../assets/img/startup-banner.jpg";
 import img1 from "../assets/img/sponser.png";
 import img2 from "../assets/img/vanilla.png";
 import img3 from "../assets/img/zippit.png";
@@ -27,16 +28,11 @@ import img23 from "../assets/img/startup-1.png";
 function Sponser() {
   return (
     <>
-      <section className="register-bg">
+       <section className="banner-img-top">
         <Row className="m-0 p-0">
           <Col lg={12} className="p-0">
             <div className="p-relative">
-              <img
-                src={img1}
-                className="w-100"
-                style={{ objectFit: "cover", height: "auto" }}
-                alt="Responsive Image"
-              />
+              <img src={banner} className="w-100" alt="Responsive Image" />
             </div>
           </Col>
         </Row>
