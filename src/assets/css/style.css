@@ -635,7 +635,8 @@ gap: 24px; */
 
 .participant-sec .slick-slide img {
     display: block;
-    padding: 30px;
+    padding: 30px 30px 15px 30px;
+    max-height: 160px;
 }
 
 .participant-sec li button:before {
@@ -1726,3 +1727,18 @@ a.no-design {
     justify-content: space-between;
     align-items: center;
 }
+
+/* .slick-slider {
+    height: 160px;
+}
+
+.slick-list ,
+.slick-track ,
+.slick-initialized .slick-slide {
+    height: 100%;
+}
+
+.adjust-height {
+    height: 100%;
+    aspect-ratio: 1;
+} */

@@ -43,13 +43,8 @@ export default function About() {
       <section className="padding-sec light-bg">
         <Container>
           <Row className="justify-content-center">
-            <Col lg={6}>
-            {React.createElement('div', { dangerouslySetInnerHTML: { __html: faq.ContentUpload } })}
+          {React.createElement('div', { dangerouslySetInnerHTML: { __html: faq.ContentUpload } })}
 
-            </Col>
-            <Col xs={12} md={6} lg={6}>
-              <img src={about} className="w-100" />
-            </Col>
           </Row>
         </Container>
       </section>

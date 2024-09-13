@@ -387,7 +387,7 @@ const Register = () => {
     };
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
     const handleShow = () => {
         setShow(true)
         // setRegisterData([])
@@ -586,9 +586,9 @@ const Register = () => {
                         }
                         const res2 = await axios.post(`${process.env.REACT_APP_URL}/api/sendOTPEmail`, data);
                         console.log("res",res2)
-                        if(res.data.isOk)
+                        if(res2.data.isOk)
                         {
-                            alert(res.data.message)
+                            alert(res2.data.message)
                         }
                     }
                     catch(error)

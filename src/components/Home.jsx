@@ -41,10 +41,10 @@ export default function Home() {
 
   const [settings] = useState({
     dots: true,
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 4000,
     autoplaySpeed: 3000,
     cssEase: 'linear',
@@ -72,12 +72,34 @@ export default function Home() {
       },
     ],
   });
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
+  const gallery = [
+    { url: require('../assets/img/Sponser logo/1.png') },
+    { url: require('../assets/img/Sponser logo/2.png') },
+    { url: require('../assets/img/Sponser logo/3.png') },
+    { url: require('../assets/img/Sponser logo/4.png') },
+    { url: require('../assets/img/Sponser logo/5.png') },
+    { url: require('../assets/img/Sponser logo/6.png') },
+    { url: require('../assets/img/Sponser logo/7.png') },
+    { url: require('../assets/img/Sponser logo/8.png') },
+    { url: require('../assets/img/Sponser logo/9.png') },
+    { url: require('../assets/img/Sponser logo/11.png') },
+    { url: require('../assets/img/Sponser logo/12.png') },
+    { url: require('../assets/img/Sponser logo/13.png') },
+    { url: require('../assets/img/Sponser logo/14.png') },
+    { url: require('../assets/img/Sponser logo/15.png') },
+    { url: require('../assets/img/Sponser logo/16.png') },
+    { url: require('../assets/img/Sponser logo/17.png') },
+    { url: require('../assets/img/Sponser logo/18.png') },
+    { url: require('../assets/img/Sponser logo/19.png') },
+    { url: require('../assets/img/Sponser logo/20.png') },
+    { url: require('../assets/img/Sponser logo/21.png') },
+    { url: require('../assets/img/Sponser logo/22.png') },
+  ]
 
 
   return (
@@ -91,7 +113,7 @@ export default function Home() {
                   Connecting Innovators and Investors.
                 </h5>
                 <h3 className="banner-text">
-                  Join the Junction of Vision and Opportunity at 
+                  Join the Junction of Vision and Opportunity at
                   <span className="gradient">Startup Fest</span> Gujarat!
                 </h3>
               </div>
@@ -149,7 +171,7 @@ export default function Home() {
           <Row className="justify-content-between">
             <Col xs={12} md={5} lg={5}>
               <h3 className="title">About start up fest</h3>
-              <p className="para" style={{textAlign:"justify"}}>
+              <p className="para" style={{ textAlign: "justify" }}>
                 Welcome to Startup Fest Gujarat, presented by the Snehshilp
                 Foundation! Get ready to immerse yourself in a dynamic ecosystem
                 where innovation and entrepreneurship converge. With over 300
@@ -157,7 +179,7 @@ export default function Home() {
                 we're setting the stage for an event that celebrates Gujarat's
                 thriving business landscape.
               </p>
-              <p className="para" style={{textAlign:"justify"}}>
+              <p className="para" style={{ textAlign: "justify" }}>
                 Join us in Ahmedabad, the heart of entrepreneurial brilliance,
                 for an unforgettable experience that amplifies business ideas
                 and fosters collaboration. Embrace the future of business at
@@ -215,8 +237,8 @@ export default function Home() {
 
             <Col lg={6}>
               <Timer />
-              </Col>
-                 </Row>
+            </Col>
+          </Row>
         </Container>
       </section>
 
@@ -350,7 +372,7 @@ export default function Home() {
                 Entrepreneurship
               </h3>
             </Col>
-            <Col  lg={6} md={12} xs={12} >
+            <Col lg={6} md={12} xs={12} >
               <Row className="text-center border-custom">
                 <Col>
                   <img src={agry} />
@@ -380,9 +402,9 @@ export default function Home() {
                 </Col>
               </Row>
               <Row>
-              <div className="mt-4" style={{display:"flex", justifyContent:"center"}}>
-                <p className="fw-bold pt-3 font-blue">Many More...</p>
-              </div>
+                <div className="mt-4" style={{ display: "flex", justifyContent: "center" }}>
+                  <p className="fw-bold pt-3 font-blue">Many More...</p>
+                </div>
               </Row>
             </Col>
           </Row>
@@ -418,10 +440,20 @@ export default function Home() {
             <Col lg={10}>
               <div>
                 <Slider {...settings}>
-                  <img src={parti1} alt="participant" />
+                  {gallery.map((item, index) => (
+                    <div className="adjust-height" key={index}>
+                    <img
+                      // key={index}
+                      src={item.url}
+                      alt={`Gallery Image ${index + 1}`}
+                    className="img-fluid "
+                    />
+                    </div>
+                  ))}
+                  {/* <img src={parti1} alt="participant" />
                   <img src={parti2} alt="participant" />
                   <img src={parti3} alt="participant" />
-                  <img src={parti4} alt="participant" />
+                  <img src={parti4} alt="participant" /> */}
                 </Slider>
               </div>
             </Col>
