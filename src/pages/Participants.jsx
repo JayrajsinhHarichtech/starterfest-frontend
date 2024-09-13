@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -11,17 +11,18 @@ import parti3 from "../assets/img/regis-closed.jpg";
 import img1 from "../assets/img/img-1.png";
 import img2 from "../assets/img/img-2.png";
 import img3 from "../assets/img/img-3.png";
-import { Link } from 'react-router-dom';
-import Timer from '../components/Timer';
-
+import { Link } from "react-router-dom";
+import Timer from "../components/Timer";
+import { MdArrowOutward } from "react-icons/md";
+import RegisterYourself from "../components/RegisterYourself";
 
 export default function Participants() {
   return (
     <>
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">
                 Pitch Your Startup <br />
                 to Investors
@@ -35,33 +36,36 @@ export default function Participants() {
                 and persuade investors to join them on their entrepreneurial
                 journey.
               </p>
-
-              <Link to="/register" className="theme-btn">Register Now</Link>
+              <div className="mt-5">
+                <Link to="/register" className="theme-btn">
+                  Register Now
+                </Link>
+              </div>
             </Col>
-            <Col lg="6">
-              <img src={parti1} className="w-100" />
+            <Col xs={12} md={6} lg={6}>
+              <img src={parti1} className="w-100 img-padding" />
             </Col>
           </Row>
         </Container>
       </section>
       <section className="padding-sec">
         <Container>
-          <Row>
-            <Col lg={6}>
+          <Row className="count-box">
+            <Col lg={6} xs={12}>
               <h3 className="title mb-5">
                 India <span className="gradient">Startup Revolution </span> is
                 here and now!
               </h3>
 
               <Row>
-                <Col lg={4}>
+                <Col lg={4} xs={12}>
                   <div className="box">
                     <MdLocationPin />
                     <h4>Venue</h4>
                     <p>Vigyan Bhavanm, Science City, Ahmedabad.</p>
                   </div>
                 </Col>
-                <Col lg={4}>
+                <Col lg={4} xs={12}>
                   <div className="box">
                     {/* <SlCalender /> */}
                     <img src={caleder} width={45} />
@@ -69,7 +73,7 @@ export default function Participants() {
                     <p>28 & 29 September, 2024</p>
                   </div>
                 </Col>
-                <Col lg={4}>
+                <Col lg={4} xs={12}>
                   <div className="box">
                     <img src={clock} width={45} />
                     <h4>Time</h4>
@@ -80,7 +84,6 @@ export default function Participants() {
             </Col>
 
             <Col lg={6}>
-              {/* <img src={parti3} className="w-100" /> */}
               <Timer />
             </Col>
           </Row>
@@ -89,8 +92,8 @@ export default function Participants() {
 
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">Start-up / Franchise</h3>
               <p className="para">
                 Startups and franchises will have a well-equipped 2/2 stall that
@@ -102,64 +105,23 @@ export default function Participants() {
                 startups to showcase their innovative products or services and
                 gain the attention they deserve.
               </p>
-              
 
-              <Link to="/register" className="theme-btn">Register Now</Link>
+              <div className="mt-5">
+                <Link to="/register" className="theme-btn">
+                  Register Now
+                </Link>
+              </div>
             </Col>
-            <Col lg="6">
-              <img src={parti2} className="w-100" />
+            <Col xs={12} md={6} lg={6}>
+              <img src={parti2} className="w-100 img-padding" />
             </Col>
           </Row>
         </Container>
       </section>
 
-      <section className="padding-sec">
-        <Container>
-          <Row className="d-flex">
-            <Col className="flex-grow-1">
-              <h3 className="title mb-5">Register Yourself</h3>
-              <h5 className="para-custom">
-                People who register for the Start-Up Fest will be allotted a
-                5-minute time slot to present their startup in front of
-                potential investors.
-              </h5>
-            </Col>
-            <Col className="flex-shrink-0 text-end">
-              <Link to="/register" className="theme-btn">Register Now</Link>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-card margin-between">
-              <h3>Pitcher</h3>
-              <p>
-                Pitchers will get a 3 by 3 stall and a chance to 
-                 <span className="yellow-bg">present their project/idea/ </span> 
-                 startup on stage in front of all the investors.
-              </p>
-              <img src={img1} className="w-100" />
-            </Col>
-            <Col className="col-card margin-between">
-              <h3>Startup</h3>
-              <p>
-                Startups/ franchises will get a 2/2 stall and <span className="yellow-bg">visibility in front of all the investors</span> coming in.
-              </p>
-              <img src={img2} className="w-100" />
-            </Col>
-            <Col className="col-card">
-              <h3>Investors</h3>
-              <p>
-                Investors will get a chance to talk to all the startups and an
-                opportunity to <span className="yellow-bg">
-                  multiply their money by 2-3 times.
-                </span>
-              </p>
-              <img src={img3} className="w-100" />
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <RegisterYourself/>
 
-      <section className="register-sec dark-bg padding-sec">
+      {/* <section className="register-sec dark-bg padding-sec">
         <Container>
           <div className="w-70 m-auto">
             
@@ -175,6 +137,26 @@ export default function Participants() {
                 <Link to="/register" className="theme-btn-light light-border">
                   Register Now
                 </Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section> */}
+
+      <section className="register-sec dark-bg padding-sec">
+        <Container>
+          <div className="w-70 m-auto">
+            <h3 className="title text-center text-white">
+              Be a Part of Gujarat's Largest Startup Fest Setting the Pace for
+              Innovation!
+            </h3>
+          </div>
+          <Row>
+            <Col lg={12}>
+              <div className="banner-btns">
+                <button className="theme-btn-light light-border">
+                  Register Now
+                </button>
               </div>
             </Col>
           </Row>

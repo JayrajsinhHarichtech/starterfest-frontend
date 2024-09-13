@@ -42,40 +42,31 @@ export default function About() {
     <>
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
-            {React.createElement('div', { dangerouslySetInnerHTML: { __html: faq.ContentUpload } })}
+          <Row className="justify-content-center about-content">
+          {React.createElement('div', { dangerouslySetInnerHTML: { __html: faq.ContentUpload } })}
 
-            </Col>
-            <Col lg="6">
-              <img src={about} className="w-100" />
-            </Col>
           </Row>
         </Container>
       </section>
 
       <section className="padding-sec">
         <Container>
-          <Row>
-            <Col lg={6}>
+          <Row className="count-box">
+            <Col lg={6} xs={12}>
               <h3 className="title mb-5">
                 India <span className="gradient">Startup Revolution </span> is
                 here and now!
               </h3>
 
               <Row>
-                <Col lg={4}>
+                <Col lg={4} xs={12}>
                   <div className="box">
                     <MdLocationPin />
                     <h4>Venue</h4>
                     <p>Vigyan Bhavanm, Science City, Ahmedabad.</p>
-                    <div className="show">
-                      <a onClick={handleMap} className='show-btn'>Show Map</a>
-                        <IoIosArrowDown />
-                    </div>
                   </div>
                 </Col>
-                <Col lg={4}>
+                <Col lg={4} xs={12}>
                   <div className="box">
                     {/* <SlCalender /> */}
                     <img src={caleder} width={45} />
@@ -83,7 +74,7 @@ export default function About() {
                     <p>28 & 29 September, 2024</p>
                   </div>
                 </Col>
-                <Col lg={4}>
+                <Col lg={4} xs={12}>
                   <div className="box">
                     <img src={clock} width={45} />
                     <h4>Time</h4>
@@ -98,24 +89,12 @@ export default function About() {
             </Col>
           </Row>
         </Container>
-        <Container fluid className="p-0 my-3">
-          {map && (
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3086.551930808391!2d72.4961889187413!3d23.076971500290245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9dd1d3d9cd79%3A0xe620538d49e61b0b!2sVigyan%20Bhawan%20Science%20City!5e0!3m2!1sen!2sus!4v1726029670292!5m2!1sen!2sus"
-              width="100%"
-              height="400"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          )}
-        </Container>
       </section>
 
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">Science city </h3>
               <p className="para">
                 Located off the Sarkhej Gandhinagar Highway, Science City is an
@@ -127,17 +106,10 @@ export default function About() {
                 demonstrations in an easily understandable manner.
               </p>
               <p className="para">
-                Gujarat Science City is a bold initiative of the Government of
-                Gujarat to realize this priority. The Government is creating a
-                sprawling center at Ahmedabad which aims to provide a perfect
-                blend of education and entertainment. It will showcase
-                contemporary and imaginative exhibits, minds on experiences,
-                working models, virtual reality, activity corners, labs and live
-                demonstrations to provide an understanding of science and
-                technology to the common man
+              Gujarat Science City is a bold initiative of the Government of Gujarat to realize this priority. The Government is creating a sprawling center at Ahmedabad which aims to provide a perfect blend of education and entertainment. It will showcase contemporary and imaginative exhibits, minds-on experiences, working models, virtual reality, activity corners, labs, and live demonstrations to provide an understanding of science and technology to the common man. Photo of Vigyan Bhavan
               </p>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={sciencecity} className="w-100" />
             </Col>
           </Row>
@@ -147,10 +119,10 @@ export default function About() {
       <section className="padding-sec">
         <Container>
           <Row className="justify-content-center">
-            <Col lg="6">
+            <Col lg="6" className='order-lg-0 order-1'>
               <img src={g20} className="w-100" />
             </Col>
-            <Col lg={6}>
+            <Col lg={6} className='order-lg-1 order-0'>
               <h3 className="title">G20 </h3>
               <p className="para">
                 The G20, short for Group of Twenty, is an international forum

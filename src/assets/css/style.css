@@ -19,7 +19,26 @@ body {
 .header {
     padding: 20px 0;
 }
+.header .navbar-nav .dropdown-menu {
+    position: absolute;
+    border: 0;
+}
+.mobile-menu .offcanvas-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
 
+.mobile-menu .navbar-nav .dropdown-menu .dropdown-item {
+    padding-bottom: 10px;
+}
+.mobile-menu .nav-item.show .nav-link {
+    font-weight: 600;
+}
+
+.mobile-menu img.logo-offcanvas {
+    max-width: 230px;
+}
 .header .logo-header {
     max-width: 200px;
 }
@@ -139,7 +158,6 @@ body {
     background: #003777;
     border: 2px solid #003777;
     padding: 10px 35px;
-    ;
     border-radius: 10px;
     transition: 0.05s ease all;
     text-decoration: none;
@@ -206,6 +224,7 @@ body {
     background-image: url('../img/blur-bg.png');
     background-size: cover;
     background-position: center;
+    margin-left: 5px;
 }
 
 .banner-btns {
@@ -290,8 +309,9 @@ body {
 }
 
 .title {
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 600;
+    line-height: 50px;
     margin-bottom: 20px;
 }
 
@@ -357,10 +377,10 @@ hr.gradient-line {
 
 .para {
     font-family: Inter;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 25px;
-    text-align: left;
+    line-height: 26px;
+    text-align: justify;
 }
 
 .container-bg {
@@ -419,8 +439,9 @@ gap: 24px; */
     background-color: white;
     box-shadow: 2px 4px 28px 0px #D5E3F1;
     border-radius: 20px;
-    padding: 21px;
+    padding: 10px 20px;
     font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
 }
 
 .col-card2 p {
@@ -457,6 +478,7 @@ gap: 24px; */
 .sfg h3 {
     line-height: 55px;
     font-size: 37px;
+    margin-bottom: 30px;
 }
 
 .border-custom {
@@ -590,7 +612,7 @@ gap: 24px; */
     color: white;
     padding: 10px 35px;
     width: 100%;
-    border: none
+    border: 2px solid var(--primary-blue)
 }
 
 .register-bg {
@@ -614,7 +636,8 @@ gap: 24px; */
 
 .participant-sec .slick-slide img {
     display: block;
-    padding: 30px;
+    padding: 30px 30px 15px 30px;
+    max-height: 160px;
 }
 
 .participant-sec li button:before {
@@ -681,7 +704,7 @@ footer .footer-list li a:hover {
 
 footer .footer-list li svg {
     color: #003777;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 footer .footer-list li img {
@@ -690,10 +713,14 @@ footer .footer-list li img {
 }
 
 footer .footer-list.flex li {
-    display: flex;
-    gap: 10px;
+    /* display: flex;
+    gap: 10px; */
+    display: table;
 }
-
+footer .footer-list.flex li span{
+    display: table-cell;
+    padding-left: 10px;
+}
 footer hr {
     background-color: #E2E8F0;
     height: 2px;
@@ -737,7 +764,9 @@ footer .copyright a:hover {
     gap: 20px;
     font-family: "Poppins", sans-serif;
 }
-
+.startup-sec .flex h6{
+    margin-bottom:20px
+}
 .startup-sec .flex button {
     padding: 0;
     background-color: transparent;
@@ -760,7 +789,6 @@ footer .copyright a:hover {
     border-radius: 12px;
     box-shadow: 2px 4px 8px #E5EEF0;
     min-height: fit-content;
-    /* min-height: 200px; */
     margin-bottom: 20px;
 }
 .startup-sec .box-content.third{
@@ -813,13 +841,21 @@ footer .copyright a:hover {
     padding: 6px 12px;
 }
 
+.startup-sec .box-content .detail {
+    align-items: center;
+    display: table;
+    vertical-align: middle;
+}
+.startup-sec .box-content .detail  .txt {
+    display: table-cell;
+    padding-left: 10px;
+    vertical-align: top;
+    align-content: center;
+}
 .startup-sec .box-content .detail svg {
-    font-size: 15px;
+    font-size: 40px;
     background: #4AD2E433;
     padding: 5px;
-    flex-basis: 25%;
-    height: 40px;
-    width: 40px;
     border-radius: 13px;
     color: #3F38DD;
 }
@@ -856,21 +892,20 @@ footer .copyright a:hover {
     background: #4AD2E433;
     padding: 10px;
     flex-basis: 25%;
-    height: max-content;
-    max-width: 45px;
+    height: 40px;
+    width: 40px;
     border-radius: 13px;
 }
 
 .startup-sec .box-content .detail img.no-bg {
     background: transparent;
     padding: 0;
-    flex-basis: 25%;
-    height: max-content;
-    max-width: 80px;
-    border-radius: 13px;
+   border-radius: 50%;
+   border: 1.5px solid #e0e0e0;
 }
 
 .startup-sec .box-content .detail a {
+    margin-top: 10px;
     color: #546BE2;
     border-bottom: 1px solid #546BE2;
     text-decoration: none;
@@ -890,15 +925,14 @@ footer .copyright a:hover {
 }
 
 .startup-sec .box-content .detail .txt .details-sec {
-    min-height: 95px;
     align-content: center;
 }
 .startup-sec .box-content.third .detail .txt .details-sec {
-    min-height: 80px;
+    min-height: max-content;
 }
 
 .startup-sec .box-content .detail .txt p {
-    font-size: 12px;
+    font-size: 15px;
     margin-bottom: 0;
 }
 
@@ -912,8 +946,8 @@ footer .copyright a:hover {
 }
 
 .detail-right p {
-    font-size: 14px;
-    margin-bottom: 30px;
+    font-size: 16px;
+    margin-bottom: 20px;
 
 }
 
@@ -1231,6 +1265,7 @@ p.big-btns {
 
 .heading-one .title {
     font-size: 30px;
+    margin-bottom: 40px;
 }
 
 .heading-one .view-mre svg {
@@ -1246,8 +1281,9 @@ p.big-btns {
 .event-box {
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0px 12px 16px -4px #10182814;
+    box-shadow: 0px 0px 16px 2px #10182814;
     border-radius: 10px;
+    height: 100%;
 }
 
 .event-box .txt-area {
@@ -1306,6 +1342,8 @@ p.big-btns {
 
 .event-box .auth-area img {
     max-width: 50px;
+    border-radius: 50%;
+    border: 1.5px solid #e0e0e0;
 }
 
 .event-box .auth-area span {
@@ -1480,13 +1518,16 @@ p.big-btns {
 .showcase .overlay {
     width: 100%;
     height: 100%;
-    background-color: #041e66db;
+    background-color: #002078db;
     position: absolute;
     top: 0;
     left: 0;
     z-index:999
   }
-  
+  .showcase .content{
+    position: relative;
+    height: 100%;
+  }
   .showcase h2 {
     margin-top: 170px;
     font-size: 3em;
@@ -1519,11 +1560,16 @@ p.big-btns {
     line-height: 36px;
 }
 
-  .showcase .content h3{
+.showcase .content h3 {
     font-size: 40px;
+    position: absolute;
     color: #ffffffda;
-  }
-  
+    display: flex;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    place-content: center;
+}
 
 
 .col-card h5 {
@@ -1575,32 +1621,57 @@ text-align: left;
     border-radius: 20px;
 }
 .speaker-card{
-    height: 400px;
+    height: 350px;
     position: relative;
-    padding: 20px;
+    /* padding: 20px; */
+    box-shadow: 0px 12px 16px -4px #10182814;
 }
 .speaker-card img{
     height: 100%;
     object-fit: cover;
     object-position: top;
 }
-
-.speaker-card-div{
+.relative-img{
+    position: relative;
+}
+.relative-img .text {
     position: absolute;
     bottom: 0px;
     background-color: var(--primary-blue);
-    width: calc(100% - 40px);
+    width: 100%;
+    
+    font-weight: 600;
+    color: #ffffff;
+    padding: 10px 0px 10px 20px;
+}
+
+.img-sec img {
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.img-sec .bg-img1 {
+    background: #fff;
+    height: 100%;
+    align-content: center;
+}
+.speaker-card-div {
+    position: absolute;
+    bottom: 0px;
+    background-color: var(--primary-blue);
+    width: calc(100% - 0px);
     left: 0px;
     display: flex;
     align-items: center;
-    /* height: 50px; */
-    color: var(--light-blue);
+    font-weight: 600;
+    color: #ffffff;
     padding: 10px 0px 10px 20px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     margin-right: 20px;
 }
 .font-sm{
     font-size: 12px;
+    font-weight: 500;
     color: #FFFFFFCC;
 }
 .hello{
@@ -1608,10 +1679,8 @@ text-align: left;
     gap: 30px;
     justify-content: center;
 }
-.hello img{
-    width: 200px;
-    object-fit: contain;
-
+.hello img {
+    width: 100%;
 }
 
 
@@ -1640,10 +1709,8 @@ text-align: left;
 }
 
 .soon {
-    height: 28vh;
     font-size: 40px;
     align-content: center;
-    padding: 40px 0;
     font-weight: 600;
     text-align: center;
 }
@@ -1659,3 +1726,44 @@ a.no-design {
     text-decoration: none;
     color: inherit;
 }
+
+.pitcher-card-a{
+    text-decoration: none;
+    color: #041e66db;
+}
+
+.pitcher-card-a svg{
+    font-size: 25px;
+}
+.pitcher-card-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-sec{
+    padding: 0;
+}
+
+.padding-right {
+    padding-right: 160px;
+}
+
+.text-gray{
+    color: #667085;
+}
+
+/* .slick-slider {
+    height: 160px;
+}
+
+.slick-list ,
+.slick-track ,
+.slick-initialized .slick-slide {
+    height: 100%;
+}
+
+.adjust-height {
+    height: 100%;
+    aspect-ratio: 1;
+} */

@@ -29,6 +29,7 @@ import StartUpShowCase from './pages/StartupShowCase';
 import PitcherContent from './pages/PitcherContent';
 import InvestorContent from './pages/InvestorContent';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import Cms from './pages/CMS';
 import PaymentFailure from './pages/PaymentFailure';
 import PaymentSuccess from './pages/PaymentSuccess';
 
@@ -63,6 +64,7 @@ function App() {
           <Route path='/faq' element={<Faq />} />
           <Route path='/start-up-showcase' element={<StartUpShowCase />} />
           <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+          <Route path='/cms/:id' element ={<Cms />} />
 
           <Route path='/payment-failure' element={<PaymentFailure />} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
