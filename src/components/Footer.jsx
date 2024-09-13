@@ -24,7 +24,7 @@ export default function Footer() {
                    </div>
                 </Col>
 
-                <Col lg={3} sm={3} xs={3}>
+                <Col lg={2} sm={3} xs={3}>
                     <div className="footer-cols">
                     <div className='footer-title'>
                         <h4>Company</h4>
@@ -37,7 +37,7 @@ export default function Footer() {
                     </div>
                 </Col>
 
-                <Col lg={3} sm={3} xs={3}>
+                <Col lg={2} sm={3} xs={3}>
                     <div className="footer-cols">
                     <div className='footer-title'>
                         <h4>Fest</h4>
@@ -51,7 +51,7 @@ export default function Footer() {
                     </div>
                 </Col>
 
-                <Col lg={3} sm={6} xs={6}>
+                <Col lg={5} sm={6} xs={6}>
                     <div className="footer-cols">
                     <div className='footer-title'>
                         <h4>Startup Revolution</h4>

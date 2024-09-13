@@ -68,79 +68,14 @@ export default function Highlights() {
         </Container>
       </section>
 
-      <section className="padding-sec">
+      {/* <section className="padding-sec">
         <Container>
-          {/* <Row className="d-flex">
-            <Col className="flex-grow-1">
-              <h3 className="title mb-5">Event Showcases</h3>
-            </Col>
-            <Col className="flex-shrink-0 text-end">
-              <p className="color-sky">
-                <IoArrowDown style={{ fontSize: "23px" }} />
-                View more
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-card" lg={4} style={{ position: "relative" }}>
-              <img src={event1} className="w-100" />
-              <h5 className=".highlight-col-card2-p">Friday, September 13</h5>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h3>Panel Discussion</h3>
-                <MdArrowOutward style={{ fontSize: "23px", width: "20%" }} />
-              </div>
-              <p className="color-grey">
-                Get ready for a mesmerizing evening with "Sufi Unplugged" at
-                Blockheads featuring the incredible talent...
-              </p>
-              <div className="bhDiv">
-                <img src={bhImg} />
-                <h6>Snehshilp Foundation</h6>
-              </div>
-            </Col>
-            <Col className="col-card" lg={4} style={{ position: "relative" }}>
-              <img src={event2} className="w-100" />
-              <h5 className=".highlight-col-card2-p">Monday, September 28</h5>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h3>Start-Up Fest 2.0 Gujarat by Snehshilp Foundation</h3>
-                <MdArrowOutward style={{ fontSize: "23px", width: "20%" }} />
-              </div>
-              <p className="color-grey">
-                Get ready for Engiexpo Industrial Engineering Exhibition 2024, a
-                mind-blowing in-person event showcasing the la...
-              </p>
-              <div className="bhDiv">
-                <img src={bhImg} />
-                <h6>Snehshilp Foundation</h6>
-              </div>
-            </Col>
-            <Col className="col-card" lg={4} style={{ position: "relative" }}>
-              <img src={event3} className="w-100" />
-              <h5 className=".highlight-col-card2-p">Tuesday, September 30</h5>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h3>
-                  14th Engiexpo Industrial Engineering Exhibition Ahmedaba...
-                </h3>
-                <MdArrowOutward style={{ fontSize: "23px", width: "20%" }} />
-              </div>
-              <p className="color-grey">
-                This exhibition is a must-attend for all industrial engineering
-                enthusiasts, professionals, and students...
-              </p>
-              <div className="bhDiv">
-                <img src={bhImg} />
-                <h6>Snehshilp Foundation</h6>
-              </div>
-            </Col>
-          </Row> */}
+         
           <Row>
             <Col lg={12}>
               <div className="heading-one d-flex justify-content-between">
                 <h4 className="title">Event Showcases</h4>
-                {/* <div className="view-mre">
-                  <FaArrowDown />
-                  <Link href="/">View more</Link>
-                </div> */}
+               
               </div>
             </Col>
             <Col lg={4}>
@@ -219,7 +154,7 @@ export default function Highlights() {
             </Col>
           </Row>
         </Container>
-      </section>
+      </section> */}
 
       <section className="register-sec padding-sec showcase">
         <Container>
@@ -238,7 +173,7 @@ export default function Highlights() {
         <Container>
           <Row className="justify-content-between">
             <Col xs={12} md={5} lg={5}>
-              <h3 className="title">2023 Venue</h3>
+              <h3 className="title">2023 Venue : Science City</h3>
               <p className="para">
                 Located off the Sarkhej Gandhinagar Highway, Science City is an
                 ambitious initiative of the government of Gujarat to trigger an

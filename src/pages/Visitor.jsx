@@ -57,15 +57,11 @@ export default function Visitor() {
               </Col>
             </div>
           </Row>
-
+{/* 
           <Row className="mt-5">
             <Col lg={12}>
               <div className="heading-one d-flex justify-content-between">
                 <h4 className="title">Event Showcases</h4>
-                {/* <div className="view-mre">
-                  <FaArrowDown />
-                  <Link to="/">View more</Link>
-                </div> */}
               </div>
             </Col>
             <Col lg={4}>
@@ -144,7 +140,7 @@ export default function Visitor() {
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
       </section>
 
