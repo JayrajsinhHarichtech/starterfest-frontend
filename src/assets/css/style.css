@@ -376,10 +376,10 @@ hr.gradient-line {
 
 .para {
     font-family: Inter;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 400;
     line-height: 25px;
-    text-align: left;
+    text-align: justify;
 }
 
 .container-bg {
@@ -1271,6 +1271,7 @@ p.big-btns {
     background-color: #fff;
     box-shadow: 0px 0px 16px 2px #10182814;
     border-radius: 10px;
+    height: 100%;
 }
 
 .event-box .txt-area {
@@ -1610,7 +1611,8 @@ text-align: left;
 .speaker-card{
     height: 400px;
     position: relative;
-    padding: 20px;
+    /* padding: 20px; */
+    box-shadow: 0px 12px 16px -4px #10182814;
 }
 .speaker-card img{
     height: 100%;
@@ -1645,14 +1647,14 @@ text-align: left;
     position: absolute;
     bottom: 0px;
     background-color: var(--primary-blue);
-    width: calc(100% - 40px);
+    width: calc(100% - 0px);
     left: 0px;
     display: flex;
     align-items: center;
     font-weight: 600;
     color: #ffffff;
     padding: 10px 0px 10px 20px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     margin-right: 20px;
 }
 .font-sm{
@@ -1713,4 +1715,14 @@ text-align: left;
 a.no-design {
     text-decoration: none;
     color: inherit;
+}
+
+.pitcher-card-a{
+    text-decoration: none;
+    color: #041e66db;
+}
+.pitcher-card-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -41,8 +41,8 @@ export default function Highlights() {
 
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">
                 Startup Fest Gujarat: <br />
                 Where Innovation Meets Investment
@@ -61,7 +61,7 @@ export default function Highlights() {
                 Atmosphere of inspiration and fruitful collaboration.
               </p>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={about} className="w-100" />
             </Col>
           </Row>
@@ -234,10 +234,10 @@ export default function Highlights() {
           </div>
         </Container>
       </section>
-      <section className="padding-sec light-bg">
+      <section className="padding-sec">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">2023 Venue</h3>
               <p className="para">
                 Located off the Sarkhej Gandhinagar Highway, Science City is an
@@ -259,7 +259,7 @@ export default function Highlights() {
                 technology to the common man
               </p>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={venue} className="w-100 br-20" />
             </Col>
           </Row>

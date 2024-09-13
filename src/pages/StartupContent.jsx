@@ -429,8 +429,8 @@ export default function StartupContent() {
 
         {/* <section className="padding-sec">
           <Container>
-            <Row className="justify-content-center">
-              <Col lg={6} className="">
+            <Row className="justify-content-between">
+              <Col xs={12} md={5} lg={5} className="">
                 <h3 className="title">Register Yourself As StartUp</h3>
                 <p className="para">
                   People who register for the Start-Up Fest will be allotted a
@@ -449,8 +449,8 @@ export default function StartupContent() {
                   </Link>
                 </div>
               </Col>
-              <Col lg="5" className="offset-lg-1">
-                <img src={about} className="w-100 pb-4" />
+              <Col xs={12} md={6} lg={6}>
+                <img src={about} className="w-100" />
               </Col>
             </Row>
           </Container>

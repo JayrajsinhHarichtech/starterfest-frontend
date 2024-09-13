@@ -13,6 +13,7 @@ import img2 from "../assets/img/img-2.png";
 import img3 from "../assets/img/img-3.png";
 import { Link } from 'react-router-dom';
 import Timer from '../components/Timer';
+import { MdArrowOutward } from "react-icons/md";
 
 
 export default function Participants() {
@@ -20,8 +21,8 @@ export default function Participants() {
     <>
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">
                 Pitch Your Startup <br />
                 to Investors
@@ -35,10 +36,11 @@ export default function Participants() {
                 and persuade investors to join them on their entrepreneurial
                 journey.
               </p>
-
+              <div className="mt-5">
               <Link to="/register" className="theme-btn">Register Now</Link>
+              </div>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={parti1} className="w-100 img-padding" />
             </Col>
           </Row>
@@ -89,8 +91,8 @@ export default function Participants() {
 
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
               <h3 className="title">Start-up / Franchise</h3>
               <p className="para">
                 Startups and franchises will have a well-equipped 2/2 stall that
@@ -103,10 +105,11 @@ export default function Participants() {
                 gain the attention they deserve.
               </p>
               
-
+               <div className='mt-5'>
               <Link to="/register" className="theme-btn">Register Now</Link>
+              </div>
             </Col>
-            <Col lg="6">
+            <Col xs={12} md={6} lg={6}>
               <img src={parti2} className="w-100 img-padding" />
             </Col>
           </Row>
@@ -131,11 +134,17 @@ export default function Participants() {
                 potential investors.
               </h5>
             </Col>
+            {/* <Col className="flex-shrink-0 text-end">
+              <Link to="/register" className="theme-btn">Register Now</Link>
+            </Col> */}
           </Row>
           <Row className="justify-content-between">
             <Col lg={3} xs={12} className="col-card">
               <Link to="/startup" className="no-design">
-                <h3>Pitcher</h3>
+              <div className="name-line pitcher-card-div">
+                <h3><a href="/pitcher" className='pitcher-card-a'>Pitcher</a></h3>
+              <a href="/pitcher" className='pitcher-card-a'> <MdArrowOutward style={{fontSize:"25px"}}/></a>
+                  </div>
                 <p>
                   Pitchers will get a 3 by 3 stall and a chance to
                   <span className="yellow-bg">present their project/idea/</span>
@@ -146,7 +155,10 @@ export default function Participants() {
             </Col>
             <Col lg={3} xs={12} className="col-card">
               <Link to="/startup" className="no-design">
-                <h3>Startup</h3>
+            <div className="name-line pitcher-card-div">
+                <h3><a href="/startup" className='pitcher-card-a'>Startup</a></h3>
+              <a href="/startup" className='pitcher-card-a'> <MdArrowOutward style={{fontSize:"25px"}}/></a>
+                  </div>
                 <p>
                   Startups/ franchises will get a 2/2 stall and
                   <span className="yellow-bg">
@@ -158,8 +170,11 @@ export default function Participants() {
               </Link>
             </Col>
             <Col lg={3} xs={12} className="col-card">
+            <div className="name-line pitcher-card-div">
               <Link to="/startup" className="no-design">
-                <h3>Investors</h3>
+                <h3><a href="/investor" className='pitcher-card-a'>Investors</a></h3>
+              <a href="/investor" className='pitcher-card-a'> <MdArrowOutward style={{fontSize:"25px"}}/></a>
+                  </div>
                 <p>
                   Investors will get a chance to talk to all the startups and an
                   opportunity to
@@ -174,7 +189,7 @@ export default function Participants() {
         </Container>
       </section>
 
-      <section className="register-sec dark-bg padding-sec">
+      {/* <section className="register-sec dark-bg padding-sec">
         <Container>
           <div className="w-70 m-auto">
             
@@ -190,6 +205,26 @@ export default function Participants() {
                 <Link to="/register" className="theme-btn-light light-border">
                   Register Now
                 </Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section> */}
+
+      <section className="register-sec dark-bg padding-sec">
+        <Container>
+          <div className="w-70 m-auto">
+            <h3 className="title text-center text-white">
+              Be a Part of Gujarat's Largest Startup Fest Setting the Pace for
+              Innovation!
+            </h3>
+          </div>
+          <Row>
+            <Col lg={12}>
+              <div className="banner-btns">
+                <button className="theme-btn-light light-border">
+                  Register Now
+                </button>
               </div>
             </Col>
           </Row>

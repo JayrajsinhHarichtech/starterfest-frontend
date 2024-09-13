@@ -42,48 +42,70 @@ const STFS = () => {
               <h3 className="title mb-5">Urban Naps</h3>
             </Col>
           </Row>
-          <Row className="g-4">
-            <Col lg={4} xs={12}>
-              <img className="w-100" src={urban} />
+          <Row className='g-4'>
+            <Col lg={4}>
+            <div className='speaker-card'>
+            <img src={urban} alt="" className='w-100' style={{objectFit:"none", objectPosition:"center", backgroundColor:"white"}}/>
+            <div className='speaker-card-div' style={{visibility:"hidden"}}>
+                <div>
+            <p className='mb-0'>Piyalee</p>
+            <p className='mb-0 font-sm'>Topic : Role and Impact of the state start-up Eco-system</p>
+            </div>
+            </div>
+            </div>
             </Col>
-
-            <Col lg={4} xs={12}>
-              <div className="relative-img">
-                <img className="w-100" src={jainam} />
-                <div className="text">
-                  <p className="mb-0">Piyalee</p>
-                </div>
-              </div>
+            <Col lg={4}>
+            <div className='speaker-card'>
+            <img src={jainam} alt="" className='w-100'/>
+            <div className='speaker-card-div'>
+                <div>
+            <p className='mb-0'>Mr Jainam Mehta</p>
+            </div>
+            </div>
+            </div>
             </Col>
           </Row>
         </Container>
-        <Container className='pt-5'>
+      </section>
+
+      <section className="padding-sec">
+        <Container>
           <Row className="d-flex">
             <Col className="flex-grow-1">
               <h3 className="title mb-5">BullSpree</h3>
             </Col>
           </Row>
-          <Row className="g-4">
-            <Col lg={4} xs={12}>
-              <img className="w-100" src={bull} />
+          <Row className='g-4'>
+            <Col lg={4}>
+            <div className='speaker-card'>
+            <img src={bull} alt="" className='w-100' style={{objectFit:"none", objectPosition:"center", backgroundColor:"white"}}/>
+            <div className='speaker-card-div' style={{visibility:"hidden"}}>
+                <div>
+            <p className='mb-0'>Piyalee</p>
+            <p className='mb-0 font-sm'>Topic : Role and Impact of the state start-up Eco-system</p>
+            </div>
+            </div>
+            </div>
             </Col>
-
-            <Col lg={4} xs={12}>
-              <div className="relative-img">
-                <img className="w-100" src={dharmil} />
-                <div className="text">
-                  <p className="mb-0">Dharmil Bavishi</p>
-                </div>
-              </div>
+            <Col lg={4}>
+            <div className='speaker-card'>
+            <img src={dharmil} alt="" className='w-100'/>
+            <div className='speaker-card-div'>
+                <div>
+            <p className='mb-0'>Dharmil Bavishi</p>
+            </div>
+            </div>
+            </div>
             </Col>
-
-            <Col lg={4} xs={12}>
-              <div className="relative-img">
-                <img className="w-100" src={harsh} />
-                <div className="text">
-                  <p className="mb-0">Harsh Dhanawat</p>
-                </div>
-              </div>
+            <Col lg={4}>
+            <div className='speaker-card'>
+            <img src={harsh} alt="" className='w-100'/>
+            <div className='speaker-card-div'>
+                <div>
+            <p className='mb-0'>Harsh Dhanawat</p>
+            </div>
+            </div>
+            </div>
             </Col>
           </Row>
         </Container>
@@ -93,23 +115,33 @@ const STFS = () => {
               <h3 className="title mb-5">Pabiben.com</h3>
             </Col>
           </Row>
-          <Row className="g-4">
-            <Col lg={4} xs={12}>
-              <div className="bg-img1">
-              <img className="w-100" src={pabi} />
-              </div>
+          <Row className='g-4'>
+            <Col lg={4}>
+            <div className='speaker-card'>
+            <img src={pabi} alt="" className='w-100' style={{objectFit:"none", objectPosition:"center", backgroundColor:"white"}}/>
+            <div className='speaker-card-div' style={{visibility:"hidden"}}>
+                <div>
+            <p className='mb-0'>Piyalee</p>
+            <p className='mb-0 font-sm'>Topic : Role and Impact of the state start-up Eco-system</p>
+            </div>
+            </div>
+            </div>
             </Col>
-
-            <Col lg={4} xs={12}>
-              <div className="relative-img">
-                <img className="w-100" src={rabari} />
-                <div className="text">
-                  <p className="mb-0">Ms Pabiben Rabari</p>
-                </div>
-              </div>
+            <Col lg={4}>
+            <div className='speaker-card'>
+            <img src={rabari} alt="" className='w-100'/>
+            <div className='speaker-card-div'>
+                <div>
+            <p className='mb-0'>Ms Pabiben Rabari</p>
+            </div>
+            </div>
+            </div>
             </Col>
           </Row>
         </Container>
+      </section>
+
+      <section className="padding-sec">
       </section>
     </>
   );

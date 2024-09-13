@@ -146,10 +146,10 @@ export default function Home() {
 
       <section className="padding-sec light-bg">
         <Container>
-          <Row className="justify-content-center">
-            <Col xs={12} md={6} lg={6}>
-              <h3 className="title">About StartUp fest</h3>
-              <p className="para">
+          <Row className="justify-content-between">
+            <Col xs={12} md={5} lg={5}>
+              <h3 className="title">About start up fest</h3>
+              <p className="para" style={{textAlign:"justify"}}>
                 Welcome to Startup Fest Gujarat, presented by the Snehshilp
                 Foundation! Get ready to immerse yourself in a dynamic ecosystem
                 where innovation and entrepreneurship converge. With over 300
@@ -157,7 +157,7 @@ export default function Home() {
                 we're setting the stage for an event that celebrates Gujarat's
                 thriving business landscape.
               </p>
-              <p className="para">
+              <p className="para" style={{textAlign:"justify"}}>
                 Join us in Ahmedabad, the heart of entrepreneurial brilliance,
                 for an unforgettable experience that amplifies business ideas
                 and fosters collaboration. Embrace the future of business at
@@ -378,6 +378,11 @@ export default function Home() {
                   <img src={edu} />
                   <p className="fw-bold pt-3 font-blue">Edu-Tech</p>
                 </Col>
+              </Row>
+              <Row>
+              <div className="mt-4" style={{display:"flex", justifyContent:"center"}}>
+                <p className="fw-bold pt-3 font-blue">Many More...</p>
+              </div>
               </Row>
             </Col>
           </Row>
