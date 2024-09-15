@@ -271,6 +271,21 @@ body {
     }
 }
 
+.vote-btn {
+    background: linear-gradient(90deg, #1b296a, #434470);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .vote-btn:hover {
+    background: linear-gradient(90deg, #434470, #1b296a);
+    color: white;
+  }
+
 .play-btn:hover {
     transform: scale(1.1);
 }

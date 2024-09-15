@@ -4,43 +4,57 @@ import Col from "react-bootstrap/Col";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const Cms =()=>{
-  // State to store time remaining
-  const { id } = useParams();
-  useEffect(()=>{
-    fetchData()
-  },[id])  
+const Cms = () => {
+    // State to store time remaining
+    const { id } = useParams();
+    useEffect(() => {
+        fetchData()
+    }, [id])
 
-  const[content,setContent] = useState('')
+    const [content, setContent] = useState('')
 
-  const fetchData=async()=>{
-    try{
-        const res=await axios.get(`${process.env.REACT_APP_URL}/api/auth/startup-cms/get-content/${id}`)
-        console.log(res)
-        if(res.status===200){
-            setContent(res.data)
+    const fetchData = async () => {
+        try {
+            const res = await axios.get(`${process.env.REACT_APP_URL}/api/auth/startup-cms/get-content/${id}`)
+            console.log(res)
+            if (res.status === 200) {
+                setContent(res.data)
+            }
         }
+        catch (error) {
+            console.error(error)
         }
-    catch(error){
-        console.error(error)
     }
-  }
 
-    return(
+    const handleClick = async () => {
+        console.log("ggg", id)
+        try{
+            const res = await axios.get(`${process.env.REACT_APP_URL}/api/auth/update-vote/StartUpDetailsMaster/${id}`)
+            console.log("ppop",res)
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+    return (
         <div className="container">
             {content &&
-            (
-                <div>
-                    {React.createElement('div', { dangerouslySetInnerHTML: { __html: content.Content } })}
+                (
+                    <div>
+                        {React.createElement('div', { dangerouslySetInnerHTML: { __html: content.Content } })}
 
-                    {/* {content.Content} */}
-                </div>
+                        {/* {content.Content} */}
+                    </div>
                 )}
 
+            <div className="text-center m-2 bg-light p-2" >
+                <button className="btn btn-lg vote-btn" onClick={handleClick} >VOTE NOW</button>
+            </div>
+
         </div>
-           
+
     )
-    
+
 }
 
 export default Cms
