@@ -8,7 +8,7 @@ import Select from "react-select";
 import axios from 'axios'
 import StartupForm from "../components/StartupForm";
 import InvestorForm from "../components/InvestorForm";
-import VisitorForm from "../components/VisitorForm";
+import VisitorForm from "../components/VIsitorForm";
 import imgEvent from "../assets/img/eventPass.png"
 import logo from "../assets/img/logo.png";
 import Modal from 'react-bootstrap/Modal';
@@ -567,7 +567,7 @@ const Register = () => {
     const handleCheckout = async () => {
         // const startupIds = registerData.map(item => item._id);
         const ticketIds = registerData.map(item => item.ticketId);
-        const { data: { order } } = await axios.post(`${process.env.REACT_APP_URL}/api/auth/payment/checkout`, { amount: 100, startupIds: registerData, ticketIds })
+        const { data: { order } } = await axios.post(`${process.env.REACT_APP_URL}/api/auth/payment/checkout`, { startupIds: registerData, selectedTicket })
 
         console.log("checout order", order);
 
@@ -579,7 +579,7 @@ const Register = () => {
             name: 'Startupfest Gujarat',
             description: 'Test Transaction',
             order_id: order.id,
-            callback_url: `${process.env.REACT_APP_URL}/api/auth/payment/paymentVerification`,
+            callback_url: `${process.env.REACT_APP_URL}/api/auth/payment/paymentVerification/${customActiveTab}`,
             prefill: {
                 name: 'Gaurav Kumar',
                 email: 'gaurav.kumar@example.com',
@@ -594,8 +594,6 @@ const Register = () => {
         rzp.open();
 
     }
-
-    const [isActive, setIsActive] = useState(false)
 
 
     return (
@@ -916,7 +914,9 @@ const Register = () => {
             <Modal
                 className="event-popup register-popup"
                 show={ticketPopup}
-                onHide={() => setTicketPopup(false)}
+                onHide={() => {setTicketPopup(false);
+                    setSelectedTicket();
+                }}
                 animation={false}
             >
                 <Modal.Header closeButton className="pb-0">
@@ -935,7 +935,6 @@ const Register = () => {
                             return <Col lg={12} >
                                 <Button
                                     onClick={() => {
-                                        setIsActive(true)
                                         setSelectedTicket(t._id)
                                     }}
                                     className={selectedTicket === t._id ? `border-1 no-btn-style container-bg` : 'no-btn-style container-bg  '}
@@ -969,7 +968,7 @@ const Register = () => {
                     </Row>
 
                     <div>
-                        <Button type="button" color="primary" className="mt-3 register-btn" onClick={handleCheckout}  >Checkout</Button>
+                        <Button type="button" color="primary" className="mt-3 register-btn" onClick={handleCheckout} disabled={!selectedTicket} >Checkout</Button>
                     </div>
                 </Modal.Body>
             </Modal>
