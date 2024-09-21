@@ -66,7 +66,7 @@ export default function StartupContent() {
           <Row className="justify-content-center">
             <Col lg={9} xs={7}>
               <div className="flex">
-                <h6 className="txt-blue">Saturday ,28 September</h6>
+                <h6 className="txt-blue">Saturday ,20 October</h6>
                 {/* <button onClick={handleCopy}>
                   <CiStar />
                 </button>
@@ -138,7 +138,7 @@ export default function StartupContent() {
                       </button>
                     </div>
                   </div>
-                  <p className="desc-line">Sales end on September 28</p>
+                  <p className="desc-line">Sales end on October 20</p>
 
                   <hr />
                   <div className="total-amt">
@@ -279,9 +279,9 @@ export default function StartupContent() {
                           <img src={cal} />
                           <div className="txt">
                             <div className="details-sec">
-                              <h6> 28 September, 2024</h6>
+                              <h6> 20 October, 2024</h6>
                               <p>
-                                Sat Sep 28 2024 at 09:00 am to Sun Sep 29 2024
+                                Sat Oct 20 2024 at 09:00 am to Sun Oct 21 2024
                                 at 11:00 pm (GMT+05:30)
                               </p>
                             </div>

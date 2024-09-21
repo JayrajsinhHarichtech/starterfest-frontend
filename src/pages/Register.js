@@ -444,7 +444,7 @@ const Register = () => {
                         const res2 = await axios.post(`${process.env.REACT_APP_URL}/api/sendOTPEmail`, data);
                         console.log("res", res2)
                         if (res2.data.isOk) {
-                            alert(res2.data.message)
+                            // alert(res2.data.message)
                         }
                     }
                     catch (error) {
@@ -580,7 +580,7 @@ const Register = () => {
             name: 'Startupfest Gujarat',
             description: 'Test Transaction',
             order_id: order.id,
-            callback_url: `${process.env.REACT_APP_URL}/api/auth/payment/paymentVerification/${customActiveTab}`,
+            callback_url: `${process.env.REACT_APP_URL}/api/auth/payment/paymentVerification/${customActiveTab}/${order.amount}?registerData=${encodeURIComponent(JSON.stringify(registerData))}`,
             prefill: {
                 name: registerData[0].contactPersonName,
                 email: registerData[0].email,
@@ -589,6 +589,22 @@ const Register = () => {
             theme: {
                 color: '#F37254'
             },
+
+            // handler: async function (response) {
+            //     console.log("Payment Successful", response);
+            //     if(response.razorpay_order_id){
+
+            //     await axios.post(`${process.env.REACT_APP_URL}/api/auth/email/sendInvoice`, {
+            //         order: order,
+            //         registerData: registerData,
+            //     });
+
+            //     alert("Payment successful! Invoice has been sent to your email.");
+            //     window.location.reload();
+            // }
+            // }
+
+
         };
 
         const rzp = new window.Razorpay(options);

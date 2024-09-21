@@ -16,7 +16,7 @@ const Timer =()=>{
   });
 
   // Target date for the event (28th August 2024 in local time)
-  const targetDate = new Date('2024-09-28T10:00:00').getTime();
+  const targetDate = new Date('2024-10-20T10:00:00').getTime();
 
   useEffect(() => {
     const calculateTimeLeft = () => {

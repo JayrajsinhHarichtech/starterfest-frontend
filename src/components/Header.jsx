@@ -90,7 +90,7 @@ export default function Header() {
               <div className="menubar left">
                 <ul className="navbar-item-left mr-3">
                   <li>
-                    <Link href="/">Sept 28-29,2024</Link>
+                    <Link href="/">October 20-21,2024</Link>
                   </li>
                   <li>
                     <Link to="https://maps.app.goo.gl/p7vsywPPdDFeGUcF6" target="_blank">
