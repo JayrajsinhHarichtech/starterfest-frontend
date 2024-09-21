@@ -239,8 +239,8 @@ export default function Home() {
             <Col lg={6} xs={12} className="sfg order-lg-1 order-0">
               <p className="font-blue">SFG 2024</p>
               <h3 className="title">
-                India Startup Revolution is Here and now! At Ahmedabad September{" "}
-                <span className="gradient"> 28 & 29, 2024 </span>
+                India Startup Revolution is Here and now! At Ahmedabad October{" "}
+                <span className="gradient"> 20 & 21, 2024 </span>
               </h3>
             </Col>
           </Row>

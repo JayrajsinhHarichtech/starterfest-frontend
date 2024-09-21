@@ -82,14 +82,14 @@ const Timer =()=>{
                 {/* <SlCalender /> */}
                 <img src={caleder} width={45} />
                 <h4>Date</h4>
-                <p>28 & 29 September, 2024</p>
+                <p>20 & 21 October, 2024</p>
               </div>
             </Col>
             <Col lg={4} md={4} xs={12}>
               <div className="box">
                 <img src={clock} width={45} />
                 <h4>Time</h4>
-                <p>10:00 AM TO 10:00 PM</p>
+                <p>10:00 AM TO 07:00 PM</p>
               </div>
             </Col>
           </Row>
