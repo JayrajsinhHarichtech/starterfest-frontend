@@ -260,7 +260,6 @@ const Register = () => {
         if (!values.teamSize) {
             errors.teamSize = 'Team Size is required';
         }
-
         if (!values.pincode) {
             errors.pincode = 'Pincode is required';
         }
@@ -285,9 +284,6 @@ const Register = () => {
         if (!values.yearFounded) {
             errors.yearFounded = 'Establishment Date of  Startup is required';
         }
-        // if (!values.logo) {
-        //     errors.logo = 'Company Logo is required';
-        // }
         if (!values.terms) {
             errors.terms = 'Please accept the terms and conditions';
         }
@@ -343,12 +339,16 @@ const Register = () => {
         if (!investorvalues.terms) {
             errors.terms = 'Please accept the terms and conditions';
         }
+        if (!investorvalues.City)   {
+            errors.City = 'City is required';
+        }
         setInvestorFormErrors(errors);
         return errors;
     };
 
     const [visitorformErrors, setvisitorFormErrors] = useState({});
     const validateVisitorForm = () => {
+        
         let errors = {};
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const contactRegex = /((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/;
@@ -374,7 +374,7 @@ const Register = () => {
         if (!visitorValues.terms) {
             errors.terms = 'Please accept the terms and conditions';
         }
-        setInvestorFormErrors(errors);
+        setvisitorFormErrors(errors);
         return errors;
     };
 
@@ -528,7 +528,6 @@ const Register = () => {
         setIsSubmit(true);
 
         const errors = validateVisitorForm();
-        console.log(errors);
         if (Object.keys(errors).length === 0) {
 
             const data = {
@@ -540,6 +539,7 @@ const Register = () => {
                 ticketId: ticketId
             }
             try {
+                console.log(data)
 
                 let res = await axios.post(`${process.env.REACT_APP_URL}/api/auth/visitor`, data);
 
@@ -853,17 +853,18 @@ const Register = () => {
                                         </Col>
                                     </Row>)
                             })}
-
-
                         </Col>
                         <Col lg={6}>
                             <Button
                                 type="button"
-                                onClick={() => setAddMore(!addMore)}
+                                onClick={() => {
+                                    setAddMore(!addMore);
+                                    setCustomActiveTab('2');
+                                }}
                                 className="no-style"
                             >+ Add Attendees</Button>
                             {addMore && (
-                                (customActiveTab === '1' || customActiveTab === '2') ? (
+                                (customActiveTab === '1' /* || customActiveTab === '2' */) ? (
                                     <div>
                                         <StartupForm
                                             values={values}
