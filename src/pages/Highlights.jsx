@@ -1,4 +1,4 @@
-import React , { useState }from "react";
+import React , { useState , useEffect}from "react";
 import Slider from 'react-slick';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -17,7 +17,9 @@ import { Link } from "react-router-dom";
 import CardContent from "../components/CardContent";
 
 export default function Highlights() {
-
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     const [settings] = useState({
       dots: true,
       infinite: true,

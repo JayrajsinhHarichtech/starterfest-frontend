@@ -23,7 +23,7 @@ export default function About() {
   const [faq, setFaq] = useState([])
 
   useEffect(() => {
-
+    window.scrollTo(0, 0);
     const fetchAbout = async () => {
       try {
         const res = await axios.get(`${process.env.REACT_APP_URL}/api/auth/cms/get-content/66e2c092b91cb37980f500b1`)
@@ -64,7 +64,7 @@ export default function About() {
     <>
      
 
-      <section className="padding-sec light-bg">
+      <section className="padding-sec light-bg about-sec">
         
 
         <CardContent

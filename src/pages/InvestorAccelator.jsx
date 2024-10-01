@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 import { Col, Container, Row } from "react-bootstrap";
 import banner from "../assets/img/invest-banner.png";
 import img1 from "../assets/img/investor11.png";
@@ -16,6 +16,10 @@ import CardContent from '../components/CardContent';
 
 
 export default function InvestorAccelator() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const text = `<p class="para">
               We’ve curated a range of opportunities specifically designed to connect you with the key players in the industry. Whether you're looking to meet with venture capitalists, incubators, angel investors, or industry leaders, Startup Fest Gujarat is your gateway to the connections you need to take your startup to the next level.
@@ -55,7 +59,7 @@ export default function InvestorAccelator() {
         <img src={banner} className="w-100" />
       </section> */}
 
-      <section className="padding-sec light-bg">
+      <section className="padding-sec light-bg about-sec">
        
 
         <CardContent

@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useState , useEffect} from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -21,6 +21,10 @@ import { Link } from 'react-router-dom';
 import RegisterYourself from '../components/RegisterYourself';
 
 export default function Visitor() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     const [settings] = useState({
         dots: true,
         infinite: true,

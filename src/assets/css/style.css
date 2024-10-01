@@ -932,6 +932,7 @@ footer .copyright a:hover {
     color: #546BE2;
     border-bottom: 1px solid #546BE2;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .startup-sec .box-content.reviews .show-map {

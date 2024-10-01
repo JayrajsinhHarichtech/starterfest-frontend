@@ -10,6 +10,7 @@ const Cms = () => {
     // State to store time remaining
     const { id } = useParams();
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetchData()
     }, [id])
 

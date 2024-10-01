@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import urban from "../assets/img/urban.png";
 import jainam from "../assets/img/jainam.png";
@@ -10,6 +10,10 @@ import rabari from "../assets/img/rabari.png";
 
 
 const STFS = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section className="padding-sec">
@@ -49,6 +53,11 @@ const STFS = () => {
                   src={urban}
                   alt=""
                   className="w-100"
+                  style={{
+                    objectFit: "none",
+                    objectPosition: "center",
+                    backgroundColor: "white",
+                  }}
                 />
               </div>
             </Col>
@@ -135,7 +144,7 @@ const STFS = () => {
                   alt=""
                   className="w-100"
                   style={{
-                    objectFit: "none",
+                    objectFit: "contain",
                     objectPosition: "center",
                     backgroundColor: "white",
                   }}

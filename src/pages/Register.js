@@ -18,7 +18,10 @@ import isdCodes from "../components/CountryCode"
 import TicketPopup from "../components/TicketPopup";
 
 const Register = () => {
-
+    useEffect(() => {
+        // Scroll to the top when the component mounts
+        window.scrollTo(0, 0);
+      }, []);
     const initialValues = {
         contactPersonName: '',
         email: '',

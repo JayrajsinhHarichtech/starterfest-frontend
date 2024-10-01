@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect} from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -20,6 +20,9 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import arrow from "../assets/img/hurry-arrow.png"
 
 export default function Participants() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section className="padding-sec ">
