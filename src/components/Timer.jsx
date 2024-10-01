@@ -95,7 +95,7 @@ const Timer =()=>{
           </Row>
         </Col>
 
-        <Col lg={6} md={8} xs={12}>
+        <Col lg={6} md={12} xs={12}>
         <div className="counter-box">
         <Row>
           <Col lg={6} xs={6}>

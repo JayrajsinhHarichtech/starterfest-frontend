@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import chiranjiv from "../assets/img/chiranjiv.png";
 import snehal from "../assets/img/snehal.png";
@@ -19,6 +19,10 @@ import chintan from "../assets/img/chintan.png";
 import sushil from "../assets/img/sushil.png";
 
 const Speakers = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <section className="container-bg padding-sec">
@@ -29,7 +33,7 @@ const Speakers = () => {
             </Col>
           </Row>
           <Row className="g-4">
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={chiranjiv} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -37,7 +41,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={8}>
+            <Col lg={8} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={snehal} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -48,7 +52,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={6}>
+            <Col lg={6} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={sandip} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -62,7 +66,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={6}>
+            <Col lg={6} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={kuldip} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -75,7 +79,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={8}>
+            <Col lg={8} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={ccf} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -85,7 +89,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={parth} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -102,7 +106,7 @@ const Speakers = () => {
             </Col>
           </Row>
           <Row className="g-4">
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={hiran} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -113,7 +117,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={kamal} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -124,7 +128,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={barhat} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -145,7 +149,7 @@ const Speakers = () => {
             </Col>
           </Row>
           <Row className="g-4">
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={piyalee} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -158,7 +162,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={kedar} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -169,7 +173,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={munish} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -182,7 +186,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={mehul} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -193,7 +197,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={milap} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -206,7 +210,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={pankaj} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -219,7 +223,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={chintan} alt="" className="w-100" />
                 <div className="speaker-card-div">
@@ -230,7 +234,7 @@ const Speakers = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={4} md={6} xs={12}>
               <div className="speaker-card">
                 <img src={sushil} alt="" className="w-100" />
                 <div className="speaker-card-div">

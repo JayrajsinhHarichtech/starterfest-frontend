@@ -5,6 +5,10 @@ import axios from 'axios';
 import img from "../assets/img/Activities/1.png"
 
 function Activites() {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
     const content = [
         { url: require('../assets/img/Activities/1.png') , heading: "Panel Discussion" , para :"Panels with diverse viewpoints on trending industry topics and informal fireside chats with successful entrepreneurs sharing their journey and lessons learned."},
         { url: require('../assets/img/Activities/2.png') , heading: "Workshops" , para :"Practical workshops on topics like digital marketing, growth hacking, and funding strategies."},

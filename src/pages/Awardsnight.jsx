@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Col, Row } from 'react-bootstrap'
 import img1 from "../assets/img/awards.png";
 
 function Awardsnight() {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
   

@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 const sponsors = [
@@ -27,6 +27,10 @@ const sponsors = [
 ];
 
 const Sponser = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section className="banner-img-top">

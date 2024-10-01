@@ -56,21 +56,21 @@ export default function Home() {
         breakpoint: 1024, // Screen width less than 1024px
         settings: {
           slidesToShow: 3, // Show 3 slides
-          slidesToScroll: 1,
+          slidesToScroll: 3,
         },
       },
       {
         breakpoint: 768, // Screen width less than 768px
         settings: {
           slidesToShow: 3, // Show 2 slides
-          slidesToScroll: 1,
+          slidesToScroll: 3,
         },
       },
       {
         breakpoint: 480, // Screen width less than 480px
         settings: {
           slidesToShow: 2, // Show 1 slide
-          slidesToScroll: 1,
+          slidesToScroll: 2,
         },
       },
     ],
@@ -102,6 +102,7 @@ export default function Home() {
     { url: require('../assets/img/Sponser logo/20.png') },
     { url: require('../assets/img/Sponser logo/21.png') },
     { url: require('../assets/img/Sponser logo/22.png') },
+    { url: require('../assets/img/Sponser logo/23.png') }
   ]
 
   const text =`<p class="para">
@@ -175,7 +176,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="padding-sec light-bg">
+      <section className="padding-sec light-bg about-sec">
       <CardContent about={about} text={text}  title="About StartUp Fest"  buttonShow={true} to="/about" linkToTitle="Learn More"/>
 
       </section>

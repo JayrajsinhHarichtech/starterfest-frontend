@@ -22,7 +22,7 @@ const CardContent =({ about, text , title ,buttonShow, to , linkToTitle})=>{
 
               
             </Col>
-            <Col xs={12} md={8} lg={6} className="offset-md-2 offset-lg-0">
+            <Col xs={12} md={12} lg={6} className="offset-lg-0">
               <img src={about} className="w-100 img-padding" />
             </Col>
           </Row>

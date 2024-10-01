@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useState } from "react";
+import { useRef, useState , useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import banner from "../assets/img/pitcher-startup.jpg";
 import cal from "../assets/img/calender.png";
@@ -29,6 +29,10 @@ import { Link } from "react-router-dom";
 
 
 export default function InvestorContent() {
+
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     const [isActive, setIsActive] = useState(false);
     const inputRef = useRef(null);

@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 import { Col , Row ,Container } from 'react-bootstrap'
 import img1 from "../assets/img/piyush-bansal.png"
 import speaker1 from "../assets/img/speaker1.png"
@@ -6,6 +6,10 @@ import speaker2 from "../assets/img/speaker2.png"
 
 
 export default function GuestSpeakers() {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="padding-sec">
       <Container>
@@ -22,7 +26,7 @@ export default function GuestSpeakers() {
             <Col lg={9} sm={12}>
               <h2 className="title text-center pt-5 pb-3">Esteemed Speakers</h2>
               <Row className="g-4">
-                <Col lg={6} sm={12}>
+                <Col lg={6} md={6} sm={12}>
                   <div className="speaker-card">
                     <img src={speaker1} alt="" className="w-100" />
                     <div className="speaker-card-div">
@@ -35,7 +39,7 @@ export default function GuestSpeakers() {
                     </div>
                   </div>
                 </Col>
-                <Col lg={6} sm={12}>
+                <Col lg={6}  md={6} sm={12}>
                   <div className="speaker-card">
                     <img src={speaker2} alt="" className="w-100" />
                     <div className="speaker-card-div">

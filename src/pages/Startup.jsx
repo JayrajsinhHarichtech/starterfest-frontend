@@ -1,4 +1,4 @@
-import React from "react";
+import React  , {useEffect} from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import img1 from "../assets/img/startup-banner.jpg";
 import agry from "../assets/img/mic.png";
@@ -49,6 +49,10 @@ const opportunities = [
 
 
 function Startup() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <section className="banner-img-top">
@@ -61,7 +65,7 @@ function Startup() {
         </Row>
       </section>
 
-      <section className="padding-sec light-bg">
+      <section className="padding-sec light-bg about-sec">
      
 
         <CardContent

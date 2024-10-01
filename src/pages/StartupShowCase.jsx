@@ -1,7 +1,12 @@
-import React from "react";
+import { useEffect } from "react";
+import React  from "react";
 import { Row, Col, Container } from "react-bootstrap";
 
 const StartUpShowCase = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const startupGroups = [
     [
       "Pathshala",
