@@ -78,6 +78,7 @@ export default function Header() {
                 
                 <NavDropdown.Item href="/activities">Activities</NavDropdown.Item>
                 <NavDropdown.Item href="/faq">FAQ</NavDropdown.Item>
+                <NavDropdown.Item href="/event-flow">Event Flow</NavDropdown.Item>
               </NavDropdown>
 
               <Nav.Link href="/contact">Contact</Nav.Link>

@@ -38,6 +38,7 @@ import Activites from './pages/Activities';
 import Sponsor2024 from './pages/Sponsor2024';
 import GuestSpeakers from './pages/GuestSpeakers';
 import ScrollTop from './components/ScrollTop';
+import EventFlow from './pages/EventFlow';
 
 
 
@@ -59,6 +60,7 @@ function App() {
 
           <Route path='/visitor' element={<Visitor />} />
           <Route path='/about' element={<About />} />
+          <Route path='/event-flow' element={<EventFlow />} />
           <Route path='/investor-accelator' element={<InvestorAccelator />} />
 
           <Route path='/contact' element={<Contact />} />
