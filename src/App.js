@@ -39,6 +39,11 @@ import Sponsor2024 from './pages/Sponsor2024';
 import GuestSpeakers from './pages/GuestSpeakers';
 import ScrollTop from './components/ScrollTop';
 import EventFlow from './pages/EventFlow';
+import { Summary } from './pages/Summery';
+import Speakers2024 from './pages/2024HighlightSpeakerMentor';
+import STFS2024 from './pages/2024SharkTank';
+import PreSeries from './pages/Preseries';
+import Sharkteen from './pages/2024SharkTeens';
 
 
 
@@ -82,6 +87,11 @@ function App() {
 
           <Route path="/sponser-2024" element={<Sponsor2024/>} />
           <Route path="/guest-speakers" element={<GuestSpeakers />} />
+          <Route path="/summary" element={<Summary />} />
+          <Route path="/speaker-2024" element={<Speakers2024 />} />
+          <Route path="/sharktank-2024" element={<STFS2024 />} />
+          <Route path="/Pre-series" element={<PreSeries />} />
+          <Route path="/shark-teen" element={<Sharkteen />} />
         </Routes>
         <Footer />
         <ScrollTop/>

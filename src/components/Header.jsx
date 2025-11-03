@@ -4,6 +4,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { MdLocationPin } from "react-icons/md";
+import { FaRegCalendarAlt } from "react-icons/fa";
+
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -17,7 +19,7 @@ export default function Header() {
       <Navbar expand="lg" className="menubar">
        <Container>
        <Row className="align-items-center">
-            <Col lg={7}>
+            <Col lg={8}>
               <div className="flex">
                 
        <Navbar.Brand href="/" className="logo">
@@ -36,6 +38,21 @@ export default function Header() {
           </Offcanvas.Header>
           <Offcanvas.Body className="mobile-menu" >
             <Nav className="me-auto my-2 my-lg-0 navbar-item" navbarScroll>
+              <NavDropdown title="2024 Highlights" id="navbarScrollingDropdown">
+                
+                <NavDropdown.Item href="/speaker-2024">
+                  2024 Moderator And Mentors
+                </NavDropdown.Item>
+                  <NavDropdown.Item href="/sharktank-2024">
+                  Meet our Sharks
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/pre-series">
+                 Pitching of Pre-series (ask for more than 1 crore)
+                </NavDropdown.Item>
+                 <NavDropdown.Item href="/shark-teen">
+                 Shark Teens 2024
+                </NavDropdown.Item>
+              </NavDropdown>
               <NavDropdown title="2023 Highlights" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="/highlights">
                   2023 Highlights
@@ -65,12 +82,12 @@ export default function Header() {
                 <NavDropdown.Item href="/sponser">
                   For Sponsors
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/guest-speakers">
+                {/* <NavDropdown.Item href="/guest-speakers">
                   2024 Guest & Speakers
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/sponser-2024">
                   2024 Sponsors
-                </NavDropdown.Item>
+                </NavDropdown.Item> */}
               </NavDropdown>
 
               <NavDropdown title="Info" id="navbarScrollingDropdown">
@@ -82,23 +99,25 @@ export default function Header() {
               </NavDropdown>
 
               <Nav.Link href="/contact">Contact</Nav.Link>
+              
+              <Nav.Link href="/summary">Summary</Nav.Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
         </div>
                 </Col>
-                <Col lg={5} className="right-header">
+                <Col lg={4} className="right-header">
               <div className="menubar left">
                 <ul className="navbar-item-left mr-3">
                   <li>
-                    <Link href="/">October 20-21,2024</Link>
+                    <Link href="/"> <FaRegCalendarAlt />December 13-14,2025</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="https://maps.app.goo.gl/p7vsywPPdDFeGUcF6" target="_blank">
                       <MdLocationPin />
                       Science City
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
                 <Link to="/register" className="theme-btn">
                   Register Now

@@ -2038,3 +2038,60 @@ h6.title {
     font-size: 20px;
     color: #003777;
 }
+
+.list-check-2 .circle li { 
+    border-radius: 40px;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.list-check-2 .circle {
+ 
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 20px;
+    justify-content: center;
+}
+ 
+.list-check-2 .circle li:before {
+    border-radius: 35px;
+    background-color: #003777;
+;
+    color: #fff;
+}
+.list-check-2 li:before {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    content: "‣";
+    font-family: Font Awesome\ 6 Free;
+    font-weight: 900;
+    color: var(--secondary);
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transition: all .5s;
+    transform: translateY(-50%);
+}
+.list-check-2 .list-box li {
+    border-radius: 10px;
+    background-color: #fff; 
+    box-shadow: 0px 0px 3px #dddddd;
+}
+.list-check-2 .circle li {
+    padding: 12px 15px 12px 65px!important;
+    position: relative;
+    margin: 0 5px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    color: #222222;
+    transition: all .5s;
+    text-align: left;
+     box-shadow: 0px 0px 3px #dddddd;
+}
+.list-check-2 .list-inline li {
+    display: inline-block;
+}

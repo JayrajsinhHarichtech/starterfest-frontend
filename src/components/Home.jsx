@@ -9,13 +9,16 @@ import { IoIosArrowRoundDown } from "react-icons/io";
 // import video from "../assets/img/video-img.png";
 import video from "../assets/img/video-thumb.png";
 // import video from "../assets/img/video-home.png";
-import about from "../assets/img/about-img.png";
+// import about from "../assets/img/about-img.png";
+import about from "../assets/img/homePic1.JPG";
+
 import clock from "../assets/img/clock-icon.png";
 import caleder from "../assets/img/calender-icon.png";
 import { MdLocationPin } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 import { FaRegCheckCircle } from "react-icons/fa";
-import mainBanner from "../assets/img/home-banner.png";
+// import mainBanner from "../assets/img/home-banner.png";
+import mainBanner from "../assets/img/home2024.png";
 import img2 from "../assets/img/img-2.png";
 import img3 from "../assets/img/img-3.png";
 import parti1 from "../assets/img/client/1.jpg";
@@ -241,8 +244,8 @@ export default function Home() {
             <Col lg={6} xs={12} className="sfg order-lg-1 order-0">
               <p className="font-blue">SFG 2024</p>
               <h3 className="title">
-                India Startup Revolution is Here and now! At Ahmedabad October{" "}
-                <span className="gradient"> 20 & 21, 2024 </span>
+                India Startup Revolution is Here and now! At Ahmedabad December{" "}
+                <span className="gradient"> 13 & 14, 2025 </span>
               </h3>
             </Col>
           </Row>

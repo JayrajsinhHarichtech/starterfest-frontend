@@ -142,7 +142,7 @@ export default function InvestorContent() {
                       </button>
                     </div>
                   </div>
-                  <p className="desc-line">Sales end on October 20</p>
+                  <p className="desc-line">Sales end on December 13</p>
 
                   <hr />
                   <div className="total-amt">

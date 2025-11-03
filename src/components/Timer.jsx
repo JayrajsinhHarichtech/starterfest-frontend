@@ -16,7 +16,7 @@ const Timer =()=>{
   });
 
   // Target date for the event (28th August 2024 in local time)
-  const targetDate = new Date('2024-10-20T10:00:00').getTime();
+  const targetDate = new Date('2025-12-13T10:00:00').getTime();
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -70,22 +70,22 @@ const Timer =()=>{
           </h3>
 
           <Row>
-            <Col lg={4} md={4} xs={12}>
+            {/* <Col lg={4} md={4} xs={12}>
               <div className="box">
                 <MdLocationPin />
                 <h4>Venue</h4>
                 <p>Vigyan Bhavanm, Science City, Ahmedabad.</p>
               </div>
-            </Col>
-            <Col lg={4} md={4} xs={12}>
+            </Col> */}
+            <Col lg={6} md={6} xs={12}>
               <div className="box">
                 {/* <SlCalender /> */}
                 <img src={caleder} width={45} />
                 <h4>Date</h4>
-                <p>20 & 21 October, 2024</p>
+                <p>13 & 14 December, 2025</p>
               </div>
             </Col>
-            <Col lg={4} md={4} xs={12}>
+            <Col lg={6} md={6} xs={12}>
               <div className="box">
                 <img src={clock} width={45} />
                 <h4>Time</h4>
