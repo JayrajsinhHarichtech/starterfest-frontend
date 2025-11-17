@@ -2038,3 +2038,165 @@ h6.title {
     font-size: 20px;
     color: #003777;
 }
+
+/* Media & Recognition Section Styles */
+.media-recognition-sec {
+    background-color: var(--light-blue);
+}
+
+.media-card-wrapper {
+    padding: 15px;
+}
+
+.media-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 320px; /* Fixed height for consistent card size */
+    display: flex;
+    flex-direction: column;
+}
+
+.media-card.clickable-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.media-image {
+    position: relative;
+    overflow: hidden;
+    height: 220px; /* Fixed height for images */
+    flex-shrink: 0;
+}
+
+.media-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.media-card:hover .media-image img {
+    transform: scale(1.08);
+}
+
+.media-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px; /* Fixed height for content area */
+}
+
+.media-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: center;
+}
+
+.media-recognition-sec .slick-dots {
+    bottom: -50px;
+}
+
+.media-recognition-sec .slick-dots li button:before {
+    font-size: 10px;
+    color: var(--primary-blue);
+    opacity: 0.3;
+}
+
+.media-recognition-sec .slick-dots li.slick-active button:before {
+    color: var(--primary-blue);
+    opacity: 1;
+}
+
+/* Lightbox Modal Styles */
+.lightbox-modal .modal-content {
+    background: rgba(0, 0, 0, 0.9);
+    border: none;
+    border-radius: 0;
+}
+
+.lightbox-modal .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-modal .modal-title {
+    color: white;
+    font-size: 18px;
+}
+
+.lightbox-modal .btn-close {
+    filter: invert(1);
+}
+
+.lightbox-modal .modal-body {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Hover effect for clickable cards */
+.clickable-card {
+    position: relative;
+}
+
+.clickable-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 55, 119, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.clickable-card:hover::after {
+    opacity: 1;
+}
+
+/* Responsive styles for media cards */
+@media (max-width: 768px) {
+    .media-card {
+        height: 280px;
+    }
+    
+    .media-image {
+        height: 180px;
+    }
+    
+    .media-title {
+        font-size: 14px;
+    }
+    
+    .media-content {
+        padding: 15px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .media-card {
+        height: 260px;
+    }
+    
+    .media-image {
+        height: 160px;
+    }
+    
+    .media-content {
+        height: 80px;
+    }
+}
