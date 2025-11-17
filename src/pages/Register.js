@@ -9,6 +9,8 @@ import axios from 'axios'
 import StartupForm from "../components/StartupForm";
 import InvestorForm from "../components/InvestorForm";
 import VisitorForm from "../components/VIsitorForm";
+import SponsorForm from "../components/SponsorForm";
+import ExhibitorForm from "../components/ExhibitorForm";
 import imgEvent from "../assets/img/eventPass.png"
 import logo from "../assets/img/logo.png";
 import Modal from 'react-bootstrap/Modal';
@@ -54,12 +56,6 @@ const Register = () => {
         countryCode: '',
         companyName: '',
         investmentAmount: '',
-        City: '',
-        description: '',
-        pincode: '',
-        address: '',
-        CountryID: '',
-        StateID: '',
     }
 
     const visitorInitialValue = {
@@ -67,13 +63,40 @@ const Register = () => {
         email: '',
         contactNo: '',
         countryCode: '',
+        visitDay: '',
+        dateOfBirth: '',
+        gender: '',
+    }
+
+    const sponsorInitialValue = {
+        contactPersonName: '',
+        email: '',
+        contactNo: '',
+        countryCode: '',
+        companyName: '',
+        categoryId: '',
+        terms: false,
+    }
+
+    const exhibitorInitialValue = {
+        contactPersonName: '',
+        email: '',
+        contactNo: '',
+        countryCode: '',
+        companyName: '',
+        founderName: '',
+        categoryId: '',
+        stageOfStartup: '',
+        terms: false,
     }
 
     const [values, setValues] = useState(initialValues);
     const [investorvalues, setInvestorValues] = useState(investorInitialValue);
     const [visitorValues, setVisitorValues] = useState(visitorInitialValue);
+    const [sponsorValues, setSponsorValues] = useState(sponsorInitialValue);
+    const [exhibitorValues, setExhibitorValues] = useState(exhibitorInitialValue);
 
-    const [customActiveTab, setCustomActiveTab] = useState('1');
+    const [customActiveTab, setCustomActiveTab] = useState('4');
     const [ticketPopup, setTicketPopup] = useState(false);
     const [addMore, setAddMore] = useState(false)
 
@@ -100,6 +123,8 @@ const Register = () => {
 
     const [tickets, setTickets] = useState([]);
     const [selectedTicket, setSelectedTicket] = useState();
+    const [exhibitorTickets, setExhibitorTickets] = useState([]);
+    const [selectedExhibitorTicket, setSelectedExhibitorTicket] = useState(null);
 
     const loadTickets = async () => {
         let category = customActiveTab === '1' ? '66deba1c8d13756fe2697beb'
@@ -110,6 +135,17 @@ const Register = () => {
             const res = await axios.get(`${process.env.REACT_APP_URL}/api/auth/list-by-participant/ticketMaster/${category}`)
             console.log("ticket detailssss", res)
             setTickets(res.data);
+        }
+        catch (error) {
+            console.error(error)
+        }
+    }
+
+    const loadExhibitorTickets = async () => {
+        try {
+            const res = await axios.get(`${process.env.REACT_APP_URL}/api/auth/active-tickets/66deba1c8d13756fe2697beb`)
+            console.log("exhibitor tickets", res.data)
+            setExhibitorTickets(res.data);
         }
         catch (error) {
             console.error(error)
@@ -162,6 +198,7 @@ const Register = () => {
         fetchCountry()
         fetchStages()
         loadTickets();
+        loadExhibitorTickets();
 
     }, [])
 
@@ -204,6 +241,27 @@ const Register = () => {
         });
 
 
+    };
+
+    const handleSponsorChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setSponsorValues({
+            ...sponsorValues,
+            [name]: type === 'checkbox' ? checked : value
+        });
+    };
+
+    const handleExhibitorChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setExhibitorValues({
+            ...exhibitorValues,
+            [name]: type === 'checkbox' ? checked : value
+        });
+    };
+
+    const handleTicketSelection = (ticketId) => {
+        setSelectedExhibitorTicket(ticketId);
+        setTicketId(ticketId);
     };
 
     const handleFileChange = (e) => {
@@ -298,86 +356,143 @@ const Register = () => {
         let errors = {};
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const contactRegex = /((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/;
+        
         if (!investorvalues.contactPersonName) {
-            errors.contactPersonName = 'Contact Person Name is required';
+            errors.contactPersonName = 'Name is required';
         }
         if (!investorvalues.email) {
             errors.email = 'Email is required';
         } else if (!emailRegex.test(investorvalues.email)) {
             errors.email = 'Invalid Email address!';
         }
-        if (!investorvalues.contactNo && !investorvalues.countryCode) {
-            errors.contactNo = 'Contact Number and country code is required';
-        }
         if (!investorvalues.contactNo) {
             errors.contactNo = 'Contact Number is required';
         } else if (!contactRegex.test(investorvalues.contactNo)) {
             errors.contactNo = 'Invalid Mobile Number!';
         }
-        // if (!investorvalues.companyName) {
-        //     errors.companyName = 'Startup name is required';
-        // }
-
         if (!investorvalues.countryCode) {
             errors.countryCode = 'Country Code is required';
         }
-
-
-        // if (!investorvalues.pincode) {
-        //     errors.pincode = 'Pincode is required';
-        // }
-        // if (!investorvalues.address) {
-        //     errors.address = 'Address is required';
-        // }
-        if (!investorvalues.CountryID) {
-            errors.CountryID = 'Country is required';
+        if (!investorvalues.companyName) {
+            errors.companyName = 'Company Name is required';
         }
-        if (!investorvalues.StateID) {
-            errors.StateID = 'State is required';
+        if (!investorvalues.investmentAmount) {
+            errors.investmentAmount = 'Investment Amount is required';
         }
-        // if (!investorvalues.description) {
-        //     errors.description = 'Brief About Startup is required';
-        // }
-
-        if (!investorvalues.terms) {
-            errors.terms = 'Please accept the terms and conditions';
-        }
-        if (!investorvalues.City) {
-            errors.City = 'City is required';
-        }
+        
         setInvestorFormErrors(errors);
         return errors;
     };
 
     const [visitorformErrors, setvisitorFormErrors] = useState({});
-    const validateVisitorForm = () => {
+    const [sponsorFormErrors, setSponsorFormErrors] = useState({});
+    const [exhibitorFormErrors, setExhibitorFormErrors] = useState({});
 
-        let errors = {};
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const contactRegex = /((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/;
+    const validateVisitorForm = () => {
+        const errors = {};
         if (!visitorValues.contactPersonName) {
-            errors.contactPersonName = 'Contact Person Name is required';
+            errors.contactPersonName = 'Name is required';
         }
         if (!visitorValues.email) {
             errors.email = 'Email is required';
-        } else if (!emailRegex.test(visitorValues.email)) {
-            errors.email = 'Invalid Email address!';
-        }
-        if (!visitorValues.contactNo && !visitorValues.countryCode) {
-            errors.contactNo = 'Contact Number and country code is required';
+        } else if (!/\S+@\S+\.\S+/.test(visitorValues.email)) {
+            errors.email = 'Email is invalid';
         }
         if (!visitorValues.contactNo) {
-            errors.contactNo = 'Contact Number is required';
-        } else if (!contactRegex.test(visitorValues.contactNo)) {
-            errors.contactNo = 'Invalid Mobile Number!';
+            errors.contactNo = 'Contact number is required';
         }
         if (!visitorValues.countryCode) {
-            errors.countryCode = 'Country Code is required';
+            errors.countryCode = 'Country code is required';
         }
-        if (!visitorValues.terms) {
-            errors.terms = 'Please accept the terms and conditions';
+        if (!visitorValues.visitDay) {
+            errors.visitDay = 'Visit day is required';
+        }
+        if (!visitorValues.dateOfBirth) {
+            errors.dateOfBirth = 'Date of birth is required';
+        }
+        if (!visitorValues.gender) {
+            errors.gender = 'Gender is required';
         }
         setvisitorFormErrors(errors);
+        return errors;
+    };
+
+    const validateSponsorForm = () => {
+        const errors = {};
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const contactRegex = /((\+*)((0[ -]*)*(|(91 )*))(((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6})/;
+
+        if (!sponsorValues.contactPersonName) {
+            errors.contactPersonName = 'Name is required';
+        }
+        if (!sponsorValues.email) {
+            errors.email = 'Email is required';
+        } else if (!emailRegex.test(sponsorValues.email)) {
+            errors.email = 'Email is invalid';
+        }
+        if (!sponsorValues.contactNo) {
+            errors.contactNo = 'Contact number is required';
+        } else if (!contactRegex.test(sponsorValues.contactNo)) {
+            errors.contactNo = 'Invalid Mobile Number!';
+        }
+        if (!sponsorValues.countryCode) {
+            errors.countryCode = 'Country code is required';
+        }
+        if (!sponsorValues.companyName) {
+            errors.companyName = 'Company name is required';
+        }
+        if (!sponsorValues.categoryId) {
+            errors.categoryId = 'Industry is required';
+        }
+        if (!sponsorValues.terms) {
+            errors.terms = 'Please accept the terms and conditions';
+        }
+
+        setSponsorFormErrors(errors);
+        return errors;
+    };
+
+    const validateExhibitorForm = () => {
+        const errors = {};
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const contactRegex = /((\+*)((0[ -]*)*(|(91 )*))((\d{12})+|(\d{10})+))|(\d{5}([- ]*)\d{6})/;
+        
+        if (!exhibitorValues.contactPersonName) {
+            errors.contactPersonName = 'Name is required';
+        }
+        if (!exhibitorValues.email) {
+            errors.email = 'Email is required';
+        } else if (!emailRegex.test(exhibitorValues.email)) {
+            errors.email = 'Email is invalid';
+        }
+        if (!exhibitorValues.contactNo) {
+            errors.contactNo = 'Contact number is required';
+        } else if (!contactRegex.test(exhibitorValues.contactNo)) {
+            errors.contactNo = 'Invalid Mobile Number!';
+        }
+        if (!exhibitorValues.countryCode) {
+            errors.countryCode = 'Country code is required';
+        }
+        if (!exhibitorValues.companyName) {
+            errors.companyName = 'Startup name is required';
+        }
+        if (!exhibitorValues.founderName) {
+            errors.founderName = 'Founder name is required';
+        }
+        if (!exhibitorValues.categoryId) {
+            errors.categoryId = 'Industry is required';
+        }
+        if (!exhibitorValues.stageOfStartup) {
+            errors.stageOfStartup = 'Stage of startup is required';
+        }
+        if (!selectedExhibitorTicket) {
+            errors.ticketType = 'Please select a ticket type';
+        }
+        if (!exhibitorValues.terms) {
+            errors.terms = 'Please accept the terms and conditions';
+        }
+        
+        setExhibitorFormErrors(errors);
         return errors;
     };
 
@@ -394,42 +509,33 @@ const Register = () => {
         console.log(errors);
 
         if (Object.keys(errors).length === 0) {
-            const formData = new FormData();
-            console.log(values)
-            formData.append("contactPersonName", values.contactPersonName);
-            formData.append("email", values.email);
-            formData.append("contactNo", values.contactNo);
-            formData.append("countryCode", values.countryCode.value);
-            formData.append("companyName", values.companyName);
-            formData.append("founderName", values.founderName);
-            formData.append("categoryId", values.categoryId.value);
-            formData.append("stageOfStartup", values.stageOfStartup.value);
-            formData.append("teamSize", values.teamSize);
-            formData.append("City", values.City);
-            formData.append("description", values.description);
-            formData.append("legalName", values.legalName);
-            formData.append("yearFounded", values.yearFounded);
-            formData.append("terms", values.terms);
-            formData.append("pincode", values.pincode);
-            formData.append("address", values.address);
-            formData.append("CountryID", values.CountryID.value);
-            formData.append("StateID", values.StateID.value);
-            formData.append("participantCategoryId", participant);
-            formData.append("ticketId", ticketId);
-
-            // Handle file uploads
-            if (values.logo) {
-                formData.append("logo", values.logo);
-            }
-            if (values.brochure) {
-                formData.append("brochure", values.brochure);
-            }
-            if (values.productImages) {
-                formData.append("productImages", values.productImages);
-            }
+            const data = {
+                contactPersonName: values.contactPersonName,
+                email: values.email,
+                contactNo: values.contactNo,
+                countryCode: values.countryCode.value,
+                companyName: values.companyName,
+                founderName: values.founderName,
+                categoryId: values.categoryId.value,
+                stageOfStartup: values.stageOfStartup.value,
+                teamSize: values.teamSize,
+                City: values.City,
+                description: values.description,
+                legalName: values.legalName,
+                yearFounded: values.yearFounded,
+                terms: values.terms,
+                pincode: values.pincode,
+                address: values.address,
+                CountryID: values.CountryID.value,
+                StateID: values.StateID.value,
+                participantCategoryId: participant,
+                ticketId: ticketId
+            };
+            
+            console.log(data);
 
             try {
-                const res = await axios.post(`${process.env.REACT_APP_URL}/api/auth/create/StartUpDetailsMaster`, formData);
+                const res = await axios.post(`${process.env.REACT_APP_URL}/api/auth/create/StartUpDetailsMaster`, data);
                 if (res.data.isOk) {
                     setAddMore(false)
                     // alert("Form submitted successfully")
@@ -439,20 +545,20 @@ const Register = () => {
                     setRegisterData((prevData) => [...prevData, res.data.data]);
 
 
-                    try {
-                        const data = {
-                            email: res.data.data.email,
-                            password: res.data.data.password
-                        }
-                        const res2 = await axios.post(`${process.env.REACT_APP_URL}/api/sendOTPEmail`, data);
-                        console.log("res", res2)
-                        if (res2.data.isOk) {
-                            // alert(res2.data.message)
-                        }
-                    }
-                    catch (error) {
-                        console.error("An error occurred during submission:", error.message);
-                    }
+                    // try {
+                    //     const data = {
+                    //         email: res.data.data.email,
+                    //         password: res.data.data.password
+                    //     }
+                    //     const res2 = await axios.post(`${process.env.REACT_APP_URL}/api/sendOTPEmail`, data);
+                    //     console.log("res", res2)
+                    //     if (res2.data.isOk) {
+                    //         // alert(res2.data.message)
+                    //     }
+                    // }
+                    // catch (error) {
+                    //     console.error("An error occurred during submission:", error.message);
+                    // }
                     setValues(initialValues)
                     console.log(customActiveTab)
                     handleShow()
@@ -485,13 +591,7 @@ const Register = () => {
                 contactNo: investorvalues.contactNo,
                 countryCode: investorvalues.countryCode.value,
                 companyName: investorvalues.companyName,
-                investmentAmount: investorvalues.investmentAmount ? investorvalues.investmentAmount : 0,
-                City: investorvalues.City,
-                description: investorvalues.description,
-                pincode: investorvalues.pincode,
-                address: investorvalues.address,
-                CountryID: investorvalues.CountryID.value,
-                StateID: investorvalues.StateID.value,
+                investmentAmount: investorvalues.investmentAmount,
                 participantCategoryId: participant,
                 ticketId: ticketId
             }
@@ -538,6 +638,9 @@ const Register = () => {
                 email: visitorValues.email,
                 contactNo: visitorValues.contactNo,
                 countryCode: visitorValues.countryCode.value,
+                visitDay: visitorValues.visitDay.value,
+                dateOfBirth: visitorValues.dateOfBirth,
+                gender: visitorValues.gender.value,
                 participantCategoryId: participant,
                 ticketId: ticketId
             }
@@ -551,6 +654,7 @@ const Register = () => {
                     console.log(res)
                     alert("Form submitted successfully")
                     setVisitorValues(visitorInitialValue)
+                    setCustomActiveTab('4');
                     setRegisterData((prevData) => [...prevData, res.data.data]);
                     handleShow()
 
@@ -566,7 +670,167 @@ const Register = () => {
         }
     };
 
+    const handleSponsorSubmit = async (e) => {
+        setIsSubmit(true);
 
+        const errors = validateSponsorForm();
+        if (Object.keys(errors).length === 0) {
+            const data = {
+                contactPersonName: sponsorValues.contactPersonName,
+                email: sponsorValues.email,
+                contactNo: sponsorValues.contactNo,
+                countryCode: sponsorValues.countryCode.value,
+                companyName: sponsorValues.companyName,
+                categoryId: sponsorValues.categoryId.value,
+                participantCategoryId: participant,
+                ticketId: ticketId
+            }
+            
+            try {
+                console.log(data)
+                let res = await axios.post(`${process.env.REACT_APP_URL}/api/auth/register/sponsor`, data);
+
+                if (res.data.isOk) {
+                    alert(res.data.message)
+                    setSponsorValues(sponsorInitialValue)
+                    // Don't show modal for sponsors, just reset form
+                }
+                else {
+                    console.log(res.data)
+                    alert(res.data.message)
+                }
+            }
+            catch (error) {
+                console.error("An error occurred during submission:", error.message);
+                alert("An error occurred while submitting the form. Please try again.");
+            }
+        }
+    };
+
+    const handleExhibitorSubmit = async (e) => {
+        setIsSubmit(true);
+
+        const errors = validateExhibitorForm();
+        if (Object.keys(errors).length === 0) {
+            if (!selectedExhibitorTicket) {
+                alert("Please select a ticket type before proceeding.");
+                return;
+            }
+
+            const data = {
+                contactPersonName: exhibitorValues.contactPersonName,
+                email: exhibitorValues.email,
+                contactNo: exhibitorValues.contactNo,
+                countryCode: exhibitorValues.countryCode.value,
+                companyName: exhibitorValues.companyName,
+                founderName: exhibitorValues.founderName,
+                categoryId: exhibitorValues.categoryId.value,
+                stageOfStartup: exhibitorValues.stageOfStartup.value,
+                participantCategoryId: participant,
+                ticketId: selectedExhibitorTicket,
+                registrationType: 'exhibitor',
+                IsActive: false,
+                IsPaid: false
+            }
+            
+            try {
+                console.log(data)
+                let res = await axios.post(`${process.env.REACT_APP_URL}/api/auth/create/StartUpDetailsMaster`, data);
+
+                if (res.data.isOk) {
+                    setAddMore(false)
+                    console.log("Exhibitor registration successful, initiating payment...", res)
+                    setExhibitorValues(exhibitorInitialValue)
+                    setRegisterData((prevData) => [...prevData, res.data.data]);
+                    
+                    // Find the selected ticket to get the amount
+                    const selectedTicket = exhibitorTickets.find(ticket => ticket._id === selectedExhibitorTicket);
+                    if (selectedTicket) {
+                        // Open payment gateway immediately after successful registration
+                        await initiateExhibitorPayment([res.data.data], selectedTicket);
+                    }
+                }
+                else {
+                    console.log(res.data)
+                    alert(res.data.message)
+                }
+            }
+            catch (error) {
+                console.error("An error occurred during submission:", error.message);
+                alert("An error occurred while submitting the form. Please try again.");
+            }
+        }
+    };
+
+    const initiateExhibitorPayment = async (registrationData, selectedTicket) => {
+        try {
+            console.log("Initiating payment for registration data:", registrationData);
+            console.log("Selected ticket:", selectedTicket);
+            
+            const { data: { order } } = await axios.post(`${process.env.REACT_APP_URL}/api/auth/payment/checkout`, { 
+                startupIds: registrationData, 
+                selectedTicket: selectedTicket._id 
+            });
+
+            console.log("Checkout order for exhibitor:", order);
+
+            const options = {
+                key: "rzp_live_ST3UBESEnYNzQt",
+                amount: order.amount,
+                currency: "INR",
+                name: 'Startupfest Gujarat',
+                description: `Exhibitor Registration - ${selectedTicket.name}`,
+                order_id: order.id,
+                callback_url: `${process.env.REACT_APP_URL}/api/auth/payment/paymentVerification/1/${order.amount}?registerData=${encodeURIComponent(JSON.stringify(registrationData))}`,
+                prefill: {
+                    name: registrationData[0].contactPersonName,
+                    email: registrationData[0].email,
+                    contact: registrationData[0].contactNo
+                },
+                theme: {
+                    color: '#F37254'
+                },
+                handler: async function (response) {
+                    console.log("Payment Successful for exhibitor:", response);
+                    
+                    try {
+                        // Send payment details to verification endpoint
+                        const verificationResponse = await axios.post(
+                            `${process.env.REACT_APP_URL}/api/auth/payment/paymentVerification/1/${order.amount}?registerData=${encodeURIComponent(JSON.stringify(registrationData))}`,
+                            {
+                                razorpay_payment_id: response.razorpay_payment_id,
+                                razorpay_order_id: response.razorpay_order_id,
+                                razorpay_signature: response.razorpay_signature
+                            }
+                        );
+                        
+                        console.log("Payment verification response:", verificationResponse);
+                        alert(`Payment successful! You have registered for ${selectedTicket.name}. Confirmation email has been sent to your email address.`);
+                        
+                    } catch (error) {
+                        console.error("Error verifying payment:", error);
+                        alert("Payment successful but verification failed. Please contact support.");
+                    }
+                    
+                    // Reset the selected ticket after successful payment
+                    setSelectedExhibitorTicket(null);
+                    setTicketId('');
+                },
+                modal: {
+                    ondismiss: function() {
+                        console.log("Payment cancelled");
+                    }
+                }
+            };
+
+            const rzp = new window.Razorpay(options);
+            rzp.open();
+
+        } catch (error) {
+            console.error("Error initiating payment:", error);
+            alert("Error initiating payment. Please try again.");
+        }
+    };
     const handleCheckout = async () => {
         // const startupIds = registerData.map(item => item._id);
         // const ticketIds = registerData.map(item => item.ticketId);
@@ -578,6 +842,7 @@ const Register = () => {
             // key: `${process.env.RAZORPAY_KEY_ID}`,
             // key: "rzp_test_qoZrYXqkyGbjef",
             key: "rzp_live_ST3UBESEnYNzQt",
+            // key: "rzp_test_qoZrYXqkyGbjef",
             amount: order.amount,
             currency: "INR",
             name: 'Startupfest Gujarat',
@@ -674,7 +939,7 @@ const Register = () => {
                                             }
                                             }
                                         >
-                                            Start-Up
+                                            Sponsors
                                         </NavLink>
                                     </NavItem>
 
@@ -685,11 +950,11 @@ const Register = () => {
                                             onClick={() => {
                                                 toggleCustom("1")
                                                 setPaticipantId("66deba1c8d13756fe2697beb")
-                                                setTicketId('66e162ee158fdfa7198f4765')
+                                                // setTicketId('66e162ee158fdfa7198f4765')
                                                 // setValues(initialValues)
                                             }}
                                         >
-                                            Pitcher
+                                            Exhibitor
                                         </NavLink>
                                     </NavItem>
 
@@ -699,48 +964,38 @@ const Register = () => {
 
                                 <TabContent activeTab={customActiveTab}>
 
-                                    <TabPane tabId="1">
-                                        <div>
-                                            <StartupForm
-                                                values={values}
-                                                handleChange={handleChange}
-                                                handleFileChange={handleFileChange}
-                                                formErrors={formErrors}
-                                                isSubmit={isSubmit}
-                                                handleSubmit={handleSubmit}
-                                                country={country}
-                                                states={states}
-                                                fetchState={fetchState}
-                                                setValues={setValues}
-                                                isdCodes={isdCodes}
-                                                categories={categories}
-                                                stages={stages}
-                                            />
-                                        </div>
-                                    </TabPane>
-
-
+                    <TabPane tabId="1">
+                        <div>
+                            <ExhibitorForm
+                                exhibitorValues={exhibitorValues}
+                                handleExhibitorChange={handleExhibitorChange}
+                                exhibitorFormErrors={exhibitorFormErrors}
+                                isSubmit={isSubmit}
+                                handleExhibitorSubmit={handleExhibitorSubmit}
+                                setExhibitorValues={setExhibitorValues}
+                                isdCodes={isdCodes}
+                                categories={categories}
+                                stages={stages}
+                                exhibitorTickets={exhibitorTickets}
+                                selectedExhibitorTicket={selectedExhibitorTicket}
+                                handleTicketSelection={handleTicketSelection}
+                            />
+                        </div>
+                    </TabPane>
                                     <TabPane tabId="2">
                                         <div>
-                                            <StartupForm
-                                                values={values}
-                                                handleChange={handleChange}
-                                                handleFileChange={handleFileChange}
-                                                formErrors={formErrors}
+                                            <SponsorForm
+                                                sponsorValues={sponsorValues}
+                                                handleSponsorChange={handleSponsorChange}
+                                                sponsorFormErrors={sponsorFormErrors}
                                                 isSubmit={isSubmit}
-                                                handleSubmit={handleSubmit}
-                                                country={country}
-                                                states={states}
-                                                fetchState={fetchState}
-                                                setValues={setValues}
+                                                handleSponsorSubmit={handleSponsorSubmit}
+                                                setSponsorValues={setSponsorValues}
                                                 isdCodes={isdCodes}
                                                 categories={categories}
-                                                stages={stages}
                                             />
                                         </div>
-                                    </TabPane>
-
-                                    <TabPane tabId="3">
+                                    </TabPane>                                    <TabPane tabId="3">
                                         <div>
                                             <InvestorForm
                                                 investorvalues={investorvalues}
@@ -748,9 +1003,6 @@ const Register = () => {
                                                 InvestorformErrors={InvestorformErrors}
                                                 isSubmit={isSubmit}
                                                 handleInvestorSubmit={handleInvestorSubmit}
-                                                country={country}
-                                                states={states}
-                                                fetchState={fetchState}
                                                 setInvestorValues={setInvestorValues}
                                                 isdCodes={isdCodes}
                                             />
@@ -759,20 +1011,20 @@ const Register = () => {
 
                                     <TabPane tabId="4">
                                         <div>
-                                            {/* <VisitorForm
-                                            investorvalues={visitorValues}
-                                            handleInvestorChange={handleVisitorChange}
-                                            InvestorformErrors={visitorformErrors}
-                                            isSubmit={isSubmit}
-                                            handleInvestorSubmit={handleVisitorSubmit}
-                                            setInvestorValues={setVisitorValues}
-                                            isdCodes={isdCodes}
-                                        /> */}
-                                            <Button type="button" color="primary" className="mt-3 register-btn" onClick={(e) => { 
+                                            <VisitorForm
+                                                investorvalues={visitorValues}
+                                                handleInvestorChange={handleVisitorChange}
+                                                InvestorformErrors={visitorformErrors}
+                                                isSubmit={isSubmit}
+                                                handleInvestorSubmit={handleVisitorSubmit}
+                                                setInvestorValues={setVisitorValues}
+                                                isdCodes={isdCodes}
+                                            />
+                                            {/* <Button type="button" color="primary" className="mt-3 register-btn" onClick={(e) => { 
                                                 e.preventDefault();
                                                 window.open('https://allevents.in/ahmedabad/start-up-fest-20-gujarat-by-snehshilp-foundation/80002391998377?ref=smdl', '_blank');
                                                  }} 
-                                            >Register</Button>
+                                            >Register</Button> */}
 
                                         </div>
 
@@ -794,8 +1046,8 @@ const Register = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>
                         <img src={imgEvent} />
-                        {customActiveTab === '1' && <span>Pitcher</span>}
-                        {customActiveTab === '2' && <span>Startup</span>}
+                        {customActiveTab === '1' && <span>Exhibitor</span>}
+                        {customActiveTab === '2' && <span>Sponsor</span>}
                         {customActiveTab === '3' && <span>Investor</span>}
                         {customActiveTab === '4' && <span>Visitor</span>}
                         <span>Event Pass</span>
@@ -803,8 +1055,8 @@ const Register = () => {
                 </Modal.Header>
                 <Modal.Body>
                     Here is your pass for  {" "}
-                    {customActiveTab === '1' && <span>Pitcher</span>}
-                    {customActiveTab === '2' && <span>Startup</span>}
+                    {customActiveTab === '1' && <span>Exhibitor</span>}
+                    {customActiveTab === '2' && <span>Sponsor</span>}
                     {customActiveTab === '3' && <span>Investor</span>}
                     {customActiveTab === '4' && <span>Visitor</span>}
                     <Row className='scroll-hori'>
@@ -874,45 +1126,57 @@ const Register = () => {
                                 type="button"
                                 onClick={() => {
                                     setAddMore(!addMore);
-                                    setCustomActiveTab('2');
+                                    // Keep the current active tab when adding attendees
                                 }}
                                 className="no-style"
                             >+ Add Attendees</Button>
+                            {/* {console.log(customActiveTab)} */}
                             {addMore && (
-                                (customActiveTab === '1' /* || customActiveTab === '2' */) ? (
+                                customActiveTab === '1' ? (
                                     <div>
-                                        <StartupForm
-                                            values={values}
-                                            handleChange={handleChange}
-                                            handleFileChange={handleFileChange}
-                                            formErrors={formErrors}
+                                        <ExhibitorForm
+                                            exhibitorValues={exhibitorValues}
+                                            handleExhibitorChange={handleExhibitorChange}
+                                            exhibitorFormErrors={exhibitorFormErrors}
                                             isSubmit={isSubmit}
-                                            handleSubmit={handleSubmit}
-                                            country={country}
-                                            states={states}
-                                            fetchState={fetchState}
-                                            setValues={setValues}
+                                            handleExhibitorSubmit={handleExhibitorSubmit}
+                                            setExhibitorValues={setExhibitorValues}
                                             isdCodes={isdCodes}
                                             categories={categories}
                                             stages={stages}
+                                            exhibitorTickets={exhibitorTickets}
+                                            selectedExhibitorTicket={selectedExhibitorTicket}
+                                            handleTicketSelection={handleTicketSelection}
                                         />
                                     </div>
-                                ) : (
-                                    (customActiveTab === '2' ? <div>
+                                ) : customActiveTab === '2' ? (
+                                    <div>
+                                        <SponsorForm
+                                            sponsorValues={sponsorValues}
+                                            handleSponsorChange={handleSponsorChange}
+                                            sponsorFormErrors={sponsorFormErrors}
+                                            isSubmit={isSubmit}
+                                            handleSponsorSubmit={handleSponsorSubmit}
+                                            setSponsorValues={setSponsorValues}
+                                            isdCodes={isdCodes}
+                                            categories={categories}
+                                        />
+                                    </div>
+                                ) : customActiveTab === '3' ? (
+                                    <div>
                                         <InvestorForm
                                             investorvalues={investorvalues}
                                             handleInvestorChange={handleInvestorChange}
                                             InvestorformErrors={InvestorformErrors}
                                             isSubmit={isSubmit}
                                             handleInvestorSubmit={handleInvestorSubmit}
-                                            country={country}
-                                            states={states}
-                                            fetchState={fetchState}
                                             setInvestorValues={setInvestorValues}
                                             isdCodes={isdCodes}
                                         />
-                                    </div> : <div>
-                                        {/* <VisitorForm
+                                    </div>
+                                ) : customActiveTab === '4' ? (
+                                    <div>
+                                        <VisitorForm
                                             investorvalues={visitorValues}
                                             handleInvestorChange={handleVisitorChange}
                                             InvestorformErrors={visitorformErrors}
@@ -920,16 +1184,9 @@ const Register = () => {
                                             handleInvestorSubmit={handleVisitorSubmit}
                                             setInvestorValues={setVisitorValues}
                                             isdCodes={isdCodes}
-                                        /> */}
-                                        <Button type="button" color="primary" className="mt-3 register-btn"
-                                        onClick={(e) => { 
-                                            e.preventDefault();
-                                            window.open('https://allevents.in/ahmedabad/start-up-fest-20-gujarat-by-snehshilp-foundation/80002391998377?ref=smdl', '_blank');
-                                             }} 
-                                        >Register</Button>
-
-                                    </div>)
-                                )
+                                        />
+                                    </div>
+                                ) : null
                             )}
 
                             <div>
@@ -1003,7 +1260,7 @@ const Register = () => {
                                                 />
                                             </div>
                                         </div>
-                                        <p className="text-gray pt-3">{t.remarks}</p>
+                                        {/* <p className="text-gray pt-3">{t.remarks}</p> */}
                                     </div>
                                 </Button>
 

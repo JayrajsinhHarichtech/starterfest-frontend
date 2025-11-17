@@ -84,7 +84,71 @@ const VisitorForm = ({ investorvalues, handleInvestorChange, InvestorformErrors,
                         <p className="text-danger f-13">{InvestorformErrors.contactNo}</p>
                     )}
                 </div>
-              
+                
+                <div className="mb-3">
+                    <label className="f-13 fw-bold" htmlFor="visitDay">
+                        Visit Day<span className="text-danger">*</span>
+                    </label>
+                    <Select
+                        name="visitDay"
+                        className="p-0 b-0 form-control bg-light"
+                        value={investorvalues.visitDay}
+                        onChange={(e) => {
+                            setInvestorValues({
+                                ...investorvalues,
+                                visitDay: e
+                            })
+                        }}
+                        options={[
+                            { value: '13', label: 'Day 1 - December 13' },
+                            { value: '14', label: 'Day 2 - December 14' }
+                        ]}
+                    />
+                    {isSubmit && InvestorformErrors.visitDay && (
+                        <p className="text-danger f-13">{InvestorformErrors.visitDay}</p>
+                    )}
+                </div>
+
+                <div className="mb-3">
+                    <label className="f-13 fw-bold" htmlFor="dateOfBirth">
+                        Date of Birth<span className="text-danger">*</span>
+                    </label>
+                    <input
+                        type="date"
+                        name="dateOfBirth"
+                        className="form-control bg-light"
+                        value={investorvalues.dateOfBirth}
+                        onChange={handleInvestorChange}
+                    />
+                    {isSubmit && InvestorformErrors.dateOfBirth && (
+                        <p className="text-danger f-13">{InvestorformErrors.dateOfBirth}</p>
+                    )}
+                </div>
+
+                <div className="mb-3">
+                    <label className="f-13 fw-bold" htmlFor="gender">
+                        Gender<span className="text-danger">*</span>
+                    </label>
+                    <Select
+                        name="gender"
+                        className="p-0 b-0 form-control bg-light"
+                        value={investorvalues.gender}
+                        onChange={(e) => {
+                            setInvestorValues({
+                                ...investorvalues,
+                                gender: e
+                            })
+                        }}
+                        options={[
+                            { value: 'Male', label: 'Male' },
+                            { value: 'Female', label: 'Female' },
+                            { value: 'Other', label: 'Other' }
+                        ]}
+                    />
+                    {isSubmit && InvestorformErrors.gender && (
+                        <p className="text-danger f-13">{InvestorformErrors.gender}</p>
+                    )}
+                </div>
                 
                 <div className="mb-3 form-check">
                     <input

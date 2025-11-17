@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/img/logo.png";
+import logo from "../assets/img/logo2.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -19,7 +19,7 @@ export default function Header() {
       <Navbar expand="lg" className="menubar">
         <Container>
           <Row className="align-items-center">
-            <Col lg={8} md={10} xs={12}>
+            <Col lg={12} md={12} xs={12}>
               <div className="flex">
 
                 <Navbar.Brand href="/" className="logo">
@@ -102,7 +102,7 @@ export default function Header() {
 
                       <Nav.Link href="/summary">Summary</Nav.Link>
 
-                      <NavDropdown title="Register" id="navbarScrollingDropdown">
+                      <NavDropdown title="Register" id="navbarScrollingDropdown" className="theme-btn text-white-li ms-4 px-3" style={{color:'white'}}>
 
                         <NavDropdown.Item href="/register">
                           Exhibitor

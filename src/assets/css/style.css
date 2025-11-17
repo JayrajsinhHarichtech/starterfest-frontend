@@ -2232,3 +2232,10 @@ h6.title {
     font-size: 25px;
     font-weight: 600;
 }
+
+.text-white-li .dropdown-toggle  {
+    color: #ffffff !important;
+}
+.text-white-li .dropdown-toggle :hover {
+    color: black !important;
+}

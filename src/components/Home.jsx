@@ -310,7 +310,7 @@ export default function Home() {
 
               {/* Right: SFG Text */}
               <Col lg={6} xs={12} className="sfg order-lg-1 order-0" style={{marginTop:'auto' , marginBottom:'auto'}}>
-                <p className="font-blue">SFG 2024</p>
+                <p className="font-blue">SFG 2025</p>
                 <h3 className="title">
                   India Startup Revolution is Here and now! At Ahmedabad{" "}
                   <span className="title-gradient">December 13 & 14, 2025</span>
@@ -325,7 +325,7 @@ export default function Home() {
         <Container>
           <Row>
             <Col lg={6} md={12} xs={12} className="sfg ">
-              <p className="font-blue">SFG 2024</p>
+              <p className="font-blue">SFG 2025</p>
               <h3 className="title mb-5">
                 Innovation at Bottom of the Pyramid in Rural Innovations and
                 Entrepreneurship
