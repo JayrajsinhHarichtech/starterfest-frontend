@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import axios from 'axios';
 import { IoIosArrowRoundDown } from "react-icons/io";
 // import video from "../assets/img/video-img.png";
 import video from "../assets/img/video-thumb.png";
@@ -37,15 +38,37 @@ import Timer from "./Timer";
 import RegisterYourself from "./RegisterYourself";
 import CardContent from "./CardContent";
 import "../assets/css/style.css";
-import { FiUsers, FiTrendingUp, FiBriefcase, FiUser } from "react-icons/fi";
+import { FiUsers, FiTrendingUp, FiBriefcase, FiUser } from "react-icons/fi"; 
+import Testimonial from "./Testimonial";
 
 export default function Home() {
+  const [mediaData, setMediaData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [lightboxShow, setLightboxShow] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState('');
+  const [lightboxTitle, setLightboxTitle] = useState('');
   const handleScroll = () => {
     window.scrollTo({
       top: document.getElementById("target-section").offsetTop,
       behavior: "smooth",
     });
   };
+
+  // Fetch media and recognition data
+  useEffect(() => {
+    const fetchMediaData = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_URL}/api/auth/list/mediaAndRecognition`);
+        setMediaData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching media data:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchMediaData();
+  }, []);
 
   const [settings] = useState({
     dots: true,
@@ -80,10 +103,69 @@ export default function Home() {
       },
     ],
   });
+
+  // Dynamic media settings based on available items
+  const getMediaSettings = () => {
+    const itemCount = mediaData.length;
+    const slidesToShow = Math.min(itemCount, 3); // Show max 3 or available items
+    const slidesToScroll = Math.min(itemCount, 3);
+
+    return {
+      dots: itemCount > 1, // Only show dots if more than 1 item
+      infinite: itemCount > 3, // Only infinite scroll if more than 3 items
+      slidesToShow: slidesToShow,
+      slidesToScroll: slidesToScroll,
+      autoplay: itemCount > 1, // Only autoplay if more than 1 item
+      speed: 500,
+      autoplaySpeed: 4000,
+      cssEase: 'linear',
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: Math.min(itemCount, 2),
+            slidesToScroll: Math.min(itemCount, 2),
+            infinite: itemCount > 2,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: Math.min(itemCount, 2),
+            slidesToScroll: Math.min(itemCount, 2),
+            infinite: itemCount > 2,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: itemCount > 1,
+          },
+        },
+      ],
+    };
+  };
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleLightboxClose = () => setLightboxShow(false);
+  const handleLightboxShow = (image, title) => {
+    setLightboxImage(image);
+    setLightboxTitle(title);
+    setLightboxShow(true);
+  };
+
+  const handleMediaCardClick = (item) => {
+    if (item.link) {
+      window.open(item.link, '_blank', 'noopener,noreferrer');
+    } else {
+      handleLightboxShow(`${process.env.REACT_APP_URL}/${item.image}`, item.title);
+    }
+  };
 
   const gallery = [
     { url: require("../assets/img/Sponser logo/1.png") },
@@ -110,7 +192,7 @@ export default function Home() {
     { url: require("../assets/img/Sponser logo/23.png") },
   ];
 
-  
+
   const gallery2 = [
     { url: require("../assets/img/sponsor2/logo1.png") },
     { url: require("../assets/img/sponsor2/logo2.png") },
@@ -136,17 +218,17 @@ export default function Home() {
 
   return (
     <>
-    <section className="" id="target-section">
+      <section className="" id="target-section">
         <Container>
           <Row className="justify-content-center">
             <Col lg={12}>
-            <img src={mainBanner} className="w-100"/>
+              <img src={mainBanner} className="w-100" />
             </Col>
-          
+
           </Row>
         </Container>
       </section>
-       
+
       {/* <section className="hero-banner" id="target-section" style={{
         backgroundImage: `url(${mainBanner})`,
         backgroundSize: 'cover',
@@ -197,7 +279,7 @@ export default function Home() {
       <section className="top-banner">
         <Container>
           <Row>
-            <Col lg={4} md={5} sm={12} > 
+            <Col lg={4} md={5} sm={12} >
               <div className=" p-relative">
                 <img src={video} className="w-100" />
                 <a onClick={handleShow} className="play-btn"></a>
@@ -220,6 +302,27 @@ export default function Home() {
                       referrerpolicy="strict-origin-when-cross-origin"
                       allowfullscreen
                     ></iframe>
+                  </Modal.Body>
+                </Modal>
+
+                {/* Lightbox Modal for Images */}
+                <Modal
+                  show={lightboxShow}
+                  onHide={handleLightboxClose}
+                  size="xl"
+                  className="lightbox-modal"
+                  centered
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title>{lightboxTitle}</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="text-center p-0">
+                    <img
+                      src={lightboxImage}
+                      alt={lightboxTitle}
+                      className="img-fluid w-100"
+                      style={{ maxHeight: '80vh', objectFit: 'contain' }}
+                    />
                   </Modal.Body>
                 </Modal>
               </div>
@@ -247,7 +350,7 @@ export default function Home() {
       <section className="padding-sec light-bg about-sec">
         <CardContent about={about} text={text} title="About StartUp Fest" buttonShow={true} to="/about" linkToTitle="Learn More" />
 
-        
+
       </section>
 
       <section className="padding-sec">
@@ -309,8 +412,8 @@ export default function Home() {
               </Col>
 
               {/* Right: SFG Text */}
-              <Col lg={6} xs={12} className="sfg order-lg-1 order-0" style={{marginTop:'auto' , marginBottom:'auto'}}>
-                <p className="font-blue">SFG 2024</p>
+              <Col lg={6} xs={12} className="sfg order-lg-1 order-0" style={{ marginTop: 'auto', marginBottom: 'auto' }}>
+                <p className="font-blue">SFG 2025</p>
                 <h3 className="title">
                   India Startup Revolution is Here and now! At Ahmedabad{" "}
                   <span className="title-gradient">December 13 & 14, 2025</span>
@@ -325,7 +428,7 @@ export default function Home() {
         <Container>
           <Row>
             <Col lg={6} md={12} xs={12} className="sfg ">
-              <p className="font-blue">SFG 2024</p>
+              <p className="font-blue">SFG 2025</p>
               <h3 className="title mb-5">
                 Innovation at Bottom of the Pyramid in Rural Innovations and
                 Entrepreneurship
@@ -397,7 +500,9 @@ export default function Home() {
           </Row>
         </Container>
       </section>
-  <section className="padding-sec participant-sec">
+      <Testimonial />
+
+      <section className="padding-sec participant-sec">
         <Container>
           <Row className="justify-content-center">
             <Col lg={12}>
@@ -456,7 +561,82 @@ export default function Home() {
         </Container>
       </section>
 
+      {mediaData.length > 0 && 
+       <section className="padding-sec light-bg media-recognition-sec">
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg={12}>
+              <h3 className="title text-center">Media & Recognition</h3>
+            </Col>
+            <Col lg={10}>
+              {loading ? (
+                <div className="text-center">
+                  <p>Loading...</p>
+                </div>
+              ) : mediaData.length > 0 ? (
+                <div>
+                  {mediaData.length === 1 ? (
+                    // Single item - no slider needed
+                    <Row className="justify-content-center">
+                      <Col lg={4} md={6} sm={8}>
+                        <div className="media-card-wrapper">
+                          <div
+                            className="media-card clickable-card"
+                            onClick={() => handleMediaCardClick(mediaData[0])}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <div className="media-image">
+                              <img
+                                src={`${process.env.REACT_APP_URL}/${mediaData[0].image}`}
+                                alt={mediaData[0].title}
+                                className="img-fluid"
+                              />
+                            </div>
+                            <div className="media-content">
+                              <h4 className="media-title">{mediaData[0].title}</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  ) : (
+                    // Multiple items - use slider
+                    <Slider {...getMediaSettings()}>
+                      {mediaData.map((item, index) => (
+                        <div className="media-card-wrapper" key={index}>
+                          <div
+                            className="media-card clickable-card"
+                            onClick={() => handleMediaCardClick(item)}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <div className="media-image">
+                              <img
+                                src={`${process.env.REACT_APP_URL}/${item.image}`}
+                                alt={item.title}
+                                className="img-fluid"
+                              />
+                            </div>
+                            <div className="media-content">
+                              <h4 className="media-title">{item.title}</h4>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </Slider>
+                  )}
+                </div>
+              ) : (
+                <div className="text-center">
+                  <p>No media content available</p>
+                </div>
+              )}
+            </Col>
+          </Row>
+        </Container>
+      </section>}
+
      
+
     </>
   );
 }

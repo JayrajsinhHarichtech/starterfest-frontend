@@ -136,7 +136,7 @@ export default function VisitorPopup() {
                     </button>
                   </div>
                 </div>
-                <p className="text-gray pt-3">Sales end on September 28</p>
+                {/* <p className="text-gray pt-3">Sales end on September 28</p> */}
                 <hr />
                 <div className="input-num align-items-center">
                   <div className="amt-input">
@@ -190,7 +190,7 @@ export default function VisitorPopup() {
                     </button>
                   </div>
                 </div>
-                <p className="text-gray pt-3">Sales end on September 29</p>
+                {/* <p className="text-gray pt-3">Sales end on September 29</p> */}
                 <hr />
                 <div className="input-num align-items-center">
                   <div className="amt-input">
@@ -244,7 +244,7 @@ export default function VisitorPopup() {
                     </button>
                   </div>
                 </div>
-                <p className="text-gray pt-3">Sales end on September 29</p>
+                {/* <p className="text-gray pt-3">Sales end on September 29</p> */}
                 <hr />
                 <div className="input-num align-items-center">
                   <div className="amt-input">

@@ -49,7 +49,7 @@ export default function Visitor() {
             <div className="top-banner-two">
               <Col lg={6}>
                 <div className="small-heading">
-                  <span>SFG 2024</span>
+                  <span>SFG 2025</span>
                 </div>
 
                 <h4 className="title">

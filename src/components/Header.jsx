@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/img/logo.png";
+import logo from "../assets/img/logo2.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -17,9 +17,9 @@ export default function Header() {
   return (
     <div className="header">
       <Navbar expand="lg" className="menubar">
-        <Container>
+        <div className="px-5">
           <Row className="align-items-center">
-            <Col lg={8} md={10} xs={12}>
+            <Col lg={12} md={12} xs={12}>
               <div className="flex">
 
                 <Navbar.Brand href="/" className="logo">
@@ -38,6 +38,8 @@ export default function Header() {
                   </Offcanvas.Header>
                   <Offcanvas.Body className="mobile-menu" >
                     <Nav className="me-auto my-2 my-lg-0 navbar-item" navbarScroll>
+                      <Nav.Link href="/2025-Speakers">2025 Speakers & chief guest</Nav.Link>
+
                       <NavDropdown title="2024 Highlights" id="navbarScrollingDropdown">
 
                         <NavDropdown.Item href="/speaker-2024">
@@ -102,7 +104,7 @@ export default function Header() {
 
                       <Nav.Link href="/summary">Summary</Nav.Link>
 
-                      <NavDropdown title="Register" id="navbarScrollingDropdown">
+                      <NavDropdown title="Register" id="navbarScrollingDropdown" className="theme-btn text-white-li ms-4 px-3" style={{ color: 'white' }}>
 
                         <NavDropdown.Item href="/register">
                           Exhibitor
@@ -113,7 +115,9 @@ export default function Header() {
                         <NavDropdown.Item href="/register">
                           Investor
                         </NavDropdown.Item>
-
+                        <NavDropdown.Item href="/register">
+                          Sponsors
+                        </NavDropdown.Item>
                       </NavDropdown>
                     </Nav>
                   </Offcanvas.Body>
@@ -122,7 +126,7 @@ export default function Header() {
             </Col>
             <Col lg={12} md={12} xs={12} className="right-header">
               <div className="menubar left">
-                <ul className="navbar-item-left mr-3" style={{justifyContent:'center'}}>
+                <ul className="navbar-item-left mr-3" style={{ justifyContent: 'center' }}>
                   <li>
                     <Link href="/"> <FaRegCalendarAlt />December 13-14,2025</Link>
                   </li>
@@ -138,7 +142,7 @@ export default function Header() {
               </div>
             </Col>
           </Row>
-        </Container>
+        </div>
       </Navbar>
     </div>
   );

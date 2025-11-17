@@ -128,7 +128,7 @@ export default function TicketPopup({ ticketPopup, setTicketPopup, quantity, set
                                                 />
                                             </div>
                                         </div>
-                                         <p className="text-gray pt-3">{t.remarks}</p>
+                                         {/* <p className="text-gray pt-3">{t.remarks}</p> */}
                                     </div>
                                     <hr />
                                 </Col>
