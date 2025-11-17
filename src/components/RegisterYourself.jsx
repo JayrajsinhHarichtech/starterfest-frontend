@@ -1,14 +1,55 @@
-import React from 'react'
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { MdArrowOutward } from "react-icons/md";
-import img1 from "../assets/img/pitcher.jpeg";
-import img2 from "../assets/img/start-up.jpeg";
-import img3 from "../assets/img/glob.jpeg";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function RegisterYourself() {
+  const cards = [
+    {
+      title: "Pitcher",
+      text: (
+        <>
+          Pitchers will get a 3 by 3 stall and a chance to{" "}
+          <span className="yellow-bg">present their project/idea/</span> startup
+          on stage in front of all the investors.
+        </>
+      ),
+    },
+    {
+      title: "Startup",
+      text: (
+        <>
+          Startups/franchises will get a 2/2 stall and{" "}
+          <span className="yellow-bg">visibility in front of all investors</span>{" "}
+          coming in.
+        </>
+      ),
+    },
+    {
+      title: "Investors",
+      text: (
+        <>
+          Investors get access to all startups and an opportunity to{" "}
+          <span className="yellow-bg">multiply their money by 2–3x.</span>
+        </>
+      ),
+    },
+    {
+      title: "Sponsors",
+      text: (
+        <>
+          Sponsors get{" "}
+          <span className="yellow-bg">
+            premier visibility and direct access
+          </span>{" "}
+          to high-growth founders & capital-ready investors.
+        </>
+      ),
+    },
+  ];
+
   return (
     <div>
       <section className="padding-sec">
@@ -89,19 +130,11 @@ export default function RegisterYourself() {
                     <MdArrowOutward/>
                   </Link>
                 </div>
-                <p>
-                  Investors will get a chance to talk to all the startups and an
-                  opportunity to &nbsp;
-                  <span className="yellow-bg">
-                    multiply their money by 2-3 times.
-                  </span>
-                </p>
-                <img src={img3} className="w-100" />
               </Link>
             </Col>
-          </Row>
-        </Container>
-      </section>
-    </div>
-  )
+          ))}
+        </Row>
+      </Container>
+    </section>
+  );
 }
