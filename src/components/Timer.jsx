@@ -6,7 +6,7 @@ import clock from "../assets/img/clock-icon.png";
 import caleder from "../assets/img/calender-icon.png";
 import { MdLocationPin } from "react-icons/md";
 
-const Timer =()=>{
+const Timer = () => {
   // State to store time remaining
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -23,7 +23,7 @@ const Timer =()=>{
       const now = new Date().getTime(); // Current time in milliseconds
 
       // Calculate the difference in milliseconds
-      const difference = targetDate-now  ;
+      const difference = targetDate - now;
 
       // console.log("Current Time:", new Date(now).toLocaleString());
       // console.log("Target Date:", new Date(targetDate).toLocaleString());
@@ -60,16 +60,16 @@ const Timer =()=>{
   }, [targetDate]);
 
 
-    return(
-      <Container>
-      <Row className="count-box justify-content-center">
-        <Col lg={6} md={12} xs={12}>
-          <h3 className="title mb-5">
+  return (
+    <Container>
+      <div className="count-box justify-content-center">
+        <div>
+          <h2 className="title mb-5 text-center">
             India <span className="gradient">Startup Revolution </span> is
             here and now!
-          </h3>
+          </h2>
 
-          <Row>
+          <Row className="justify-content-center">
             {/* <Col lg={4} md={4} xs={12}>
               <div className="box">
                 <MdLocationPin />
@@ -77,63 +77,59 @@ const Timer =()=>{
                 <p>Vigyan Bhavanm, Science City, Ahmedabad.</p>
               </div>
             </Col> */}
-            <Col lg={6} md={6} xs={12}>
-              <div className="box">
+            <Col lg={4} md={4} xs={12} >
+              <div className="box text-center">
                 {/* <SlCalender /> */}
                 <img src={caleder} width={45} />
                 <h4>Date</h4>
                 <p>13 & 14 December, 2025</p>
               </div>
             </Col>
-            <Col lg={6} md={6} xs={12}>
-              <div className="box">
+            <Col lg={4} md={4} xs={12}>
+              <div className="box text-center">
                 <img src={clock} width={45} />
                 <h4>Time</h4>
                 <p>10:00 AM TO 07:00 PM</p>
               </div>
             </Col>
           </Row>
-        </Col>
+        </div>
 
-        <Col lg={6} md={12} xs={12}>
         <div className="counter-box">
-        <Row>
-          <Col lg={6} xs={6}>
-            <div className="count border-right">
-              <h3>{timeLeft.days}</h3>
-              <h5 className="subtitle">Days</h5>
-            </div>
-          </Col>
-          <Col lg={6} xs={6}>
-            <div className="count">
-              <h3>{timeLeft.hours}</h3>
-              <h5 className="subtitle">Hours</h5>
-            </div>
-          </Col>
-        </Row>
-        <hr className="gradient-line" />
-        <Row>
-          <Col lg={6} xs={6}>
-            <div className="count border-right">
-              <h3>{timeLeft.minutes}</h3>
-              <h5 className="subtitle">Minutes</h5>
-            </div>
-          </Col>
-                <Col lg={6} xs={6}>
-            <div className="count">
-              <h3>{timeLeft.seconds}</h3>
-              <h5 className="subtitle">Seconds</h5>
-            </div>
-          </Col>
-        </Row>
+          <Row>
+            <Col lg={3} xs={6}>
+              <div className="count border-right">
+                <h3>{timeLeft.days}</h3>
+                <h5 className="subtitle">Days</h5>
+              </div>
+            </Col>
+            <Col lg={3} xs={6}>
+              <div className="count border-right">
+                <h3>{timeLeft.hours}</h3>
+                <h5 className="subtitle">Hours</h5>
+              </div>
+            </Col>
+         
+            <Col lg={3} xs={6}>
+              <div className="count border-right">
+                <h3>{timeLeft.minutes}</h3>
+                <h5 className="subtitle">Minutes</h5>
+              </div>
+            </Col>
+            <Col lg={3} xs={6}>
+              <div className="count">
+                <h3>{timeLeft.seconds}</h3>
+                <h5 className="subtitle">Seconds</h5>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </div>
-        </Col>
-      </Row>
     </Container>
-            
-           
-    )
-    
+
+
+  )
+
 }
 
 export default Timer

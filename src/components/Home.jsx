@@ -15,10 +15,11 @@ import about from "../assets/img/homePic1.JPG";
 import clock from "../assets/img/clock-icon.png";
 import caleder from "../assets/img/calender-icon.png";
 import { MdLocationPin } from "react-icons/md";
-import { SlCalender } from "react-icons/sl";
+import { FaRegCalendarAlt } from "react-icons/fa";
+
 import { FaRegCheckCircle } from "react-icons/fa";
 // import mainBanner from "../assets/img/home-banner.png";
-import mainBanner from "../assets/img/home2024.png";
+import mainBanner from "../assets/img/banner.JPG";
 import img2 from "../assets/img/img-2.png";
 import img3 from "../assets/img/img-3.png";
 import parti1 from "../assets/img/client/1.jpg";
@@ -109,7 +110,7 @@ export default function Home() {
     { url: require('../assets/img/Sponser logo/23.png') }
   ]
 
-  const text =`<p class="para">
+  const text = `<p class="para">
               Snehshilp Foundation's "Start-Up Fest Gujarat" highlights the thriving spirit of entrepreneurship and innovation in the region. Founded and driven by the visionary Mrs. Snehal Brahmbhatt, the event aims to fill the void in start-up support by providing a comprehensive platform for fresh ideas to flourish.
               </p>
               <p class="para">
@@ -119,20 +120,57 @@ export default function Home() {
 
   return (
     <>
-      <section className="" id="target-section">
-        <Container>
-          <Row className="justify-content-center">
-            <Col lg={12}>
-            <img src={mainBanner} className="w-100"/>
+      <section className="hero-banner" id="target-section" style={{
+        backgroundImage: `url(${mainBanner})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        // minHeight: '100vh',
+        position: 'relative'
+      }}>
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgb(0 0 0 / 47%)',
+          zIndex: 1
+        }}></div>
+        <div style={{ position: 'relative', zIndex: 2 }}>
+          <Row className="m-0 px-5 justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+            <Col md={8}>
+              <h1 className="text-white display-3 fw-bold mb-4 text-left">
+                Transforming Ideas Into Lasting Impact : <span style={{ color: '#c39649' }}>Season 2</span>
+              </h1>
+              <h4 className="text-white fw-bold mb-4 text-left">Empowering Tomorrow’s Bharat </h4>
+              <h4 className="text-white fw-bold mb-4 text-left">Join Us on December 13 & 14, 2025 </h4>
             </Col>
-          
+            <Col md={4} >
+              <div className="d-grid gap-3" style={{ justifyContent: 'center' }}>
+                <Link to="/register" className="theme-btn-2">
+                  Visitor
+                </Link>
+
+                <Link to="/register" className="theme-btn-2">
+                  Investor
+                </Link>
+
+                <Link to="/register" className="theme-btn-2">
+                  Exhibitor
+                </Link>
+              </div>
+            </Col>
+
           </Row>
-        </Container>
+
+
+        </div>
       </section>
       <section className="top-banner">
         <Container>
           <Row>
-          <Col lg={4} md={5} sm={12} >
+            <Col lg={4} md={5} sm={12} >
               <div className=" p-relative">
                 <img src={video} className="w-100" />
                 <a onClick={handleShow} className="play-btn"></a>
@@ -175,18 +213,18 @@ export default function Home() {
                 </Link>
               </div>
             </Col>
-           
+
           </Row>
         </Container>
       </section>
 
       <section className="padding-sec light-bg about-sec">
-      <CardContent about={about} text={text}  title="About StartUp Fest"  buttonShow={true} to="/about" linkToTitle="Learn More"/>
+        <CardContent about={about} text={text} title="About StartUp Fest" buttonShow={true} to="/about" linkToTitle="Learn More" />
 
       </section>
 
       <section className="padding-sec">
-      <Timer />
+        <Timer />
       </section>
 
       <div className="container-bg">
@@ -340,12 +378,12 @@ export default function Home() {
                 <Slider {...settings}>
                   {gallery.map((item, index) => (
                     <div className="adjust-height" key={index}>
-                    <img
-                      // key={index}
-                      src={item.url}
-                      alt={`Gallery Image ${index + 1}`}
-                    className="img-fluid "
-                    />
+                      <img
+                        // key={index}
+                        src={item.url}
+                        alt={`Gallery Image ${index + 1}`}
+                        className="img-fluid "
+                      />
                     </div>
                   ))}
                   {/* <img src={parti1} alt="participant" />
