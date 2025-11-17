@@ -39,7 +39,7 @@ export default function RegisterYourself() {
                 <div className="name-line pitcher-card-div">
                   <h3>
                     <Link to="/register" className="pitcher-card-a">
-                      Pitcher
+                      Exhibitor
                     </Link>
                   </h3>
                   <Link href="/register" className="pitcher-card-a">
@@ -47,7 +47,7 @@ export default function RegisterYourself() {
                   </Link>
                 </div>
                 <p>
-                  Pitchers will get a 3 by 3 stall and a chance to&nbsp;
+                  Exhibitors will get a 3 by 3 stall and a chance to&nbsp;
                   <span className="yellow-bg">present their project/idea/</span>
                   &nbsp; startup on stage in front of all the investors.
                 </p>
@@ -59,7 +59,7 @@ export default function RegisterYourself() {
                 <div className="name-line pitcher-card-div">
                   <h3>
                     <Link to="/register" className="pitcher-card-a">
-                      Startup
+                      Visitor
                     </Link>
                   </h3>
                   <Link to="/register" className="pitcher-card-a">
@@ -67,7 +67,7 @@ export default function RegisterYourself() {
                   </Link>
                 </div>
                 <p>
-                  Startups/ franchises will get a 2/2 stall and&nbsp;
+                  Visitors will get a 2/2 stall and&nbsp;
                   <span className="yellow-bg">
                     visibility in front of all the investors
                   </span>

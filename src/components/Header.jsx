@@ -101,6 +101,20 @@ export default function Header() {
                       <Nav.Link href="/contact">Contact</Nav.Link>
 
                       <Nav.Link href="/summary">Summary</Nav.Link>
+
+                      <NavDropdown title="Register" id="navbarScrollingDropdown">
+
+                        <NavDropdown.Item href="/register">
+                          Exhibitor
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="/register">
+                          Visitor
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="/register">
+                         Investor
+                        </NavDropdown.Item>
+                        
+                      </NavDropdown>
                     </Nav>
                   </Offcanvas.Body>
                 </Navbar.Offcanvas>
@@ -119,9 +133,9 @@ export default function Header() {
                     </Link>
                   </li> */}
                 </ul>
-                <Link to="/register" className="theme-btn">
+                {/* <Link to="/register" className="theme-btn">
                   Register Now
-                </Link>
+                </Link> */}
               </div>
             </Col>
           </Row>
