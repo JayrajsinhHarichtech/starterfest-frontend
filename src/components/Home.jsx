@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import axios from 'axios';
 import { IoIosArrowRoundDown } from "react-icons/io";
 // import video from "../assets/img/video-img.png";
 import video from "../assets/img/video-thumb.png";
@@ -40,12 +41,33 @@ import "../assets/css/style.css";
 import { FiUsers, FiTrendingUp, FiBriefcase, FiUser } from "react-icons/fi";
 
 export default function Home() {
+  const [mediaData, setMediaData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [lightboxShow, setLightboxShow] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState('');
+  const [lightboxTitle, setLightboxTitle] = useState('');
   const handleScroll = () => {
     window.scrollTo({
       top: document.getElementById("target-section").offsetTop,
       behavior: "smooth",
     });
   };
+
+  // Fetch media and recognition data
+  useEffect(() => {
+    const fetchMediaData = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_URL}/api/auth/list/mediaAndRecognition`);
+        setMediaData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching media data:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchMediaData();
+  }, []);
 
   const [settings] = useState({
     dots: true,
@@ -80,10 +102,69 @@ export default function Home() {
       },
     ],
   });
+
+  // Dynamic media settings based on available items
+  const getMediaSettings = () => {
+    const itemCount = mediaData.length;
+    const slidesToShow = Math.min(itemCount, 3); // Show max 3 or available items
+    const slidesToScroll = Math.min(itemCount, 3);
+    
+    return {
+      dots: itemCount > 1, // Only show dots if more than 1 item
+      infinite: itemCount > 3, // Only infinite scroll if more than 3 items
+      slidesToShow: slidesToShow,
+      slidesToScroll: slidesToScroll,
+      autoplay: itemCount > 1, // Only autoplay if more than 1 item
+      speed: 500,
+      autoplaySpeed: 4000,
+      cssEase: 'linear',
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: Math.min(itemCount, 2),
+            slidesToScroll: Math.min(itemCount, 2),
+            infinite: itemCount > 2,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: Math.min(itemCount, 2),
+            slidesToScroll: Math.min(itemCount, 2),
+            infinite: itemCount > 2,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: itemCount > 1,
+          },
+        },
+      ],
+    };
+  };
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
+  const handleLightboxClose = () => setLightboxShow(false);
+  const handleLightboxShow = (image, title) => {
+    setLightboxImage(image);
+    setLightboxTitle(title);
+    setLightboxShow(true);
+  };
+  
+  const handleMediaCardClick = (item) => {
+    if (item.link) {
+      window.open(item.link, '_blank', 'noopener,noreferrer');
+    } else {
+      handleLightboxShow(`${process.env.REACT_APP_URL}/${item.image}`, item.title);
+    }
+  };
 
   const gallery = [
     { url: require("../assets/img/Sponser logo/1.png") },
@@ -220,6 +301,27 @@ export default function Home() {
                       referrerpolicy="strict-origin-when-cross-origin"
                       allowfullscreen
                     ></iframe>
+                  </Modal.Body>
+                </Modal>
+                
+                {/* Lightbox Modal for Images */}
+                <Modal
+                  show={lightboxShow}
+                  onHide={handleLightboxClose}
+                  size="xl"
+                  className="lightbox-modal"
+                  centered
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title>{lightboxTitle}</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="text-center p-0">
+                    <img
+                      src={lightboxImage}
+                      alt={lightboxTitle}
+                      className="img-fluid w-100"
+                      style={{ maxHeight: '80vh', objectFit: 'contain' }}
+                    />
                   </Modal.Body>
                 </Modal>
               </div>
@@ -451,6 +553,79 @@ export default function Home() {
                   <img src={parti4} alt="participant" /> */}
                 </Slider>
               </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="padding-sec light-bg media-recognition-sec">
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg={12}>
+              <h3 className="title text-center">Media & Recognition</h3>
+            </Col>
+            <Col lg={10}>
+              {loading ? (
+                <div className="text-center">
+                  <p>Loading...</p>
+                </div>
+              ) : mediaData.length > 0 ? (
+                <div>
+                  {mediaData.length === 1 ? (
+                    // Single item - no slider needed
+                    <Row className="justify-content-center">
+                      <Col lg={4} md={6} sm={8}>
+                        <div className="media-card-wrapper">
+                          <div 
+                            className="media-card clickable-card" 
+                            onClick={() => handleMediaCardClick(mediaData[0])}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <div className="media-image">
+                              <img
+                                src={`${process.env.REACT_APP_URL}/${mediaData[0].image}`}
+                                alt={mediaData[0].title}
+                                className="img-fluid"
+                              />
+                            </div>
+                            <div className="media-content">
+                              <h4 className="media-title">{mediaData[0].title}</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  ) : (
+                    // Multiple items - use slider
+                    <Slider {...getMediaSettings()}>
+                      {mediaData.map((item, index) => (
+                        <div className="media-card-wrapper" key={index}>
+                          <div 
+                            className="media-card clickable-card" 
+                            onClick={() => handleMediaCardClick(item)}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <div className="media-image">
+                              <img
+                                src={`${process.env.REACT_APP_URL}/${item.image}`}
+                                alt={item.title}
+                                className="img-fluid"
+                              />
+                            </div>
+                            <div className="media-content">
+                              <h4 className="media-title">{item.title}</h4>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </Slider>
+                  )}
+                </div>
+              ) : (
+                <div className="text-center">
+                  <p>No media content available</p>
+                </div>
+              )}
             </Col>
           </Row>
         </Container>
