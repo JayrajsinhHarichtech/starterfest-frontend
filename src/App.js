@@ -44,6 +44,7 @@ import Speakers2024 from './pages/2024HighlightSpeakerMentor';
 import STFS2024 from './pages/2024SharkTank';
 import PreSeries from './pages/Preseries';
 import Sharkteen from './pages/2024SharkTeens';
+import SpeakersChiefGuest from './pages/2025SpeakersChiefGuest';
 
 
 
@@ -92,6 +93,7 @@ function App() {
           <Route path="/sharktank-2024" element={<STFS2024 />} />
           <Route path="/Pre-series" element={<PreSeries />} />
           <Route path="/shark-teen" element={<Sharkteen />} />
+          <Route path='/2025-Speakers' element={<SpeakersChiefGuest />} />
         </Routes>
         <Footer />
         <ScrollTop/>

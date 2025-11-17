@@ -18,11 +18,16 @@ body {
 
 .header {
     padding: 20px 0;
+    position: relative;
+    z-index: 1000;
 }
 
 .header .navbar-nav .dropdown-menu {
     position: absolute;
     border: 0;
+    z-index: 1050 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff !important;
 }
 
 .mobile-menu .offcanvas-title {
@@ -56,6 +61,11 @@ body {
 .header .menubar .navbar-nav .dropdown-menu {
     padding: 15px 0;
     border: 0;
+    z-index: 1050 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff !important;
+    border-radius: 8px;
+    margin-top: 8px;
 }
 
 .header .right-header {
@@ -115,8 +125,38 @@ body {
 
 
 .header .menubar .navbar-item a.dropdown-item {
-    padding: 10px;
+    padding: 10px 20px;
+    color: #333 !important;
+    font-weight: 900;
+    transition: all 0.3s ease;
+}
 
+.header .menubar .navbar-item a.dropdown-item:hover {
+    background-color: #f8f9fa !important;
+    color: var(--primary-blue) !important;
+    padding-left: 25px;
+}
+
+/* Ensure dropdown toggle has proper z-index */
+.header .navbar-nav .nav-item.dropdown {
+    position: relative;
+    z-index: 1051;
+}
+
+/* Fix for Bootstrap dropdown positioning */
+.navbar-nav .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    z-index: 1050 !important;
+    display: none !important;
+    float: none !important;
+    min-width: 200px !important;
+    max-width: 400px !important;
+}
+
+.navbar-nav .dropdown-menu.show {
+    display: block !important;
 }
 
 /* .header .menubar ul.navbar-item li a:hover::after {
@@ -2395,9 +2435,16 @@ h6.title {
     font-weight: 600;
 }
 
-.text-white-li .dropdown-toggle  {
-    color: #ffffff !important;
-}
+ 
 .text-white-li .dropdown-toggle :hover {
     color: black !important;
+}
+.text-white-li:hover 
+/* .text-white-li .dropdown-toggle */
+{
+    background-color: #003777 !important;
+    color: black !important;
+}
+.text-white-li a{
+    color: white !important;
 }

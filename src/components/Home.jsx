@@ -38,7 +38,8 @@ import Timer from "./Timer";
 import RegisterYourself from "./RegisterYourself";
 import CardContent from "./CardContent";
 import "../assets/css/style.css";
-import { FiUsers, FiTrendingUp, FiBriefcase, FiUser } from "react-icons/fi";
+import { FiUsers, FiTrendingUp, FiBriefcase, FiUser } from "react-icons/fi"; 
+import Testimonial from "./Testimonial";
 
 export default function Home() {
   const [mediaData, setMediaData] = useState([]);
@@ -108,7 +109,7 @@ export default function Home() {
     const itemCount = mediaData.length;
     const slidesToShow = Math.min(itemCount, 3); // Show max 3 or available items
     const slidesToScroll = Math.min(itemCount, 3);
-    
+
     return {
       dots: itemCount > 1, // Only show dots if more than 1 item
       infinite: itemCount > 3, // Only infinite scroll if more than 3 items
@@ -150,14 +151,14 @@ export default function Home() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   const handleLightboxClose = () => setLightboxShow(false);
   const handleLightboxShow = (image, title) => {
     setLightboxImage(image);
     setLightboxTitle(title);
     setLightboxShow(true);
   };
-  
+
   const handleMediaCardClick = (item) => {
     if (item.link) {
       window.open(item.link, '_blank', 'noopener,noreferrer');
@@ -191,7 +192,7 @@ export default function Home() {
     { url: require("../assets/img/Sponser logo/23.png") },
   ];
 
-  
+
   const gallery2 = [
     { url: require("../assets/img/sponsor2/logo1.png") },
     { url: require("../assets/img/sponsor2/logo2.png") },
@@ -217,17 +218,17 @@ export default function Home() {
 
   return (
     <>
-    <section className="" id="target-section">
+      <section className="" id="target-section">
         <Container>
           <Row className="justify-content-center">
             <Col lg={12}>
-            <img src={mainBanner} className="w-100"/>
+              <img src={mainBanner} className="w-100" />
             </Col>
-          
+
           </Row>
         </Container>
       </section>
-       
+
       {/* <section className="hero-banner" id="target-section" style={{
         backgroundImage: `url(${mainBanner})`,
         backgroundSize: 'cover',
@@ -278,7 +279,7 @@ export default function Home() {
       <section className="top-banner">
         <Container>
           <Row>
-            <Col lg={4} md={5} sm={12} > 
+            <Col lg={4} md={5} sm={12} >
               <div className=" p-relative">
                 <img src={video} className="w-100" />
                 <a onClick={handleShow} className="play-btn"></a>
@@ -303,7 +304,7 @@ export default function Home() {
                     ></iframe>
                   </Modal.Body>
                 </Modal>
-                
+
                 {/* Lightbox Modal for Images */}
                 <Modal
                   show={lightboxShow}
@@ -349,7 +350,7 @@ export default function Home() {
       <section className="padding-sec light-bg about-sec">
         <CardContent about={about} text={text} title="About StartUp Fest" buttonShow={true} to="/about" linkToTitle="Learn More" />
 
-        
+
       </section>
 
       <section className="padding-sec">
@@ -411,7 +412,7 @@ export default function Home() {
               </Col>
 
               {/* Right: SFG Text */}
-              <Col lg={6} xs={12} className="sfg order-lg-1 order-0" style={{marginTop:'auto' , marginBottom:'auto'}}>
+              <Col lg={6} xs={12} className="sfg order-lg-1 order-0" style={{ marginTop: 'auto', marginBottom: 'auto' }}>
                 <p className="font-blue">SFG 2025</p>
                 <h3 className="title">
                   India Startup Revolution is Here and now! At Ahmedabad{" "}
@@ -499,7 +500,9 @@ export default function Home() {
           </Row>
         </Container>
       </section>
-  <section className="padding-sec participant-sec">
+      <Testimonial />
+
+      <section className="padding-sec participant-sec">
         <Container>
           <Row className="justify-content-center">
             <Col lg={12}>
@@ -558,7 +561,8 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="padding-sec light-bg media-recognition-sec">
+      {mediaData.length > 0 && 
+       <section className="padding-sec light-bg media-recognition-sec">
         <Container>
           <Row className="justify-content-center">
             <Col lg={12}>
@@ -576,8 +580,8 @@ export default function Home() {
                     <Row className="justify-content-center">
                       <Col lg={4} md={6} sm={8}>
                         <div className="media-card-wrapper">
-                          <div 
-                            className="media-card clickable-card" 
+                          <div
+                            className="media-card clickable-card"
                             onClick={() => handleMediaCardClick(mediaData[0])}
                             style={{ cursor: 'pointer' }}
                           >
@@ -600,8 +604,8 @@ export default function Home() {
                     <Slider {...getMediaSettings()}>
                       {mediaData.map((item, index) => (
                         <div className="media-card-wrapper" key={index}>
-                          <div 
-                            className="media-card clickable-card" 
+                          <div
+                            className="media-card clickable-card"
                             onClick={() => handleMediaCardClick(item)}
                             style={{ cursor: 'pointer' }}
                           >
@@ -629,9 +633,10 @@ export default function Home() {
             </Col>
           </Row>
         </Container>
-      </section>
+      </section>}
 
      
+
     </>
   );
 }
