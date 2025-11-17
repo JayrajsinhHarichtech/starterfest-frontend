@@ -3,7 +3,7 @@ name: Deploy Demo Project
 on:
     push:
         branches:
-            - ClientChanges
+            - VaibhaviChanges
 
 jobs:
     build-and-deploy:

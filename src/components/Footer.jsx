@@ -59,8 +59,8 @@ export default function Footer() {
                     <ul className="footer-list flex">
                         <li><img src={clock} width={45} /><span>10:00 AM TO 07:00 PM</span></li>
                         <li><img src={caleder} width={45} /><span>13 & 14 December, 2025</span></li>
-                        {/* <li><MdLocationPin /><span>Vigyan Bhavan, Science City,
-                        Ahmedabad</span></li> */}
+                            <li><MdLocationPin /><span>Gujarat University Atal Kalam Building,
+                            Ahmedabad</span></li>
                     </ul>
                     </div>
                 </Col>

@@ -70,13 +70,13 @@ const Timer = () => {
           </h2>
 
           <Row className="justify-content-center">
-            {/* <Col lg={4} md={4} xs={12}>
-              <div className="box">
+            <Col lg={4} md={4} xs={12}>
+              <div className="box text-center">
                 <MdLocationPin />
                 <h4>Venue</h4>
-                <p>Vigyan Bhavanm, Science City, Ahmedabad.</p>
+                <p>Gujarat University Atal Kalam Building, Ahmedabad.</p>
               </div>
-            </Col> */}
+            </Col>
             <Col lg={4} md={4} xs={12} >
               <div className="box text-center">
                 {/* <SlCalender /> */}

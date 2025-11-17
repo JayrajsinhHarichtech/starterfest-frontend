@@ -19,7 +19,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 
 import { FaRegCheckCircle } from "react-icons/fa";
 // import mainBanner from "../assets/img/home-banner.png";
-import mainBanner from "../assets/img/banner.JPG";
+import mainBanner from "../assets/img/banner-1.png";
 import img2 from "../assets/img/img-2.png";
 import img3 from "../assets/img/img-3.png";
 import parti1 from "../assets/img/client/1.jpg";
@@ -110,6 +110,23 @@ export default function Home() {
     { url: require("../assets/img/Sponser logo/23.png") },
   ];
 
+  
+  const gallery2 = [
+    { url: require("../assets/img/sponsor2/logo1.png") },
+    { url: require("../assets/img/sponsor2/logo2.png") },
+    { url: require("../assets/img/sponsor2/logo3.png") },
+    { url: require("../assets/img/sponsor2/logo4.png") },
+    { url: require("../assets/img/sponsor2/logo5.png") },
+    { url: require("../assets/img/sponsor2/logo6.png") },
+    { url: require("../assets/img/sponsor2/logo7.png") },
+    { url: require("../assets/img/sponsor2/logo8.png") },
+    { url: require("../assets/img/sponsor2/logo9.png") },
+    // { url: require("../assets/img/sponsor2/logo11.png") },
+    { url: require("../assets/img/sponsor2/logo12.png") },
+    { url: require("../assets/img/sponsor2/logo13.jpg") },
+  ];
+
+
   const text = `<p class="para"> 
               Snehshilp Foundation's "Start-Up Fest Gujarat" highlights the thriving spirit of entrepreneurship and innovation in the region. Founded and driven by the visionary Mrs. Snehal Brahmbhatt, the event aims to fill the void in start-up support by providing a comprehensive platform for fresh ideas to flourish.
               </p>
@@ -119,12 +136,18 @@ export default function Home() {
 
   return (
     <>
-      <section className="" id="target-section">
+    <section className="" id="target-section">
         <Container>
           <Row className="justify-content-center">
             <Col lg={12}>
-              <img src={mainBanner} className="w-100" />
-      <section className="hero-banner" id="target-section" style={{
+            <img src={mainBanner} className="w-100"/>
+            </Col>
+          
+          </Row>
+        </Container>
+      </section>
+       
+      {/* <section className="hero-banner" id="target-section" style={{
         backgroundImage: `url(${mainBanner})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -170,7 +193,7 @@ export default function Home() {
 
 
         </div>
-      </section>
+      </section> */}
       <section className="top-banner">
         <Container>
           <Row>
@@ -224,14 +247,7 @@ export default function Home() {
       <section className="padding-sec light-bg about-sec">
         <CardContent about={about} text={text} title="About StartUp Fest" buttonShow={true} to="/about" linkToTitle="Learn More" />
 
-        <CardContent
-          about={about}
-          text={text}
-          title="About StartUp Fest"
-          buttonShow={true}
-          to="/about"
-          linkToTitle="Learn More"
-        />
+        
       </section>
 
       <section className="padding-sec">
@@ -293,7 +309,7 @@ export default function Home() {
               </Col>
 
               {/* Right: SFG Text */}
-              <Col lg={6} xs={12} className="sfg order-lg-1 order-0">
+              <Col lg={6} xs={12} className="sfg order-lg-1 order-0" style={{marginTop:'auto' , marginBottom:'auto'}}>
                 <p className="font-blue">SFG 2024</p>
                 <h3 className="title">
                   India Startup Revolution is Here and now! At Ahmedabad{" "}
@@ -381,12 +397,40 @@ export default function Home() {
           </Row>
         </Container>
       </section>
-
+  <section className="padding-sec participant-sec">
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg={12}>
+              <h3 className="title text-center">Sponsors of Season 2</h3>
+            </Col>
+            <Col lg={10}>
+              <div>
+                <Slider {...settings}>
+                  {gallery2.map((item, index) => (
+                    <div className="adjust-height" key={index}>
+                      <img
+                        // key={index}
+                        src={item.url}
+                        alt={`Gallery Image ${index + 1}`}
+                        className="img-fluid "
+                      />
+                    </div>
+                  ))}
+                  {/* <img src={parti1} alt="participant" />
+                  <img src={parti2} alt="participant" />
+                  <img src={parti3} alt="participant" />
+                  <img src={parti4} alt="participant" /> */}
+                </Slider>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
       <section className="padding-sec participant-sec">
         <Container>
           <Row className="justify-content-center">
             <Col lg={12}>
-              <h3 className="title text-center">Participants</h3>
+              <h3 className="title text-center">Sponsors of Season 1</h3>
             </Col>
             <Col lg={10}>
               <div>
@@ -411,6 +455,8 @@ export default function Home() {
           </Row>
         </Container>
       </section>
+
+     
     </>
   );
 }

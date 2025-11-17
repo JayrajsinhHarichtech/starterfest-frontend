@@ -111,27 +111,26 @@ export default function Header() {
                           Visitor
                         </NavDropdown.Item>
                         <NavDropdown.Item href="/register">
-                         Investor
+                          Investor
                         </NavDropdown.Item>
-                        
+
                       </NavDropdown>
                     </Nav>
                   </Offcanvas.Body>
                 </Navbar.Offcanvas>
               </div>
             </Col>
-            <Col lg={4} md={2} xs={12} className="right-header">
+            <Col lg={12} md={12} xs={12} className="right-header">
               <div className="menubar left">
-                <ul className="navbar-item-left mr-3">
+                <ul className="navbar-item-left mr-3" style={{justifyContent:'center'}}>
                   <li>
                     <Link href="/"> <FaRegCalendarAlt />December 13-14,2025</Link>
                   </li>
-                  {/* <li>
-                    <Link to="https://maps.app.goo.gl/p7vsywPPdDFeGUcF6" target="_blank">
+                  <li>
+                    <Link to="https://maps.app.goo.gl/SfCmiCDvEbRHjkpL9?g_st=ic" target="_blank">
                       <MdLocationPin />
-                      Science City
-                    </Link>
-                  </li> */}
+                      Gujarat University Atal Kalam Building.                     </Link>
+                  </li>
                 </ul>
                 {/* <Link to="/register" className="theme-btn">
                   Register Now
