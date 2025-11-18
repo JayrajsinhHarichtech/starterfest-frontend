@@ -32,7 +32,7 @@ export default function Header() {
                   placement="end"
                 >
                   <Offcanvas.Header closeButton>
-                    <Offcanvas.Title id="offcanvasNavbarLabel">
+                    <Offcanvas.Title id="offcanvasNavbarLabel" href="/">
                       <img src={logo} className="logo-offcanvas" width="200" />
                     </Offcanvas.Title>
                   </Offcanvas.Header>
@@ -104,7 +104,7 @@ export default function Header() {
 
                       <Nav.Link href="/summary">Summary</Nav.Link>
 
-                      <NavDropdown title="Register" id="navbarScrollingDropdown" className="theme-btn text-white-li ms-4 px-3" style={{ color: 'white' }}>
+                      <NavDropdown title="Register" id="navbarScrollingDropdown" className="theme-btn text-white-li ms-4 px-3 px-sm-0" style={{ color: 'white' }}>
 
                         <NavDropdown.Item href="/register">
                           Exhibitor
