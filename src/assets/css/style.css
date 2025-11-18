@@ -38,6 +38,7 @@ body {
 
 .mobile-menu .navbar-nav .dropdown-menu .dropdown-item {
     padding-bottom: 10px;
+    background-color: transparent;
 }
 
 .mobile-menu .nav-item.show .nav-link {
@@ -145,7 +146,7 @@ body {
 
 /* Fix for Bootstrap dropdown positioning */
 .navbar-nav .dropdown-menu {
-    position: absolute !important;
+    position: absolute;
     top: 100% !important;
     left: 0 !important;
     z-index: 1050 !important;
@@ -2446,5 +2447,6 @@ h6.title {
     color: black !important;
 }
 .text-white-li a{
+    background-color: #003777;
     color: white !important;
 }

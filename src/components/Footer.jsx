@@ -68,7 +68,7 @@ export default function Footer() {
             <hr/>
             <Row className="copyright">
                 <Col lg={12}>
-                <p className='mb-0'>© Copyright 2024, All Rights Reserved by <Link to="/">Startup Fest</Link></p>
+                <p className='mb-0'>© Copyright 2025, All Rights Reserved by <Link to="/">Startup Fest</Link></p>
                 </Col>
             </Row>
         </Container>
