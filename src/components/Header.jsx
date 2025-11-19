@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/img/logo2.png";
+
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { MdLocationPin } from "react-icons/md";
@@ -14,7 +15,7 @@ import { Offcanvas } from "react-bootstrap";
 
 export default function Header() {
   return (
-    <div className="header">
+    <div className="header">about
       <Navbar expand="lg" className="menubar">
         <div className="px-5">
           <Row className="align-items-center">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import about from "../assets/img/about-img.png";
-import sciencecity from "../assets/img/science-city.jpg";
+import venue from "../assets/img/venue.webp";
 import g20 from "../assets/img/g20.jpg";
 import clock from "../assets/img/clock-icon.png";
 import caleder from "../assets/img/calender-icon.png";
@@ -82,7 +82,7 @@ export default function About() {
       <section className="padding-sec light-bg">
         
          <CardContent
-          about={sciencecity}
+          about={venue}
           text={text2}
           title="2025 Venue : The GU Atal Kalam Building"
           buttonShow={false}
