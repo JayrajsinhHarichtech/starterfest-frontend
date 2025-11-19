@@ -80,13 +80,38 @@ export default function About() {
       </section>
 
       <section className="padding-sec light-bg">
-        
-         <CardContent
-          about={venue}
-          text={text2}
-          title="2025 Venue : The GU Atal Kalam Building"
-          buttonShow={false}
-         />
+        <Container>
+          <Row className="mb-5">
+            <Col xs={12}>
+              <h3 className="title">2025 Venue : The GU Atal Kalam Building</h3>
+            </Col>
+          </Row>
+        </Container>
+
+        <Container fluid className="px-0">
+          <Row className="g-0">
+            <Col xs={12} md={12} lg={6} className="d-flex align-items-center">
+              <div className="px-4">
+                <p className="para">
+                  The GU Atal Kalam Building at Gujarat University is a premier center for research, innovation, and entrepreneurship, inspired by the vision of Dr. A. P. J. Abdul Kalam. Housing the Centre for Extension, Research & Innovation (CERI), it provides a collaborative ecosystem where students, researchers, innovators, and industry experts work together on incubation programs, technical research, product prototyping, and academic partnerships.
+                </p>
+              </div>
+            </Col>
+            <Col xs={12} md={12} lg={6}>
+              <img src={venue} className="w-100" alt="Venue" />
+            </Col>
+          </Row>
+
+          <Row className="g-0 mt-5">
+            <Col xs={12} className="d-flex align-items-center">
+              <div className="px-4 w-100">
+                <p className="para">
+                  Located within the university's lush green campus, the building hosts major conferences, exhibitions, academic ceremonies, and innovation-driven events. With its modern infrastructure and multifunctional spaces, it has become a symbol of Gujarat University's commitment to advancing science and technology. It also serves as the venue for Startup Fest Gujarat Season 3.0, offering the ideal platform for showcasing ideas and driving the state's innovation movement.
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
 
       <section className="register-sec dark-bg padding-sec">

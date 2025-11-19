@@ -2494,3 +2494,21 @@ h6.title {
     color: white !important;
 }
 
+/* Disable tap behavior on dropdowns - only allow hover */
+@media (hover: hover) and (pointer: fine) {
+    .dropdown-menu .dropdown-toggle {
+        cursor: pointer;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .dropdown-menu .dropdown-toggle {
+        pointer-events: none;
+    }
+}
+
+/* Ensure nested dropdowns only show on hover */
+.dropdown-menu .nav-item.dropdown:not(:hover) > .dropdown-menu {
+    display: none !important;
+}
+

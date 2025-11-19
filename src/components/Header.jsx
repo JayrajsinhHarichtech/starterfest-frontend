@@ -55,6 +55,7 @@ export default function Header() {
                             Shark Teens 2024
                           </NavDropdown.Item>
                         </NavDropdown>
+                        <hr className="dropdown-divider my-3" />
                         <NavDropdown title="2023 Highlights" id="navbarScrollingDropdown2023">
                           <NavDropdown.Item href="/highlights">
                             2023 Highlights
