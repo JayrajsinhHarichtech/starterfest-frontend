@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import st from "../assets/img/st.jpg";
+import st from "../assets/img/st.webp";
 import st1 from "../assets/img/st-1 (1).JPG";
 import st2 from "../assets/img/st-1 (2).JPG";
 import st3 from "../assets/img/st-1 (3).JPG";

@@ -52,7 +52,7 @@ const Speakers2024 = () => {
         {
             title: "Mentor",
             data: Array.from({ length: 9 }, (_, index) => ({
-                image: require(`../assets/img/m${index + 1}.jpg`),
+                image: require(`../assets/img/m${index + 1}.webp`),
             })),
         },
         {

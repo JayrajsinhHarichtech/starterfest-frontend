@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-import pre from "../assets/img/pre.png";
-import pre2 from "../assets/img/pre2.png";
-import pre3 from "../assets/img/pre3.png";
-import pre4 from "../assets/img/pre4.png";
-import pre5 from "../assets/img/pre5.png";
+import pre from "../assets/img/pre.webp";
+import pre2 from "../assets/img/pre2.webp";
+import pre3 from "../assets/img/pre3.webp";
+import pre4 from "../assets/img/pre4.webp";
+import pre5 from "../assets/img/pre5.webp";
 
 
 
