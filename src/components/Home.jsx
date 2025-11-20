@@ -40,6 +40,13 @@ import CardContent from "./CardContent";
 import "../assets/css/style.css";
 import { FiUsers, FiTrendingUp, FiBriefcase, FiUser } from "react-icons/fi"; 
 import Testimonial from "./Testimonial";
+import abhijeet from "../assets/img/image4.png";
+import fenil from "../assets/img/image6.png";
+import naman from "../assets/img/image3.png";
+import neil from "../assets/img/Neil.JPEG";
+import raul from "../assets/img/image2.png";
+import sonu from "../assets/img/image1.png";
+import tirth from "../assets/img/image5.png";
 
 export default function Home() {
   const [mediaData, setMediaData] = useState([]);
@@ -53,6 +60,52 @@ export default function Home() {
       behavior: "smooth",
     });
   };
+
+  const [timeLeft, setTimeLeft] = useState({
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+});
+
+useEffect(() => {
+  const sections = document.querySelectorAll(".scroll-sec");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        } else {
+          entry.target.classList.remove("active");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  sections.forEach((sec) => observer.observe(sec));
+
+  return () => observer.disconnect();
+}, []);
+
+useEffect(() => {
+  const targetDate = new Date("2025-12-13T00:00:00");
+
+  const timer = setInterval(() => {
+    const now = new Date();
+    const difference = targetDate - now;
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / 1000 / 60) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    setTimeLeft({ days, hours, minutes, seconds });
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, []);
 
   // Fetch media and recognition data
   useEffect(() => {
@@ -218,14 +271,15 @@ export default function Home() {
 
   return (
     <>
-      <section className="" id="target-section">
+      <section className="scroll-sec" id="target-section">
         {/* <Container> */}
-          <Row className="justify-content-center">
-            <Col lg={12} className="m-0 p-0">
-              <img src={mainBanner} className="w-100" />
-            </Col>
+      <Row className="justify-content-center m-0 p-0">
+  <Col lg={12} className="m-0 p-0">
+    <img src={mainBanner} className="w-100" style={{ marginTop: "55px" }} />
+  </Col>
+</Row>
 
-          </Row>
+
         {/* </Container> */}
       </section>
 
@@ -276,76 +330,222 @@ export default function Home() {
 
         </div>
       </section> */}
-      <section className="top-banner">
-        <Container>
-          <Row>
-            <Col lg={4} md={5} sm={12} >
-              <div className=" p-relative">
-                <img src={video} className="w-100" />
-                <a onClick={handleShow} className="play-btn"></a>
 
-                <Modal
-                  show={show}
-                  onHide={handleClose}
-                  size="xl"
-                  className="video-modal"
-                >
-                  <Modal.Header closeButton></Modal.Header>
-                  <Modal.Body>
-                    <iframe
-                      width="100%"
-                      height="450"
-                      src="https://www.youtube.com/embed/kKACoyYyHpg"
-                      title="Startup Fest 2023"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerpolicy="strict-origin-when-cross-origin"
-                      allowfullscreen
-                    ></iframe>
-                  </Modal.Body>
-                </Modal>
+<div 
+  style={{
+    background:
+      "linear-gradient(to right,#C29343 25%, #C29343 50%, #C29343 75%)",
+    padding: "20px 0",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+  }}
+>
+  <div className="scroll-sec"
+    style={{
+      display: "inline-block",
+      animation: "scrollText 18s linear infinite",
+      fontSize: "22px",
+      fontWeight: "700",
+      color: "white",
+    }}
+  >
+      ✧ LIVE STARTUP PITCHES ✧ KEYNOTE SESSIONS ✧ PANEL DISCUSSIONS ✧ FIRESIDE CHATS ✧  
+      WORKSHOPS ✧ SPEED DATING ✧ EXHIBITIONS ✧  
+      LIVE STARTUP PITCHES ✧ KEYNOTE SESSIONS ✧ PANEL DISCUSSIONS ✧ FIRESIDE CHATS ✧  
+      WORKSHOPS ✧ SPEED DATING ✧ EXHIBITIONS ✧
+  </div>
+</div>
 
-                {/* Lightbox Modal for Images */}
-                <Modal
-                  show={lightboxShow}
-                  onHide={handleLightboxClose}
-                  size="xl"
-                  className="lightbox-modal"
-                  centered
-                >
-                  <Modal.Header closeButton>
-                    <Modal.Title>{lightboxTitle}</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body className="text-center p-0">
-                    <img
-                      src={lightboxImage}
-                      alt={lightboxTitle}
-                      className="img-fluid w-100"
-                      style={{ maxHeight: '80vh', objectFit: 'contain' }}
-                    />
-                  </Modal.Body>
-                </Modal>
-              </div>
-            </Col>
-            <Col lg={8} md={7} sm={12}>
-              <div className="">
-                <h5 className="subheading banner">
-                  Connecting Innovators and Investors.
-                </h5>
-                <h3 className="banner-text">
-                  Join the Junction of Vision and Opportunity at
-                  <span className="gradient">Startup Fest</span> Gujarat!
-                </h3>
-              </div>
-              <div className="banner-btns left">
-                <Link to="/register" className="theme-btn">
-                  Register Now
-                </Link>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+
+<div
+  className="counter-box"
+  style={{
+    backgroundColor: "#003777",
+    padding: "20px 0",
+    borderRadius: "10px",
+  }}
+>
+  <Row>
+    <Col lg={3} xs={6}>
+      <div className="count border-right">
+        <h3>{timeLeft.days}</h3>
+        <h5 className="subtitle">Days</h5>
+      </div>
+    </Col>
+
+    <Col lg={3} xs={6}>
+      <div className="count border-right">
+        <h3>{timeLeft.hours}</h3>
+        <h5 className="subtitle">Hours</h5>
+      </div>
+    </Col>
+
+    <Col lg={3} xs={6}>
+      <div className="count border-right">
+        <h3>{timeLeft.minutes}</h3>
+        <h5 className="subtitle">Minutes</h5>
+      </div>
+    </Col>
+
+    <Col lg={3} xs={6}>
+      <div className="count">
+        <h3>{timeLeft.seconds}</h3>
+        <h5 className="subtitle">Seconds</h5>
+      </div>
+    </Col>
+  </Row>
+</div>
+
+
+<section
+  className="top-banner scroll-sec"
+  style={{
+    padding: "80px 0",
+    backgroundImage: "url('/vivid-blurred-colorful-wallpaper-background.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  <Container>
+    <Row className="align-items-center">
+
+      {/* LEFT SIDE CONTENT */}
+      <Col lg={7} md={7} sm={12}>
+
+        {/* INITIATED BY */}
+        <div style={{ marginBottom: "15px" }}>
+          <p style={{ margin: 0, fontSize: "20px", fontWeight: "600" }}>
+            Initiated By
+          </p>
+
+          <img
+            src="/snehalshilplogo.svg"
+            alt="logo"
+            style={{ height: "80px", marginTop: "5px" }}
+          />
+        </div>
+
+        {/* MAIN HEADING */}
+           <h2
+          style={{
+            fontWeight: "900",
+            fontSize: "48px",
+            lineHeight: "1.2",
+            marginBottom: "15px",
+            maxWidth: "800px",
+            color: "#000000",
+            letterSpacing: "1px",
+          }}
+        >
+          TRANSFORMING IDEAS <br />
+          INTO LASTING{" "}
+          <span
+            style={{
+              color: "#003777",
+              fontWeight: "900",
+              letterSpacing: "1px",
+            }}
+          >
+            IMPACT
+          </span>
+        </h2>
+
+<p
+  style={{
+    fontSize: "22px",
+    fontWeight: "500",
+    marginBottom: "30px",
+    color: "#1a1a1a",
+  }}
+>
+  Empowering Tomorrow’s Bharat
+</p>
+
+        {/* BUTTON */}
+        <Link
+          to="/register"
+          style={{
+            background: "#003777",
+            color: "#fff",
+            padding: "12px 35px",
+            borderRadius: "8px",
+            textDecoration: "none",
+            fontSize: "18px",
+            fontWeight: "600",
+            display: "inline-block",
+          }}
+        >
+          Register
+        </Link>
+
+      </Col>
+
+ <Col lg={5} md={5} sm={12}>
+    <div className="p-relative">
+      <img src={video} className="w-100" />
+      <a onClick={handleShow} className="play-btn"></a>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        size="xl"
+        className="video-modal"
+        centered
+      >
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body className="p-0">
+          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%'
+              }}
+              src="https://www.youtube.com/embed/kKACoyYyHpg"
+              title="Startup Fest 2023"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </Modal.Body>
+      </Modal>
+
+      {/* Lightbox Modal for Images */}
+      <Modal
+        show={lightboxShow}
+        onHide={handleLightboxClose}
+        size="xl"
+        className="lightbox-modal"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>{lightboxTitle}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="text-center p-0">
+          <img
+            src={lightboxImage}
+            alt={lightboxTitle}
+            className="img-fluid w-100"
+            style={{ maxHeight: '100vh', objectFit: 'contain' }}
+          />
+        </Modal.Body>
+      </Modal>
+    </div>
+  </Col>
+
+
+    </Row>
+  </Container>
+ 
+</section>
+
+
+
 
       <section className="padding-sec light-bg about-sec">
         <CardContent about={about} text={text} title="About StartUp Fest" buttonShow={true} to="/about" linkToTitle="Learn More" />
@@ -361,16 +561,20 @@ export default function Home() {
         <RegisterYourself />
       </div>
 
-      <section className="padding-sec">
+      <section className="padding-sec scroll-sec">
         <div
           className="stats-bg">
           <Container>
             <Row>
               <Col>
-                <h3 className="title mb-5 text-center">
-                  Empowering India’s{" "}
-                  <span className="title-gradient">Startup Ecosystem</span>
-                </h3>
+               <h3
+  className="title mb-5 text-center "
+  style={{ color: "#000" }}
+>
+  Empowering India’s{" "}
+  <span className="title-gradient">Startup Ecosystem</span>
+</h3>
+
               </Col>
             </Row>
 
@@ -414,7 +618,7 @@ export default function Home() {
               {/* Right: SFG Text */}
               <Col lg={6} xs={12} className="sfg order-lg-1 order-0" style={{ marginTop: 'auto', marginBottom: 'auto' }}>
                 <p className="font-blue">SFG 2025</p>
-                <h3 className="title">
+                <h3 className="title" style={{ color: "#000" }}>
                   India Startup Revolution is Here and now! At Ahmedabad{" "}
                   <span className="title-gradient">December 13 & 14, 2025</span>
                 </h3>
@@ -424,56 +628,118 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container-bg padding-sec">
-        <Container>
-          <Row>
-            <Col lg={6} md={12} xs={12} className="sfg ">
-              <p className="font-blue">SFG 2025</p>
-              <h3 className="title mb-5">
-                Innovation at Bottom of the Pyramid in Rural Innovations and
-                Entrepreneurship
-              </h3>
-            </Col>
-            <Col lg={6} md={12} xs={12}>
-              <Row className="text-center border-custom">
-                <Col>
-                  <img src={agry} />
-                  <p className="fw-bold pt-3 font-blue "> Agri-Tech</p>
-                </Col>
-                <Col className="outer-border">
-                  <img src={food} />
-                  <p className="fw-bold pt-3 font-blue">Food- Tech</p>
-                </Col>
-                <Col>
-                  <img src={innov} />
-                  <p className="fw-bold pt-3 font-blue">Rural Innovation</p>
-                </Col>
-              </Row>
-              <Row className="text-center">
-                <Col className="pt-4">
-                  <img src={fin} />
-                  <p className="fw-bold pt-3 font-blue ">Fin-Tech</p>
-                </Col>
-                <Col className="outer-border pt-4">
-                  <img src={mobile} />
-                  <p className="fw-bold pt-3 font-blue">Rural Healthcare</p>
-                </Col>
-                <Col className="pt-4">
-                  <img src={edu} />
-                  <p className="fw-bold pt-3 font-blue">Edu-Tech</p>
-                </Col>
-              </Row>
-              <Row>
-                <div className="mt-4 text-center">
-                  <p className="fw-bold pt-3 font-blue">Many More...</p>
-                </div>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      
+{/* ---------------- SPEAKERS SECTION ---------------- */}
+<Container className="pt-5 speaker-section scroll-sec">
+  <Row className="d-flex justify-content-center mb-4">
+    <Col className="text-center">
+      <h3 className="title" style={{ color: "#000" }}>Speakers</h3>
+    </Col>
+    <div className="title-divider">
+            <span className="line"></span>
+           <span className="icon">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f8a405" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 22 12 12 22 2 12 12 2"></polygon>
+  </svg>
+</span>
 
-      <section className="register-sec dark-bg padding-sec">
+            <span className="line"></span>
+          </div>
+  </Row>
+
+  <Row className="g-4 justify-content-center">
+    {[
+      { img: neil, name: "Neil Nitin Mukesh", role: "Renowned Indian Actor & Film Producer" },
+      { img: sonu, name: "Sonu Sharma", role: "International Motivational Speaker" },
+      { img: raul, name: "Raul John Aju", role: "India's Young AI Innovator, CEO Project 47x, TEDx Speaker" },
+      { img: naman, name: "Naman Anand", role: "Mentalist, Magician" },
+      { img: abhijeet, name: "Mr. Abhijeet Satani", role: "Scientist" },
+      { img: tirth, name: "Mr. Tirth Patel", role: "CEO & Director – Anand Innovation Pvt Ltd" },
+      { img: fenil, name: "CA. DR. CS. Fenil Shah", role: "WIRC Treasurer, Former ICAI Chairperson, CA-CS Professional" },
+    ].map((spk, index) => (
+      <Col key={index} lg={4} md={6} xs={12} className="d-flex justify-content-center">
+        <div className="speaker-card">
+
+          {/* IMAGE WRAP */}
+          <div className="speaker-img-wrap">
+            <img
+              src={spk.img}
+              alt={spk.name}
+              className="speaker-img"
+            />
+          </div>
+
+          <h4 className="speaker-name">{spk.name}</h4>
+          <p className="speaker-role">{spk.role}</p>
+        </div>
+      </Col>
+    ))}
+  </Row>
+</Container>
+
+{/* 🔥 PERFECT GAP BETWEEN SECTIONS */}
+<div style={{ height: "80px" }}></div>
+
+
+{/* ---------------- NEXT SECTION ---------------- */}
+<section className="container-bg padding-sec scroll-sec">
+  <Container>
+    <Row>
+      <Col lg={6} md={12} xs={12} className="sfg">
+        <p className="font-blue">SFG 2025</p>
+        <h3 className="title mb-5" style={{ color: "#000" }}>
+          Innovation at Bottom of the Pyramid in Rural Innovations and Entrepreneurship
+        </h3>
+      </Col>
+
+      <Col lg={6} md={12} xs={12}>
+        <Row className="text-center border-custom">
+          <Col>
+            <img src={agry} />
+            <p className="fw-bold pt-3 font-blue">Agri-Tech</p>
+          </Col>
+
+          <Col className="outer-border">
+            <img src={food} />
+            <p className="fw-bold pt-3 font-blue">Food-Tech</p>
+          </Col>
+
+          <Col>
+            <img src={innov} />
+            <p className="fw-bold pt-3 font-blue">Rural Innovation</p>
+          </Col>
+        </Row>
+
+        <Row className="text-center">
+          <Col className="pt-4">
+            <img src={fin} />
+            <p className="fw-bold pt-3 font-blue">Fin-Tech</p>
+          </Col>
+
+          <Col className="outer-border pt-4">
+            <img src={mobile} />
+            <p className="fw-bold pt-3 font-blue">Rural Healthcare</p>
+          </Col>
+
+          <Col className="pt-4">
+            <img src={edu} />
+            <p className="fw-bold pt-3 font-blue">Edu-Tech</p>
+          </Col>
+        </Row>
+
+        <Row>
+          <div className="mt-4 text-center">
+            <p className="fw-bold pt-3 font-blue">Many More...</p>
+          </div>
+        </Row>
+
+      </Col>
+    </Row>
+  </Container>
+</section>
+
+
+      <section className="register-sec dark-bg padding-sec scroll-sec">
         <Container>
           <div className="w-70 m-auto">
             <h3 className="title text-center text-white">
@@ -502,64 +768,80 @@ export default function Home() {
       </section>
       <Testimonial />
 
-      <section className="padding-sec participant-sec">
-        <Container>
-          <Row className="justify-content-center">
-            <Col lg={12}>
-              <h3 className="title text-center">Sponsors of Season 2</h3>
-            </Col>
-            <Col lg={10}>
-              <div>
-                <Slider {...settings}>
-                  {gallery2.map((item, index) => (
-                    <div className="adjust-height" key={index}>
-                      <img
-                        // key={index}
-                        src={item.url}
-                        alt={`Gallery Image ${index + 1}`}
-                        className="img-fluid "
-                      />
-                    </div>
-                  ))}
-                  {/* <img src={parti1} alt="participant" />
-                  <img src={parti2} alt="participant" />
-                  <img src={parti3} alt="participant" />
-                  <img src={parti4} alt="participant" /> */}
-                </Slider>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-      <section className="padding-sec participant-sec">
-        <Container>
-          <Row className="justify-content-center">
-            <Col lg={12}>
-              <h3 className="title text-center">Sponsors of Season 1</h3>
-            </Col>
-            <Col lg={10}>
-              <div>
-                <Slider {...settings}>
-                  {gallery.map((item, index) => (
-                    <div className="adjust-height" key={index}>
-                      <img
-                        // key={index}
-                        src={item.url}
-                        alt={`Gallery Image ${index + 1}`}
-                        className="img-fluid "
-                      />
-                    </div>
-                  ))}
-                  {/* <img src={parti1} alt="participant" />
-                  <img src={parti2} alt="participant" />
-                  <img src={parti3} alt="participant" />
-                  <img src={parti4} alt="participant" /> */}
-                </Slider>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+   {/* ⭐⭐⭐ OUR SPONSORS – SEASON 4 ⭐⭐⭐ */}
+<section className="padding-sec sponsor-section scroll-sec">
+  <Container>
+
+    {/* Title */}
+    <Row className="justify-content-center">
+      <Col lg={12} className="text-center">
+        <h2 className="sponsor-title-heading">Sponsors of Season 2</h2>
+
+        <div className="title-divider">
+          <span className="line"></span>
+          <span className="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f8a405" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="12 2 22 12 12 22 2 12 12 2"></polygon>
+          </svg>
+        </span>
+   <span className="line"></span>
+        </div>
+      </Col>
+    </Row>
+
+    {/* Grid */}
+    <Row className="justify-content-center mt-4">
+      {gallery2.map((item, index) => (
+        <Col lg={3} md={4} sm={6} xs={12} key={index} className="mb-4">
+          <div className="sponsor-card">
+            <img
+              src={item.url}
+              alt={`Sponsor ${index}`}
+              className="sponsor-img"
+            />
+          </div>
+        </Col>
+      ))}
+    </Row>
+
+  </Container>
+</section>
+
+{/* ⭐⭐⭐ SPONSORS OF SEASON 1 ⭐⭐⭐ */}
+<section className="padding-sec sponsor-section scroll-sec">
+  <Container>
+    <Row className="justify-content-center">
+      <Col lg={12} className="text-center">
+        <h2 className="sponsor-title-heading">Sponsors of Season 1</h2>
+
+          <div className="title-divider">
+            <span className="line"></span>
+           <span className="icon">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f8a405" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 22 12 12 22 2 12 12 2"></polygon>
+  </svg>
+</span>
+
+            <span className="line"></span>
+          </div>
+      </Col>
+    </Row>
+
+    <Row className="justify-content-center mt-4">
+      {gallery.map((item, index) => (
+        <Col lg={3} md={4} sm={6} xs={12} key={index} className="mb-4">
+          <div className="sponsor-card">
+            <img
+              src={item.url}
+              alt={`Sponsor ${index}`}
+              className="sponsor-img"
+            />
+          </div>
+        </Col>
+      ))}
+    </Row>
+  </Container>
+</section>
 
       {mediaData.length > 0 && 
        <section className="padding-sec light-bg media-recognition-sec">
@@ -640,3 +922,4 @@ export default function Home() {
     </>
   );
 }
+

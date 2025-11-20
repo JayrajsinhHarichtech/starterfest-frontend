@@ -61,7 +61,9 @@ export default function Highlights() {
 
   return (
     <>
-      <section className="">
+      <section className="" style={{
+      paddingTop: "120px",   // ⭐ TOP GAP FIXED
+    }}>
         <img src={bannerImg} className="w-100" />
       </section>
 

@@ -1,10 +1,12 @@
-import snehalMam from "../assets/img/snehal.JPG";
+import snehalMam from "../assets/img/snhel.JPG";
 import sonusir from "../assets/img/sonusir.jpg";
 
 export const Summary = () => {
     return (
         <>
-            <section className="padding-sec light-bg about-sec">
+            <section className="padding-sec light-bg about-sec "   style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
                 <div className="container">
                     <div className="justify-content-between row">
                         <div className="col-lg-7 col-md-12 col-12">

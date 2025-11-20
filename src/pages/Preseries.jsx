@@ -42,7 +42,9 @@ const PreSeries = () => {
     return (
         <>
             {/* ======= INTRO SECTION ======= */}
-            <section className="padding-sec">
+            <section className="padding-sec" style={{
+      paddingTop: "120px",   // ⭐ TOP GAP FIXED
+    }}>
                 <Container>
 
                     

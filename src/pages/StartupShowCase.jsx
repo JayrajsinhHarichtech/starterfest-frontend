@@ -56,7 +56,9 @@ const StartUpShowCase = () => {
   ];
 
   return (
-    <div className="padding-sec">
+    <div className="padding-sec" style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
       <Container>
         <div className="title text-center mb-5">
           2023 Startup Showcase

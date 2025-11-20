@@ -16,7 +16,9 @@ const STFS = () => {
   }, []);
   return (
     <>
-      <section className="padding-sec">
+      <section className="padding-sec" style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
         <Container>
           <Row className="justify-content-center align-items-center">
             <Col lg={5} xs={12}>

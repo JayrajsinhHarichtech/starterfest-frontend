@@ -32,7 +32,9 @@ const Sharkteen = () => {
 
     return (
         <>
-            <section className="padding-sec">
+            <section className="padding-sec" style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
                 <Container>
                     <Row className="g-4 mt-4 justify-content-center">
                         {section.map((person, index) => (

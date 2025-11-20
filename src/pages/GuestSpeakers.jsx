@@ -11,7 +11,9 @@ export default function GuestSpeakers() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="padding-sec">
+    <div className="padding-sec"   style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
       <Container>
         <div className="">
           <h2 className='title'>Content Coming Soon...</h2>

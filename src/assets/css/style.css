@@ -2511,4 +2511,454 @@ h6.title {
 .dropdown-menu .nav-item.dropdown:not(:hover) > .dropdown-menu {
     display: none !important;
 }
+/* ------------------------------------------------------------ */
 
+/* ============================================================= */
+/*                     ✅ TOP ANNOUNCEMENT BAR                   */
+/* ============================================================= */
+
+body {
+    font-family: 'Inter';
+}
+
+.topbar,
+.top-announcement-bar {
+  width: 100%;
+  padding: 7px 0;
+  background: #003777;
+  color: white;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ============================================================= */
+/*                     MAIN HEADER                               */
+/* ============================================================= */
+.main-header,
+.menubar {
+  background: #fff !important;
+  position: fixed !important;
+  top: 32px !important;
+  width: 100%;
+  padding: 20px 0 !important;
+  box-shadow: 0 2px 8px #00000012;
+  z-index: 1099 !important;
+}
+
+.header-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo-header {
+  max-width: 180px;
+}
+
+/* ============================================================= */
+/*                   NAVIGATION CENTER                           */
+/* ============================================================= */
+.navigation-center {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 25px;
+}
+
+.navigation-center a {
+  color: #444 !important;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navigation-center a:hover {
+  color: #000 !important;
+}
+
+/* ============================================================= */
+/*                DROPDOWN HOVER FIX (UPDATED)                   */
+/* ============================================================= */
+
+/* Make dropdown work on hover */
+.navbar-nav .dropdown:hover > .dropdown-menu,
+.hover-menu:hover > .dropdown-menu {
+  display: block !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Parent dropdown animation */
+.dropdown-menu {
+  margin-top: 10px !important;
+  border-radius: 8px !important;
+  padding: 12px 0 !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12) !important;
+  transition: all 0.20s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Submenu wrapper */
+.dropdown-submenu {
+  position: relative !important;
+}
+
+/* Position submenu (2024/2023) */
+.dropdown-submenu > .dropdown-menu {
+  top: 0 !important;
+  left: 100% !important;
+  margin-left: 5px !important;
+  border-radius: 8px !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.20s ease-in-out;
+}
+
+/* KEEP SUBMENU OPEN on hover */
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Mobile fix */
+@media(max-width: 991px){
+  .navbar-nav .dropdown:hover > .dropdown-menu {
+    display: none !important;
+  }
+}
+
+/* ============================================================= */
+/*                 REGISTER BUTTON                               */
+/* ============================================================= */
+.register-btn,
+.text-white-li {
+  background: #2563eb !important;
+  color: white !important;
+  padding: 8px 25px;
+  border-radius: 30px !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-btn:hover {
+  background: #1d4ed8 !important;
+}
+
+
+/* ============================================================= */
+/*                     ✅ DATE + LOCATION BAR                    */
+/* ============================================================= */
+.date-bar ul,
+.right-header ul {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.date-bar ul li a,
+.right-header ul li a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2563eb !important;
+}
+
+/* ============================================================= */
+/*                        EXTRA FIX                              */
+/* ============================================================= */
+.header {
+  margin-top: 35px; /* avoids topbar overlap */
+  z-index: 1000;
+}
+
+.right-header {
+  margin-top: 10px;
+}
+
+@keyframes scrollText {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* SPEAKER CARD WRAPPER */
+.speaker-card {
+  text-align: center;
+  padding: 20px 10px;
+  transition: 0.3s ease;
+}
+
+/* ROUND BACKGROUND */
+.speaker-img-wrap {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: #ffffff;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+/* IMAGE FIT */
+.speaker-img {
+  width: 85%;
+  object-fit: contain;
+  transform: translateY(10px);
+}
+
+/* HOVER ZOOM */
+.speaker-card:hover .speaker-img-wrap {
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* NAME STYLE */
+.speaker-name {
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #f4a300;   /* Yellow accent like sample */
+}
+
+/* ROLE STYLE */
+.speaker-role {
+  font-size: 14px;
+  color: #333;
+  max-width: 260px;
+  margin: 5px auto 0;
+  line-height: 1.4;
+}
+
+.video-img {
+  width: 100%;
+  height: 420px; 
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+
+.video-modal .modal-dialog {
+  max-width: 90vw !important;
+}
+/* --- Perfect Round Speaker Card --- */
+.speaker-img-wrap {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+  background: none !important; /* REMOVE WHITE BG */
+}
+
+/* Image inside circle */
+.speaker-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: center top;
+  border-radius: 50%;
+  background: none !important;
+}
+
+/* Remove shadows / background */
+.speaker-card {
+  text-align: center;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.speaker-img-round {
+  border-radius: 50% !important;
+}
+/* Speaker Section Gap */
+.speaker-section {
+  margin-bottom: 60px !important;
+}
+
+/* Speaker Image Round */
+.speaker-img-wrap {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.speaker-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Speaker Name Color */
+.speaker-name {
+  color: #003777 !important;
+  font-weight: 700;
+}
+
+/* Sponsor Title */
+.sponsor-title-heading {
+  font-size: 42px;
+  font-weight: 800;
+  color: #000;
+}
+
+/* Divider Under Title */
+.title-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.title-divider .line {
+  width: 110px;
+  height: 4px;
+  background: #003777;
+  border-radius: 5px;
+  margin: 0 12px;
+}
+
+.title-divider .icon {
+  font-size: 28px;
+  color: #003777;
+  margin-top: -3px;
+}
+
+/* Sponsor Card Box */
+.sponsor-card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 28px; /* EXACT rounded rectangular shape */
+  height: 180px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s ease;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* FIX Distorted Images */
+.sponsor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* No stretching */
+}
+
+.title-divider .icon {
+  font-size: 30px;
+  color: #ffb300;   /* PURE GOLDEN COLOR */
+  margin-top: -3px;
+}
+.row-margin {
+  margin-top: 20px !important;
+}
+
+/* SECTION BASE */
+.timer-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease-out;
+}
+
+.timer-section.anim-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* INDIVIDUAL FADE ITEMS */
+.fade-item {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.8s ease-out;
+}
+
+.timer-section.anim-active .fade-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay classes */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+
+/* Overlay */
+.timer-section .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+/* Base hidden state */
+.scroll-sec {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease-out;
+}
+
+/* When visible */
+.scroll-sec.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Child stagger */
+.scroll-item {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.8s ease-out;
+}
+
+.scroll-sec.active .scroll-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+
+/* MULTI-LEVEL DROPDOWN FIX */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0 !important;
+  left: 100% !important;
+  margin-top: -2px !important;
+  display: block !important;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+  transition: 0.25s ease;
+}
+
+.dropdown-submenu .dropdown-menu.show {
+  opacity: 1 !important;
+  pointer-events: auto;
+  transform: translateX(0px);
+}
+.register-btn {
+  background: #003777 !important;
+  border-color: #003777 !important;
+  color: #fff !important;
+}

@@ -27,7 +27,9 @@ function Activites() {
 
   return (
     <>
-      <section className='padding-sec gradeint-bg'>
+      <section className='padding-sec gradeint-bg'  style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
         <Container>
         <Row className='justify-content-center'>
           <Col lg={12} xs={12}>

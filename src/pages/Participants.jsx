@@ -25,7 +25,9 @@ export default function Participants() {
   }, []);
   return (
     <>
-      <section className="padding-sec ">
+      <section className="padding-sec " style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
         <Container>
           <Row className="justify-content-between">
             <Col xs={12} md={5} lg={5}>

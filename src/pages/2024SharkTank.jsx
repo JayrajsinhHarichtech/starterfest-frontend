@@ -49,7 +49,9 @@ const STFS2024 = () => {
     // ===================== RENDER =====================
     return (
         <>
-                <section class=""><img src={panel} className="w-100"/></section>
+                <section className=""  style={{
+      paddingTop: "120px",   // ⭐ TOP GAP FIXED
+    }}><img src={panel} className="w-100"/></section>
         
             {/* ======= INTRO SECTION ======= */}
             <section className="padding-sec">

@@ -61,7 +61,9 @@ export default function About() {
     <>
      
 
-      <section className="padding-sec light-bg about-sec">
+      <section className="padding-sec light-bg about-sec"   style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
         
 
         <CardContent

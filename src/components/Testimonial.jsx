@@ -47,7 +47,7 @@ const Testimonial = () => {
         <section className="testimonials-section">
             <div className="container">
                 <div className="testimonials-header">
-                    <h2 className="section-title">What People Say About Us</h2>
+                    <h2 className="section-title">What People Say About Us</h2> 
                     <p className="section-subtitle">Hear from our community members and participants</p>
                 </div>
 

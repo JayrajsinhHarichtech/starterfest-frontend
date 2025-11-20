@@ -10,7 +10,9 @@ function Awardsnight() {
   return (
     <>
   
-      <section className="">
+      <section className="" style={{
+      paddingTop: "140px",   // ⭐ TOP GAP FIXED
+    }}>
         <Row className="m-0 p-0">
 
             <h2

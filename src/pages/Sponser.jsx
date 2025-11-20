@@ -33,7 +33,9 @@ const Sponser = () => {
   }, []);
   return (
     <>
-      <section className="banner-img-top">
+      <section className="banner-img-top "    style={{
+      paddingTop: "120px",   // ⭐ TOP GAP FIXED
+    }}>
         <Row className="m-0 p-0">
           <Col lg={12} className="p-0">
             <div className="p-relative">

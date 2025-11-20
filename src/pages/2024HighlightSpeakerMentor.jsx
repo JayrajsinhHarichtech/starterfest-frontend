@@ -75,8 +75,10 @@ const Speakers2024 = () => {
     // ===================== RENDER =====================
     return (
         <>
-        <section class=""><img src={panel} className="w-100"/></section>
-        <section className="container-bg padding-sec">
+        <section className=""  style={{
+      paddingTop: "120px",   // ⭐ TOP GAP FIXED
+    }}><img src={panel} className="w-100"/></section>
+        <section className="container-bg padding-sec" >
             {sections.map((section, i) => (
                 <Container key={i} className={i !== 0 ? "pt-5" : ""}>
                     <Row className="d-flex mb-3">

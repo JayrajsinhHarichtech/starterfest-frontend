@@ -25,7 +25,9 @@ const Speakers = () => {
 
   return (
     <>
-      <section className="container-bg padding-sec">
+      <section className="container-bg padding-sec" style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
         <Container>
           <Row className="d-flex">
             <Col className="flex-grow-1">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Container } from "react-bootstrap";
@@ -7,7 +7,6 @@ import caleder from "../assets/img/calender-icon.png";
 import { MdLocationPin } from "react-icons/md";
 
 const Timer = () => {
-  // State to store time remaining
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -15,121 +14,138 @@ const Timer = () => {
     seconds: 0,
   });
 
-  // Target date for the event (28th August 2024 in local time)
-  const targetDate = new Date('2025-12-13T10:00:00').getTime();
+  const sectionRef = useRef(null);
+
+  const targetDate = new Date("2025-12-13T10:00:00").getTime();
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const now = new Date().getTime(); // Current time in milliseconds
-
-      // Calculate the difference in milliseconds
+      const now = new Date().getTime();
       const difference = targetDate - now;
 
-      // console.log("Current Time:", new Date(now).toLocaleString());
-      // console.log("Target Date:", new Date(targetDate).toLocaleString());
-      // console.log("Difference:", difference);
-
       if (difference > 0) {
-        // Calculate days, hours, minutes, and seconds from the difference
-        const time = {
+        setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          hours: Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          ),
           minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        };
-        setTimeLeft(time);
-      } else {
-        // If the countdown ends, set everything to zero
-        setTimeLeft({
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
         });
       }
     };
 
-    // Call the function immediately to set the initial state
     calculateTimeLeft();
-
-    // Update every second
     const timer = setInterval(calculateTimeLeft, 1000);
-
-    // Clean up the interval when the component unmounts
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, []);
 
+  // ⭐ SCROLL ANIMATION TRIGGER
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          section.classList.add("anim-active");
+        } else {
+          section.classList.remove("anim-active");
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (section) observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <Container>
-      <div className="count-box justify-content-center">
-        <div>
-          <h2 className="title mb-5 text-center">
-            India <span className="gradient">Startup Revolution </span> is
-            here and now!
+    <div
+      ref={sectionRef}
+      className="timer-section"
+      style={{
+        position: "relative",
+        padding: "80px 0",
+        backgroundImage:
+          "url('/vivid-blurred-colorful-wallpaper-background-1.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* WHITE OVERLAY */}
+      <div className="overlay"></div>
+
+      <Container style={{ position: "relative", zIndex: 2 }}>
+        <div className="content-wrapper">
+
+          <h2 className="title mb-5 text-center fade-item">
+            India Startup Revolution is here and now!
           </h2>
 
           <Row className="justify-content-center">
             <Col lg={4} md={4} xs={12}>
-              <div className="box text-center">
+              <div className="box text-center fade-item">
                 <MdLocationPin />
                 <h4>Venue</h4>
                 <p>Gujarat University Atal Kalam Building, Ahmedabad.</p>
               </div>
             </Col>
-            <Col lg={4} md={4} xs={12} >
-              <div className="box text-center">
-                {/* <SlCalender /> */}
+
+            <Col lg={4} md={4} xs={12}>
+              <div className="box text-center fade-item delay-1">
                 <img src={caleder} width={45} />
                 <h4>Date</h4>
                 <p>13 & 14 December, 2025</p>
               </div>
             </Col>
+
             <Col lg={4} md={4} xs={12}>
-              <div className="box text-center">
+              <div className="box text-center fade-item delay-2">
                 <img src={clock} width={45} />
                 <h4>Time</h4>
                 <p>10:00 AM TO 07:00 PM</p>
               </div>
             </Col>
           </Row>
+
+          {/* COUNTER */}
+          <div className="counter-box fade-item delay-3">
+            <Row>
+              <Col lg={3} xs={6}>
+                <div className="count border-right">
+                  <h3>{timeLeft.days}</h3>
+                  <h5 className="subtitle">Days</h5>
+                </div>
+              </Col>
+
+              <Col lg={3} xs={6}>
+                <div className="count border-right">
+                  <h3>{timeLeft.hours}</h3>
+                  <h5 className="subtitle">Hours</h5>
+                </div>
+              </Col>
+
+              <Col lg={3} xs={6}>
+                <div className="count border-right">
+                  <h3>{timeLeft.minutes}</h3>
+                  <h5 className="subtitle">Minutes</h5>
+                </div>
+              </Col>
+
+              <Col lg={3} xs={6}>
+                <div className="count">
+                  <h3>{timeLeft.seconds}</h3>
+                  <h5 className="subtitle">Seconds</h5>
+                </div>
+              </Col>
+            </Row>
+          </div>
+
         </div>
+      </Container>
+    </div>
+  );
+};
 
-        <div className="counter-box">
-          <Row>
-            <Col lg={3} xs={6}>
-              <div className="count border-right">
-                <h3>{timeLeft.days}</h3>
-                <h5 className="subtitle">Days</h5>
-              </div>
-            </Col>
-            <Col lg={3} xs={6}>
-              <div className="count border-right">
-                <h3>{timeLeft.hours}</h3>
-                <h5 className="subtitle">Hours</h5>
-              </div>
-            </Col>
-         
-            <Col lg={3} xs={6}>
-              <div className="count border-right">
-                <h3>{timeLeft.minutes}</h3>
-                <h5 className="subtitle">Minutes</h5>
-              </div>
-            </Col>
-            <Col lg={3} xs={6}>
-              <div className="count">
-                <h3>{timeLeft.seconds}</h3>
-                <h5 className="subtitle">Seconds</h5>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </div>
-    </Container>
-
-
-  )
-
-}
-
-export default Timer
+export default Timer;

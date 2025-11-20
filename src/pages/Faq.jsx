@@ -24,7 +24,9 @@ function Faq() {
 
   return (
     <>
-      <section className='padding-sec'>
+      <section className='padding-sec'  style={{
+      paddingTop: "150px",   // ⭐ TOP GAP FIXED
+    }}>
         <Container>
         <Row className='justify-content-center'>
           <Col lg={12} xs={12}>
