@@ -1,4 +1,5 @@
 import React from 'react';
+import azar from "../../assets/img/azar1.png";
 import abhijeet from "../../assets/img/image4.png";
 import fenil from "../../assets/img/image6.png";
 import naman from "../../assets/img/image3.png";
@@ -10,6 +11,7 @@ import SectionTitle from '../SectionTitle';
 
 const SpeakersSection = () => {
   const speakersData = [
+    { img: azar, name: "Azar Iqubal", role: "Co-Founder & Chairman at Inshorts \nCo-founder & CEO at Fenado AI" },
     { img: neil, name: "Neil Nitin Mukesh", role: "Renowned Indian Actor & Film Producer" },
     { img: sonu, name: "Sonu Sharma", role: "International Motivational Speaker" },
     { img: raul, name: "Raul John Aju", role: "India's Young AI Innovator, CEO Project 47x, TEDx Speaker" },

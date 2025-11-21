@@ -1,7 +1,7 @@
 import snehalMam from "../assets/img/snhel.JPG";
 import sonusir from "../assets/img/sonusir.jpg";
 
-export const Summary = () => {
+const Summary = () => {
     return (
         <>
             <section className="padding-sec light-bg about-sec "  >
@@ -119,3 +119,5 @@ export const Summary = () => {
         </>
     );
 };
+
+export default Summary;

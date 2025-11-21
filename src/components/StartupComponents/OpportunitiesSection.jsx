@@ -25,7 +25,7 @@ const OpportunitiesSection = ({ opportunities }) => {
       className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10"
     >
         <SectionTitle 
-          title="2024 Opportunities" 
+          title="2024 Glimpses" 
           subtitle="Discover the diverse range of opportunities and experiences that await you at Startup Fest Gujarat."
           className="mb-16 text-center"
         />

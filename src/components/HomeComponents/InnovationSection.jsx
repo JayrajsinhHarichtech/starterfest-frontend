@@ -1,6 +1,6 @@
 import React from 'react';
 import agry from "../../assets/img/agry.png";
-import food from "../../assets/img/food.png";
+import AI from "../../assets/img/food.png";
 import innov from "../../assets/img/innov.png";
 import fin from "../../assets/img/fin.png";
 import mobile from "../../assets/img/mobile.png";
@@ -8,8 +8,8 @@ import edu from "../../assets/img/edu.png";
 
 const InnovationSection = () => {
   const innovations = [
+    { img: AI, title: "AI", delay: "150ms" },
     { img: agry, title: "Agri-Tech", delay: "0ms" },
-    { img: food, title: "Food-Tech", delay: "150ms" },
     { img: innov, title: "Rural Innovation", delay: "300ms" },
     { img: fin, title: "Fin-Tech", delay: "450ms" },
     { img: mobile, title: "Rural Healthcare", delay: "600ms" },

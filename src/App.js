@@ -17,40 +17,51 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollTop from './components/ScrollTop';
 
+// Helper function to handle lazy import errors
+const lazyImport = (importFunc) => {
+  return lazy(() => 
+    importFunc().catch(err => {
+      console.error('Lazy loading failed:', err);
+      // Return a fallback component
+      return { default: () => <div className="p-8 text-center"><p>Error loading page. Please refresh.</p></div> };
+    })
+  );
+};
+
 // Lazy load all page components
-const Home = lazy(() => import('./components/Home'));
-const Register = lazy(() => import('./pages/Register'));
-const Participants = lazy(() => import('./pages/Participants'));
-const StartupContent = lazy(() => import('./pages/StartupContent'));
-const Highlights = lazy(() => import('./pages/Highlights'));
-const Speakers = lazy(() => import('./pages/Speakers'));
-const STFS = lazy(() => import('./pages/STFS'));
-const Visitor = lazy(() => import('./pages/Visitor'));
-const About = lazy(() => import('./pages/About'));
-const InvestorAccelator = lazy(() => import('./pages/InvestorAccelator'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Sponser = lazy(() => import('./pages/Sponser'));
-const Awardsnight = lazy(() => import('./pages/Awardsnight'));
-const Startup = lazy(() => import('./pages/Startup'));
-const Faq = lazy(() => import('./pages/Faq'));
-const StartUpShowCase = lazy(() => import('./pages/StartupShowCase'));
-const PitcherContent = lazy(() => import('./pages/PitcherContent'));
-const InvestorContent = lazy(() => import('./pages/InvestorContent'));
-const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
-const Cms = lazy(() => import('./pages/CMS'));
-const PaymentFailure = lazy(() => import('./pages/PaymentFailure'));
-const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
-const VisitorPopup = lazy(() => import('./pages/VisitorPopup'));
-const Activities = lazy(() => import('./pages/Activities'));
-const Sponsor2024 = lazy(() => import('./pages/Sponsor2024'));
-const GuestSpeakers = lazy(() => import('./pages/GuestSpeakers'));
-const EventFlow = lazy(() => import('./pages/EventFlow'));
-const Summary = lazy(() => import('./pages/Summery'));
-const Speakers2024 = lazy(() => import('./pages/2024HighlightSpeakerMentor'));
-const STFS2024 = lazy(() => import('./pages/2024SharkTank'));
-const PreSeries = lazy(() => import('./pages/Preseries'));
-const Sharkteen = lazy(() => import('./pages/2024SharkTeens'));
-const SpeakersChiefGuest = lazy(() => import('./pages/2025SpeakersChiefGuest'));
+const Home = lazyImport(() => import('./components/Home'));
+const Register = lazyImport(() => import('./pages/Register'));
+const Participants = lazyImport(() => import('./pages/Participants'));
+const StartupContent = lazyImport(() => import('./pages/StartupContent'));
+const Highlights = lazyImport(() => import('./pages/Highlights'));
+const Speakers = lazyImport(() => import('./pages/Speakers'));
+const STFS = lazyImport(() => import('./pages/STFS'));
+const Visitor = lazyImport(() => import('./pages/Visitor'));
+const About = lazyImport(() => import('./pages/About'));
+const InvestorAccelator = lazyImport(() => import('./pages/InvestorAccelator'));
+const Contact = lazyImport(() => import('./pages/Contact'));
+const Sponser = lazyImport(() => import('./pages/Sponser'));
+const Awardsnight = lazyImport(() => import('./pages/Awardsnight'));
+const Startup = lazyImport(() => import('./pages/Startup'));
+const Faq = lazyImport(() => import('./pages/Faq'));
+const StartUpShowCase = lazyImport(() => import('./pages/StartupShowCase'));
+const PitcherContent = lazyImport(() => import('./pages/PitcherContent'));
+const InvestorContent = lazyImport(() => import('./pages/InvestorContent'));
+const PrivacyPolicy = lazyImport(() => import('./components/PrivacyPolicy'));
+const Cms = lazyImport(() => import('./pages/CMS'));
+const PaymentFailure = lazyImport(() => import('./pages/PaymentFailure'));
+const PaymentSuccess = lazyImport(() => import('./pages/PaymentSuccess'));
+const VisitorPopup = lazyImport(() => import('./pages/VisitorPopup'));
+const Activities = lazyImport(() => import('./pages/Activities'));
+const Sponsor2024 = lazyImport(() => import('./pages/Sponsor2024'));
+const GuestSpeakers = lazyImport(() => import('./pages/GuestSpeakers'));
+const EventFlow = lazyImport(() => import('./pages/EventFlow'));
+const Summary = lazyImport(() => import('./pages/Summery'));
+const Speakers2024 = lazyImport(() => import('./pages/2024HighlightSpeakerMentor'));
+const STFS2024 = lazyImport(() => import('./pages/2024SharkTank'));
+const PreSeries = lazyImport(() => import('./pages/Preseries'));
+const Sharkteen = lazyImport(() => import('./pages/2024SharkTeens'));
+const SpeakersChiefGuest = lazyImport(() => import('./pages/2025SpeakersChiefGuest'));
 
 
 

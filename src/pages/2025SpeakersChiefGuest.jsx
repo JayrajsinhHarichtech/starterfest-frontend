@@ -9,6 +9,7 @@ import neil from "../assets/img/Neil.JPEG";
 import raul from "../assets/img/Raul.jpeg";
 import sonu from "../assets/img/SonuSharma.png";
 import tirth from "../assets/img/tirth.jpeg";
+import azar from "../assets/img/azar2.png";
 
 const SpeakersChiefGuest = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -41,6 +42,7 @@ const SpeakersChiefGuest = () => {
             name: "Sonu Sharma",
             role: "International Motivational Speaker",
         },
+
         {
             img: raul,
             name: "Raul John Aju",
@@ -80,17 +82,18 @@ const SpeakersChiefGuest = () => {
                     <SectionTitle title="Chief Guest" className="mb-16 text-center"/>
                 </div>
 
-                <div className="flex justify-center">
-                    <div className={`max-w-md transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        <div className="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-4 transition-all duration-500 border-t-4 border-[#003777]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                    {/* Azar Iqubal - First Chief Guest */}
+                    <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                        <div className="group bg-white rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-4 transition-all duration-500 border-t-4 border-[#003777]">
                             
                             {/* Image Container */}
                             <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                <div className="aspect-square overflow-hidden">
+                                <div className="aspect-[4/3] overflow-hidden">
                                     <img
-                                        src={neil}
-                                        alt="Neil Nitin Mukesh"
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        src={azar}
+                                        alt="Azar Iqubal"
+                                        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                                     />
                                 </div>
                                 
@@ -100,10 +103,43 @@ const SpeakersChiefGuest = () => {
 
                             {/* Content */}
                             <div className="text-center space-y-3">
-                                <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#003777] transition-colors duration-300">
+                                <h4 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#003777] transition-colors duration-300">
+                                    Azar Iqubal
+                                </h4>
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
+                                    Co-Founder & Chairman at Inshorts, Co-founder & CEO at Fenado AI
+                                </p>
+                            </div>
+                            
+                            {/* Hover Border Effect */}
+                            <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-[#003777] transition-colors duration-300"></div>
+                        </div>
+                    </div>
+
+                    {/* Neil Nitin Mukesh - Second Chief Guest */}
+                    <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                        <div className="group bg-white rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-4 transition-all duration-500 border-t-4 border-[#003777]">
+                            
+                            {/* Image Container */}
+                            <div className="relative mb-6 overflow-hidden rounded-2xl">
+                                <div className="aspect-[4/3] overflow-hidden">
+                                    <img
+                                        src={neil}
+                                        alt="Neil Nitin Mukesh"
+                                        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                </div>
+                                
+                                {/* Overlay Effect */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#003777]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="text-center space-y-3">
+                                <h4 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#003777] transition-colors duration-300">
                                     Neil Nitin Mukesh
                                 </h4>
-                                <p className="text-base text-gray-600 leading-relaxed font-medium">
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
                                     Renowned Indian Actor & Film Producer
                                 </p>
                             </div>
@@ -133,11 +169,11 @@ const SpeakersChiefGuest = () => {
                             
                             {/* Image Container */}
                             <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                <div className="aspect-square overflow-hidden">
+                                <div className="aspect-[4/3] overflow-hidden">
                                     <img
                                         src={speaker.img}
                                         alt={speaker.name}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                                     />
                                 </div>
                                 

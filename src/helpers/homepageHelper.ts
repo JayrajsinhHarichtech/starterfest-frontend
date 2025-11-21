@@ -11,7 +11,7 @@ export const sponsorLogosS1 = [
   { url: require("../assets/img/Sponser logo/3.png") },
   { url: require("../assets/img/Sponser logo/4.png") },
   { url: require("../assets/img/Sponser logo/5.png") },
-  { url: require("../assets/img/Sponser logo/6.png") },
+//   { url: require("../assets/img/Sponser logo/6.png") },
   { url: require("../assets/img/Sponser logo/7.png") },
   { url: require("../assets/img/Sponser logo/8.png") },
   { url: require("../assets/img/Sponser logo/9.png") },
@@ -37,14 +37,17 @@ export const sponsorLogosS2 = [
   { url: require("../assets/img/sponsor2/logo2.png") },
   { url: require("../assets/img/sponsor2/logo3.png") },
   { url: require("../assets/img/sponsor2/logo4.png") },
-  { url: require("../assets/img/sponsor2/logo5.png") },
+//   { url: require("../assets/img/sponsor2/logo5.png") },
   { url: require("../assets/img/sponsor2/logo6.png") },
+  { url: require("../assets/img/Sponser logo/8.png") },
+  
   { url: require("../assets/img/sponsor2/logo7.png") },
   { url: require("../assets/img/sponsor2/logo8.png") },
   { url: require("../assets/img/sponsor2/logo9.png") },
   { url: require("../assets/img/sponsor2/logo12.png") },
-  { url: require("../assets/img/sponsor2/logo13.jpg") },
+//   { url: require("../assets/img/sponsor2/logo13.jpg") },
 ];
+
 
 // About Text Content
 export const aboutText = `<p class="para"> 
