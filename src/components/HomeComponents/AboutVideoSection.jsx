@@ -20,7 +20,7 @@ const AboutVideoSection = () => {
             {/* INITIATED BY */}
             <div className="mb-6">
               <p className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
-                Initiated By
+                An Initiative of
               </p>
               <img
                 src="/snehalshilplogo.svg"

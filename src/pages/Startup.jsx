@@ -29,7 +29,7 @@ const text = ` <p class="para">
                 opportunities worth hundreds of crores awarded onsite, and
                 facilitating countless networking experiences, including curated
                 match-ups and interactive sessions. Designed to connect you with
-                key players and resources, Startup Fest Gujarat Season I was a
+                key players and resources, Startup Fest Gujarat Season 1 was a
                 launchpad for startups to accelerate their growth and make
                 meaningful industry connections.
               </p>`

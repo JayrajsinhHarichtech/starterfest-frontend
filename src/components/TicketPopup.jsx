@@ -71,7 +71,7 @@ export default function TicketPopup({ ticketPopup, setTicketPopup, quantity, set
 
     const loadTickets = async () => {
         try {
-            const res = await axios.get(`${process.env.REACT_APP_URL}/api/auth/list-by-participant/ticketMaster/${category}`)
+            const res = await axios.get(`${import.meta.env.VITE_APP_URL}/api/auth/list-by-participant/ticketMaster/${category}`)
             console.log("ticket detailssss", res)
             setTickets(res.data);
         }

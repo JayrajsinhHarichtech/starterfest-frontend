@@ -277,30 +277,38 @@ const Sidebar = ({ isOpen, onClose }) => {
               
               {registerOpen && (
                 <div className="ml-6 space-y-1 animate-slideDown">
-                  <button 
-                    onClick={() => handleNavigation('/register')}
-                    className="w-full text-left text-gray-600 hover:text-[#003777] hover:bg-blue-50 px-4 py-2 rounded-lg transition-all duration-200 bg-transparent border-none cursor-pointer"
+                  <a 
+                    href="https://register.startupfestgujarat.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left text-gray-600 hover:text-[#003777] hover:bg-blue-50 px-4 py-2 rounded-lg transition-all duration-200 no-underline"
                   >
                     Exhibitor
-                  </button>
-                  <button 
-                    onClick={() => handleNavigation('/register')}
-                    className="w-full text-left text-gray-600 hover:text-[#003777] hover:bg-blue-50 px-4 py-2 rounded-lg transition-all duration-200 bg-transparent border-none cursor-pointer"
+                  </a>
+                  <a 
+                    href="https://register.startupfestgujarat.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left text-gray-600 hover:text-[#003777] hover:bg-blue-50 px-4 py-2 rounded-lg transition-all duration-200 no-underline"
                   >
                     Visitor
-                  </button>
-                  <button 
-                    onClick={() => handleNavigation('/register')}
-                    className="w-full text-left text-gray-600 hover:text-[#003777] hover:bg-blue-50 px-4 py-2 rounded-lg transition-all duration-200 bg-transparent border-none cursor-pointer"
+                  </a>
+                  <a 
+                    href="https://register.startupfestgujarat.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left text-gray-600 hover:text-[#003777] hover:bg-blue-50 px-4 py-2 rounded-lg transition-all duration-200 no-underline"
                   >
                     Investor
-                  </button>
-                  <button 
-                    onClick={() => handleNavigation('/register')}
-                    className="w-full text-left text-gray-600 hover:text-[#003777] hover:bg-blue-50 px-4 py-2 rounded-lg transition-all duration-200 bg-transparent border-none cursor-pointer"
+                  </a>
+                  <a 
+                    href="https://register.startupfestgujarat.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left text-gray-600 hover:text-[#003777] hover:bg-blue-50 px-4 py-2 rounded-lg transition-all duration-200 no-underline"
                   >
                     Sponsors
-                  </button>
+                  </a>
                 </div>
               )}
             </div>

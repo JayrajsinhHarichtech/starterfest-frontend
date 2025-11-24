@@ -1,5 +1,4 @@
-import React from 'react';
-import mainBanner from "../../assets/img/banner-1.png";
+import mainBanner from "../../assets/img/banners/home-page.png";
 
 const HeroBanner = () => {
   return (

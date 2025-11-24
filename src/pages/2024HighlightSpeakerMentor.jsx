@@ -15,6 +15,17 @@ import Chiranjeev from "../assets/img/Chiranjeev.webp"
 import Deepali from "../assets/img/Deepali.webp"
 import Hirav from "../assets/img/Hirav.webp"
 
+// Import mentor images
+import m1 from "../assets/img/m1.webp";
+import m2 from "../assets/img/m2.webp";
+import m3 from "../assets/img/m3.webp";
+import m4 from "../assets/img/m4.webp";
+import m5 from "../assets/img/m5.webp";
+import m6 from "../assets/img/m6.webp";
+import m7 from "../assets/img/m7.webp";
+import m8 from "../assets/img/m8.webp";
+import m9 from "../assets/img/m9.webp";
+
 const Speakers2024 = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -45,9 +56,17 @@ const Speakers2024 = () => {
         subtitle: "Business Journalist and Media Host",
     };
 
-    const mentors = Array.from({ length: 9 }, (_, index) => ({
-        image: require(`../assets/img/m${index + 1}.webp`),
-    }));
+    const mentors = [
+        { image: m1 },
+        { image: m2 },
+        { image: m3 },
+        { image: m4 },
+        { image: m5 },
+        { image: m6 },
+        { image: m7 },
+        { image: m8 },
+        { image: m9 },
+    ];
 
     const motivationalSpeaker = {
         name: "Sneh Desai",

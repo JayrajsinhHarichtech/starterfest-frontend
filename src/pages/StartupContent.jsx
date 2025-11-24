@@ -1,241 +1,213 @@
-import React from "react";
-import { useRef, useState , useEffect} from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { useState, useEffect } from "react";
 import banner from "../assets/img/pitcher-startup.jpg";
 import cal from "../assets/img/calender.png";
 import img1 from "../assets/img/shilp-icon.png";
-import review from "../assets/img/reviews.png";
-import mainBanner from "../assets/img/banner-1.png";
-
+import mainBanner from "../assets/img/banners/home-page.png";
 import rePurchase from "../assets/img/review-purchase.png";
-import { CiStar } from "react-icons/ci";
-import { IoShareSocialOutline } from "react-icons/io5";
-import { SlCalender } from "react-icons/sl";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdLocationPin } from "react-icons/md";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalfAlt } from "react-icons/fa";
-import { PiFlagPennantFill } from "react-icons/pi";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
-import { RiFileCopyFill } from "react-icons/ri";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
-import { PiCurrencyInr } from "react-icons/pi";
-import about from "../assets/img/start-upImg.png";
-import { Link } from "react-router-dom";
-
+import { IoClose } from "react-icons/io5";
 
 export default function StartupContent() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
-  const [isActive, setIsActive] = useState(false);
-  const inputRef = useRef(null);
-
-  const handleCopy = () => {
-    inputRef.current.select();
-    document.execCommand("copy");
-    setIsActive(true);
-    window.getSelection().removeAllRanges(); // Clear the selection
-    setTimeout(() => {
-      setIsActive(false);
-    }, 2500);
-  };
 
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const [map, setMap] = useState(false);
-
   const handleMap = () => setMap(!map);
 
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="gradeint-bg padding-sec startup-sec">
-      <div className="banner">
-        <Container>
-          <Row>
-            <Col lg={12}>
-              <img src={mainBanner} className="w-100 startup-banner" />
-            </Col>
-          </Row>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Banner Section */}
+        <div className="mb-8">
+          <img src={mainBanner} className="w-full h-auto rounded-2xl shadow-lg" alt="Startup Fest Banner" />
+        </div>
 
-          <Row className="justify-content-center">
-            <Col lg={9} xs={7}>
-              <div className="flex">
-                <h6 className="txt-blue">Saturday ,13 December</h6>
-                {/* <button onClick={handleCopy}>
-                  <CiStar />
+        {/* Date and Ticket Section */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+          <div className="flex-1">
+            <h6 className="text-[#003777] text-lg font-semibold">Saturday, 13 December</h6>
+          </div>
+          <div className="">
+            <a 
+              href="http://register.startupfestgujarat.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="!no-underline inline-block bg-[#003777] hover:bg-blue-900 text-white font-semibold py-2 px-6 rounded-3xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              Get Ticket
+            </a>
+          </div>
+        </div>
+
+        {/* Modal */}
+        {show && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto">
+              {/* Modal Header */}
+              <div className="flex items-center justify-between p-6 border-b">
+                <div className="flex items-center space-x-3">
+                  <img src={rePurchase} width="50" className="" alt="Review" />
+                  <span className="text-xl font-semibold">Review Purchase</span>
+                </div>
+                <button 
+                  onClick={handleClose}
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  <IoClose size={24} />
                 </button>
-                <button onClick={handleCopy}>
-                  <IoShareSocialOutline />
-                </button> */}
               </div>
-            </Col>
-            <Col lg={3} xs={5} className="text-end">
-              {/* <button className="theme-btn" onClick={handleShow}> */}
-              <a href="http://register.startupfestgujarat.com/" target="_blank" rel="noopener noreferrer" className="theme-btn">
-                Get Ticket
-              </a>
-
-              <Modal
-                show={show}
-                onHide={handleClose}
-                backdrop="static"
-                keyboard={false}
-                className="register-popup"
-              >
-                <Modal.Header>
-                  <Modal.Title>
-                    <img src={rePurchase} width="50" className="review-icn" />
-                    <span>Review Purchase</span>
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <h5>Friday AfterHours: Sufi Unplugged</h5>
-                  <h6 className="txt-blue">Friday, September 13</h6>
-                  <img src={banner} className="w-100" />
-                  <div className="d-flex justify-content-between">
-                    <h5 className="mt-3">Amount (₹) </h5>
-                    <h5 className="mt-3">Quantity </h5>
+              
+              {/* Modal Body */}
+              <div className="p-6">
+                <h5 className="text-xl font-semibold mb-2">Friday AfterHours: Sufi Unplugged</h5>
+                <h6 className="text-[#003777] text-base mb-4">Friday, September 13</h6>
+                <img src={banner} className="w-full rounded-lg mb-4" alt="Event" />
+                
+                <div className="flex justify-between mb-4">
+                  <h5 className="text-lg font-semibold">Amount (₹)</h5>
+                  <h5 className="text-lg font-semibold">Quantity</h5>
+                </div>
+                
+                <div className="flex gap-4 mb-4">
+                  <input 
+                    type="number" 
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003777]" 
+                    placeholder="100" 
+                  />
+                  <div className="flex items-center border border-gray-300 rounded-lg">
+                    <button
+                      onClick={() => setQuantity(Math.max(0, quantity - 1))}
+                      className="px-3 py-2 text-gray-600 hover:text-[#003777] transition-colors"
+                    >
+                      <FaMinus />
+                    </button>
+                    <input
+                      type="number"
+                      className="w-16 text-center py-2 border-0 focus:outline-none"
+                      onChange={(e) => setQuantity(parseInt(e.target.value) || 0)}
+                      value={quantity}
+                      min={0}
+                    />
+                    <button
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="px-3 py-2 text-gray-600 hover:text-[#003777] transition-colors"
+                    >
+                      <FaPlus />
+                    </button>
                   </div>
-                  <div className="input-num">
-                    <div className="amt-input">
-                      <input type="num" className="amount" placeholder="100" />
-                      {/* <div className="rs-icon">
-                  <PiCurrencyInr />
-                  </div> */}
-                    </div>
-                    <div className="ince-btns">
-                      <button
-                        onClick={() => {
-                          setQuantity((prevQuantity) => prevQuantity - 1);
-                        }}
-                        className="decrr"
-                      >
-                        <FaMinus />
-                      </button>
-                      <input
-                        type="num"
-                        className="text-center"
-                        // placeholder="1"
-                        onChange={(e) => {
-                          setQuantity(e.target.value);
-                        }}
-                        value={quantity}
-                        min={0}
-                      />
-                      <button
-                        onClick={() => {
-                          setQuantity((prevQuantity) => prevQuantity + 1);
-                        }}
-                        className="incrr active"
-                      >
-                        <FaPlus />
-                      </button>
-                    </div>
+                </div>
+                
+                <p className="text-sm text-gray-600 mb-4">Sales end on December 13</p>
+
+                <hr className="mb-4" />
+                
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="font-medium">Subtotal</span>
+                    <span>₹500.00</span>
                   </div>
-                  <p className="desc-line">Sales end on December 13</p>
-
-                  <hr />
-                  <div className="total-amt">
-                    <div className="flex">
-                      <h6>Subtotal</h6>
-                      <p>₹500.00</p>
-                    </div>
-                    <div className="flex">
-                      <h6>Tax</h6>
-                      <p>₹4.00</p>
-                    </div>
-                    <div className="flex">
-                      <h6>
-                        <b>Total</b>
-                      </h6>
-                      <p>
-                        <b>₹504.00</b>
-                      </p>
-                    </div>
+                  <div className="flex justify-between">
+                    <span className="font-medium">Tax</span>
+                    <span>₹4.00</span>
                   </div>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button className="theme-btn-light" onClick={handleClose}>
-                    Cancel
-                  </Button>
-                  <Button className="theme-btn">Proceed to checkout</Button>
-                </Modal.Footer>
-              </Modal>
-            </Col>
-          </Row>
+                  <div className="flex justify-between text-lg font-bold">
+                    <span>Total</span>
+                    <span>₹504.00</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Modal Footer */}
+              <div className="flex gap-3 p-6 border-t">
+                <button 
+                  onClick={handleClose}
+                  className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button className="flex-1 px-4 py-2 bg-[#003777] text-white rounded-lg hover:bg-blue-900 transition-colors">
+                  Proceed to checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
-          <Row>
-            <Col lg={12}>
-              <h3 className="title w-sm">
-                Start-Up Fest 3.0 Gujarat by Snehshilp Foundation
-              </h3>
-              <Row className=" ">
-                <Col lg={8}>
-                  <div className="detail-right mt-3">
-                    <h4>About Event</h4>
-                    <p>
-                      Join us for the second edition of Start-Up Fest Gujarat, a
-                      day dedicated to empowering your business journey with
-                      unparalleled knowledge, inspiration, and networking
-                      opportunities. This event is crafted to uplift and
-                      celebrate the dynamic community of small businesses,
-                      providing you with key insights and connections to propel
-                      your success.
-                    </p>
+        {/* Main Content */}
+        <div className="">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            Start-Up Fest 3.0 Gujarat by Snehshilp Foundation
+          </h3>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Left Content - About Event */}
+            <div className="lg:col-span-2">
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
+                <h4 className="text-2xl font-bold text-gray-900 mb-6">About Event</h4>
+                
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    Join us for the second edition of Start-Up Fest Gujarat, a
+                    day dedicated to empowering your business journey with
+                    unparalleled knowledge, inspiration, and networking
+                    opportunities. This event is crafted to uplift and
+                    celebrate the dynamic community of small businesses,
+                    providing you with key insights and connections to propel
+                    your success.
+                  </p>
 
-                    <p>
-                      At the Start-Up Fest Gujarat, you'll have the opportunity
-                      to engage with industry-leading experts, influential
-                      speakers, and fellow entrepreneurs who have thrived in the
-                      small business arena. Dive deep into invaluable knowledge
-                      through keynote presentations, interactive workshops, and
-                      panel discussions on a wide array of topics, including
-                      marketing strategies, finance and funding, digital
-                      transformation, customer experience, and more.
-                    </p>
+                  <p>
+                    At the Start-Up Fest Gujarat, you'll have the opportunity
+                    to engage with industry-leading experts, influential
+                    speakers, and fellow entrepreneurs who have thrived in the
+                    small business arena. Dive deep into invaluable knowledge
+                    through keynote presentations, interactive workshops, and
+                    panel discussions on a wide array of topics, including
+                    marketing strategies, finance and funding, digital
+                    transformation, customer experience, and more.
+                  </p>
 
-                    {/* <h6>Tickets are priced at INR 450 + GST. </h6> */}
-                    <p>
-                      Our exhibition hall will be a hub of innovation,
-                      showcasing products and services specifically designed to
-                      cater to the needs of small businesses. Connect with
-                      exhibitors and discover cutting-edge solutions that can
-                      streamline your operations, enhance productivity, and
-                      drive growth. Explore the latest technological
-                      advancements, software applications, marketing tools, and
-                      financial services that can revolutionize your business.
-                    </p>
+                  <p>
+                    Our exhibition hall will be a hub of innovation,
+                    showcasing products and services specifically designed to
+                    cater to the needs of small businesses. Connect with
+                    exhibitors and discover cutting-edge solutions that can
+                    streamline your operations, enhance productivity, and
+                    drive growth. Explore the latest technological
+                    advancements, software applications, marketing tools, and
+                    financial services that can revolutionize your business.
+                  </p>
 
+                  <p>
+                    Whether you're an established business owner or just
+                    beginning your entrepreneurial journey, the Small Business
+                    Expo is an essential event to fuel your ambitions. Mark
+                    your calendars, gather your business cards, and prepare to
+                    immerse yourself in a day of inspiration, education, and
+                    growth. Don't miss this chance to connect with the
+                    brightest minds in the industry and unlock the full
+                    potential of your small business.
+                  </p>
+                  
+                  <p>
+                    Join us at the Start-Up Fest Gujarat 3.0 and take a
+                    monumental step towards realizing your entrepreneurial
+                    dreams!
+                  </p>
+                  
+                  <div className="mt-8">
+                    <h6 className="text-xl font-semibold text-gray-900 mb-3">Refund Policy</h6>
                     <p>
-                      Whether you're an established business owner or just
-                      beginning your entrepreneurial journey, the Small Business
-                      Expo is an essential event to fuel your ambitions. Mark
-                      your calendars, gather your business cards, and prepare to
-                      immerse yourself in a day of inspiration, education, and
-                      growth. Don't miss this chance to connect with the
-                      brightest minds in the industry and unlock the full
-                      potential of your small business.
-                    </p>
-                    <p>
-                      Join us at the Start-Up Fest Gujarat 3.0 and take a
-                      monumental step towards realizing your entrepreneurial
-                      dreams!
-                    </p>
-                    <h6>Refund Policy </h6>
-                    <p>
-                      Once registration is confirmed, the fee is non-refundable,
+                      Once registration is confirmed, the fee is non-refundable.
                       IF THE EVENT IS CANCELLED DUE TO ANY UNFORESEEN
                       CIRCUMSTANCES BEYOND THE CONTROL OF THE ORGANIZERS, THE
                       REGISTRATION FEE PAID BY YOU FOR PARTICIPATION WILL BE
@@ -243,234 +215,91 @@ export default function StartupContent() {
                       EVENT OF YOU BEING UNABLE TO PARTICIPATE ON THE NEW DATE,
                       YOU WILL NOT BE ELIGIBLE FOR A REFUND.
                     </p>
-                    <h6>Tickets </h6>
-                    <p>
+                  </div>
+                  
+                  <div className="mt-6">
+                    <h6 className="text-xl font-semibold text-gray-900 mb-3">Tickets</h6>
+                    <p className="mb-4">
                       Tickets for Start-Up Fest 3.0 Gujarat by Snehshilp
                       Foundation can be booked here.
                     </p>
-
-                    {/* <button className="theme-btn" onClick={handleShow}> */}
-                    <a href="http://register.startupfestgujarat.com/" target="_blank" rel="noopener noreferrer" className="theme-btn">
+                    
+                    <a 
+                      href="http://register.startupfestgujarat.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className=" !no-underline inline-block bg-[#003777] hover:bg-blue-900 text-white font-semibold py-2 px-6 rounded-3xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    >
                       Get Ticket
                     </a>
                   </div>
-
-                  {/* <div className="tags">
-                    <h4>Tags</h4>
-                    <p>
-                      <button className="square">Performance</button>
-                      <button className="round">Music</button>
-                      <button className="round">Art</button>
-                    </p>
-
-                    <p className="big-btns">
-                      <button className="square">
-                        <FaPlus />
-                        Add to curated list
-                      </button>
-                      <button className="square">
-                        <PiFlagPennantFill />
-                        Report this event
-                      </button>
-                    </p>
-                  </div> */}
-                </Col>
-                <Col lg={4}>
-                  <Row className="mt-4">
-                    <Col lg={12}>
-                      <div className="box-content">
-                        <h6 className="box-title">Date and Time</h6>
-                        <div className="detail">
-                          {/* <SlCalender /> */}
-                          <img src={cal} />
-                          <div className="txt">
-                            <div className="details-sec">
-                              {/* <h6> 13 December, 2025</h6> */}
-                              <p>
-                                Sat Dec 13 2025 at 09:00 am to Sun Dec 14 2025
-                                at 11:00 pm (GMT+05:30)
-                              </p>
-                            </div>
-                            {/* <a href="/">Add to calendar</a> */}
-                          </div>
-                        </div>
-                      </div>
-                    </Col>
-
-                    <Col lg={12}>
-                      <div className="box-content">
-                        <h6 className="box-title">Location</h6>
-                        <div className="detail">
-                          <MdLocationPin />
-                          <div className="txt">
-                            <div className="details-sec">
-                              {/* <h6> Gujarat University Atal Kalam Building </h6> */}
-                              <p>
-                               Gujarat University Atal Kalam Building, Ahmedabad
-                              </p>
-                            </div>
-                            <div className="mt-2">
-                              <a onClick={handleMap}>Show Map</a>
-
-                              <span>
-                                <IoIosArrowDown />
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="iframe-map">
-                           {map && (
-                            <iframe
-                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.54275011732!2d72.54009267509234!3d23.040555279161175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84ead1103329%3A0x1a907f7fee8b2b7f!2sGujarat%20University!5e0!3m2!1sen!2sin!4v1763451642149!5m2!1sen!2sin"
-                              width="100%"
-                              height="200"
-                              allowFullScreen
-                              loading="lazy"
-                              referrerPolicy="no-referrer-when-downgrade"
-                            ></iframe>
-                          )}
-                        </div>
-                      </div>
-                    </Col>
-
-                    <Col lg={12}>
-                      <div className="box-content">
-                        <h6 className="box-title">Hosted By</h6>
-                        <div className="detail">
-                          <img src={img1} className="no-bg" />
-                          <div className="txt">
-                            <div className="details-sec">
-                              <h6>Snehshilp Foundation</h6>
-                            </div>
-
-                            {/* <div className="btns">
-                              <button className="theme-btn">Follow</button>
-                              <button className="theme-btn-light">
-                                Contact
-                              </button>
-                            </div> */}
-                          </div>
-                        </div>
-                      </div>
-                    </Col>
-                  </Row>
-                </Col>
-                {/* <Col lg={4}>
-                  <Row>
-                    <Col lg={12}>
-                      <div className="box-content reviews">
-                        <div className="flex">
-                          <h6 className="box-title">
-                            Host reviews by attendees
-                          </h6>
-                          <div className="star">
-                            <p className="mb-0">4.5</p>
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStarHalfAlt />
-                          </div>
-                        </div>
-                        <div className="detail">
-                          <img src={review} />
-                          <div className="txt">
-                            <div className="details-sec">
-                              <h6 className="mb-1"> Samantha Payne </h6>
-                              <div className="star">
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStarHalfAlt />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <p className="comment">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit ut aliquam, purus sit amet luctus venenatis,
-                          lectus magna fringilla urna
-                        </p>
-                        <a className="show-map" href="/">
-                          View More
-                        </a>
-                        <span className="show">
-                          <IoIosArrowDown />
-                        </span>
-                      </div>
-                    </Col>
-                    <Col lg={12}>
-                      <div className="box-content reviews mt-3">
-                        <div className="flex">
-                          <h6 className="box-title">Share Event</h6>
-                        </div>
-                        <div className="detail">
-                          <div className="social">
-                            <button>
-                              <FaTwitter />
-                            </button>
-                            <button>
-                              <FaFacebookF />
-                            </button>
-                            <button>
-                              <FaInstagram />
-                            </button>
-                            <button>
-                              <FaGithub />
-                            </button>
-                          </div>
-                        </div>
-
-                        <div class="copy-text">
-                          <input
-                            ref={inputRef}
-                            type="text"
-                            class="text"
-                            value="https://startupfest.barodaweb.org/startup"
-                            readOnly
-                          />
-                          <button onClick={handleCopy}>
-                            <RiFileCopyFill />
-                          </button>
-                        </div>
-                      </div>
-                    </Col>
-                  </Row>
-                </Col> */}
-              </Row>
-            </Col>
-          </Row>
-        </Container>
-
-        {/* <section className="padding-sec">
-          <Container>
-            <Row className="justify-content-between">
-              <Col xs={12} md={5} lg={5} className="">
-                <h3 className="title">Register Yourself As StartUp</h3>
-                <p className="para">
-                  People who register for the Start-Up Fest will be allotted a
-                  5-minute time slot to present their startup in front of
-                  potential investors.
-                </p>
-
-                <p className="para">
-                  Startups/ franchises will get a 2/2 stall and visibility in
-                  front of all the investors coming in.
-                </p>
-
-                <div className="mt-5">
-                  <a href="http://register.startupfestgujarat.com/" target="_blank" rel="noopener noreferrer" className="theme-btn">
-                    Register Now
-                  </a>
                 </div>
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                <img src={about} className="w-100" />
-              </Col>
-            </Row>
-          </Container>
-        </section> */}
+              </div>
+            </div>
+
+            {/* Right Sidebar - Event Details */}
+            <div className="lg:col-span-1 space-y-6">
+              {/* Date and Time */}
+              <div className="bg-white rounded-2xl p-6 shadow-xl">
+                <h6 className="text-lg font-semibold text-gray-900 mb-4">Date and Time</h6>
+                <div className="flex items-start space-x-4">
+                  <img src={cal} className="w-8 h-8 mt-1" alt="Calendar" />
+                  <div>
+                    <p className="text-gray-700 leading-relaxed">
+                      Sat Dec 13 2025 at 09:00 am to Sun Dec 14 2025
+                      at 11:00 pm (GMT+05:30)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Location */}
+              <div className="bg-white rounded-2xl p-6 shadow-xl">
+                <h6 className="text-lg font-semibold text-gray-900 mb-4">Location</h6>
+                <div className="flex items-start space-x-4 mb-4">
+                  <MdLocationPin className="text-[#003777] text-xl mt-1 flex-shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-gray-700 leading-relaxed">
+                      Gujarat University Atal Kalam Building, Ahmedabad
+                    </p>
+                    <button 
+                      onClick={handleMap}
+                      className="flex items-center space-x-2 mt-2 text-[#003777] hover:text-blue-900 transition-colors"
+                    >
+                      <span className="text-sm font-medium">Show Map</span>
+                      <IoIosArrowDown className={`transform transition-transform ${map ? 'rotate-180' : ''}`} />
+                    </button>
+                  </div>
+                </div>
+                
+                {map && (
+                  <div className="mt-4 rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.54275011732!2d72.54009267509234!3d23.040555279161175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84ead1103329%3A0x1a907f7fee8b2b7f!2sGujarat%20University!5e0!3m2!1sen!2sin!4v1763451642149!5m2!1sen!2sin"
+                      width="100%"
+                      height="200"
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="border-0 rounded-lg"
+                    ></iframe>
+                  </div>
+                )}
+              </div>
+
+              {/* Hosted By */}
+              <div className="bg-white rounded-2xl p-6 shadow-xl">
+                <h6 className="text-lg font-semibold text-gray-900 mb-4">Hosted By</h6>
+                <div className="flex items-center space-x-4">
+                  <img src={img1} className="w-12 h-12 object-contain" alt="Snehshilp Foundation" />
+                  <div>
+                    <h6 className="font-semibold text-gray-900">Snehshilp Foundation</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

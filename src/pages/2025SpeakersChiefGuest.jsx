@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import SectionTitle from "../components/SectionTitle";
 
 // Images
-import abhijeet from "../assets/img/Abhijeet-Satani.jpg";
-import fenil from "../assets/img/ca.jpeg";
-import naman from "../assets/img/NamanAnand.jpeg";
-import neil from "../assets/img/Neil.JPEG";
-import raul from "../assets/img/Raul.jpeg";
-import sonu from "../assets/img/SonuSharma.png";
-import tirth from "../assets/img/tirth.jpeg";
-import azar from "../assets/img/azar2.png";
+import abhijeet from "../assets/img/2025-speaker/abhijit-satani.png";
+import fenil from "../assets/img/2025-speaker/fenil-shah.png";
+import naman from "../assets/img/2025-speaker/naman-anand.png";
+import neil from "../assets/img/2025-speaker/neil-nitin-sharma.png";
+import raul from "../assets/img/2025-speaker/raul-john.png";
+import sonu from "../assets/img/2025-speaker/sonu-sharma.png";
+import tirth from "../assets/img/2025-speaker/tirth.png";
+import azar from "../assets/img/2025-speaker/azhar-iqubal.png";
 
 const SpeakersChiefGuest = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -37,12 +37,6 @@ const SpeakersChiefGuest = () => {
 
     // All Speakers Data
     const speakers = [
-        {
-            img: sonu,
-            name: "Sonu Sharma",
-            role: "International Motivational Speaker",
-        },
-
         {
             img: raul,
             name: "Raul John Aju",
@@ -79,20 +73,20 @@ const SpeakersChiefGuest = () => {
                 className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20"
             >
                 <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <SectionTitle title="Chief Guest" className="mb-16 text-center"/>
+                    <SectionTitle title="Guest Of Honor" className="mb-16 text-center"/>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
                     {/* Azar Iqubal - First Chief Guest */}
                     <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="group bg-white rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-4 transition-all duration-500 border-t-4 border-[#003777]">
                             
                             {/* Image Container */}
                             <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                <div className="aspect-[4/3] overflow-hidden">
+                                <div className="aspect-[4/4] overflow-hidden">
                                     <img
                                         src={azar}
-                                        alt="Azar Iqubal"
+                                        alt="Azhar Iqubal"
                                         className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                                     />
                                 </div>
@@ -104,7 +98,7 @@ const SpeakersChiefGuest = () => {
                             {/* Content */}
                             <div className="text-center space-y-3">
                                 <h4 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#003777] transition-colors duration-300">
-                                    Azar Iqubal
+                                    Azhar Iqubal
                                 </h4>
                                 <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
                                     Co-Founder & Chairman at Inshorts, Co-founder & CEO at Fenado AI
@@ -122,7 +116,7 @@ const SpeakersChiefGuest = () => {
                             
                             {/* Image Container */}
                             <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                <div className="aspect-[4/3] overflow-hidden">
+                                <div className="aspect-[4/4] overflow-hidden">
                                     <img
                                         src={neil}
                                         alt="Neil Nitin Mukesh"
@@ -141,6 +135,39 @@ const SpeakersChiefGuest = () => {
                                 </h4>
                                 <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
                                     Renowned Indian Actor & Film Producer
+                                </p>
+                            </div>
+                            
+                            {/* Hover Border Effect */}
+                            <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-[#003777] transition-colors duration-300"></div>
+                        </div>
+                    </div>
+
+                    {/* Sonu Sharma - Third Chief Guest */}
+                    <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                        <div className="group bg-white rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-4 transition-all duration-500 border-t-4 border-[#003777]">
+                            
+                            {/* Image Container */}
+                            <div className="relative mb-6 overflow-hidden rounded-2xl">
+                                <div className="aspect-[4/4] overflow-hidden">
+                                    <img
+                                        src={sonu}
+                                        alt="Sonu Sharma"
+                                        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                </div>
+                                
+                                {/* Overlay Effect */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#003777]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="text-center space-y-3">
+                                <h4 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#003777] transition-colors duration-300">
+                                   Sonu Sharma
+                                </h4>
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
+                                   International Motivational Speaker
                                 </p>
                             </div>
                             
@@ -169,7 +196,7 @@ const SpeakersChiefGuest = () => {
                             
                             {/* Image Container */}
                             <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                <div className="aspect-[4/3] overflow-hidden">
+                                <div className="aspect-[4/4] overflow-hidden">
                                     <img
                                         src={speaker.img}
                                         alt={speaker.name}

@@ -11,7 +11,7 @@ import SectionTitle from '../SectionTitle';
 
 const SpeakersSection = () => {
   const speakersData = [
-    { img: azar, name: "Azar Iqubal", role: "Co-Founder & Chairman at Inshorts \nCo-founder & CEO at Fenado AI" },
+    { img: azar, name: "Azhar Iqubal", role: "Co-Founder & Chairman at Inshorts Co-founder & CEO at Fenado AI" },
     { img: neil, name: "Neil Nitin Mukesh", role: "Renowned Indian Actor & Film Producer" },
     { img: sonu, name: "Sonu Sharma", role: "International Motivational Speaker" },
     { img: raul, name: "Raul John Aju", role: "India's Young AI Innovator, CEO Project 47x, TEDx Speaker" },
@@ -55,7 +55,7 @@ const SpeakersSection = () => {
                 <h4 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-[#003777] transition-colors duration-300">
                   {spk.name}
                 </h4>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
+                <p className="text-sm md:text-[18px] text-gray-600 leading-relaxed font-medium">
                   {spk.role}
                 </p>
               </div>

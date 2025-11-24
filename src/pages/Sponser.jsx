@@ -1,29 +1,53 @@
 import React, { useEffect } from "react";
 import { SponsorHeroBanner, SponsorGrid } from '../components/SponsorComponents';
 
+// Import sponsor images
+import startupImg from '../assets/img/startup.png';
+import vanillaImg from '../assets/img/vanilla.png';
+import zippitImg from '../assets/img/zippit.png';
+import defImg from '../assets/img/def.png';
+import rogueImg from '../assets/img/rogue.png';
+import mirchiImg from '../assets/img/mirchi.png';
+import swarnimImg from '../assets/img/swarnim.png';
+import gallopsImg from '../assets/img/gallops.png';
+import chitraImg from '../assets/img/chitra.png';
+import insightImg from '../assets/img/insight.png';
+import swenImg from '../assets/img/swen.png';
+import inocenImg from '../assets/img/inocen.png';
+import gyanjyotImg from '../assets/img/gyanjyot.png';
+import dronaImg from '../assets/img/drona.png';
+import heritageImg from '../assets/img/heritage.png';
+import amdavadImg from '../assets/img/amdavad.png';
+import gyaniImg from '../assets/img/gyani.png';
+import mediaImg from '../assets/img/media.png';
+import ssipImg from '../assets/img/ssip.png';
+import eventImg from '../assets/img/event.png';
+import swargamImg from '../assets/img/swargam.png';
+import startupBannerImg from '../assets/img/startup-banner.jpg';
+
 const sponsors = [
-  { url: require('../assets/img/startup.png'), heading: "Sponsor 1" },
-  { url: require('../assets/img/vanilla.png'), heading: "Sponsor 2" },
-  { url: require('../assets/img/zippit.png'), heading: "Sponsor 3" },
-  { url: require('../assets/img/def.png'), heading: "Sponsor 4" },
-  { url: require('../assets/img/rogue.png'), heading: "Sponsor 5" },
-  { url: require('../assets/img/mirchi.png'), heading: "Sponsor 6" },
-  { url: require('../assets/img/swarnim.png'), heading: "Sponsor 7" },
-  { url: require('../assets/img/gallops.png'), heading: "Sponsor 8" },
-  { url: require('../assets/img/chitra.png'), heading: "Sponsor 9" },
-  { url: require('../assets/img/insight.png'), heading: "Sponsor 10" },
-  { url: require('../assets/img/swen.png'), heading: "Sponsor 11" },
-  { url: require('../assets/img/inocen.png'), heading: "Sponsor 12" },
-  { url: require('../assets/img/gyanjyot.png'), heading: "Sponsor 13" },
-  { url: require('../assets/img/drona.png'), heading: "Sponsor 14" },
-  { url: require('../assets/img/heritage.png'), heading: "Sponsor 15" },
-  { url: require('../assets/img/amdavad.png'), heading: "Sponsor 16" },
-  { url: require('../assets/img/gyani.png'), heading: "Sponsor 17" },
-  { url: require('../assets/img/media.png'), heading: "Sponsor 18" },
-  { url: require('../assets/img/startup.png'), heading: "Sponsor 19" },
-  { url: require('../assets/img/ssip.png'), heading: "Sponsor 20" },
-  { url: require('../assets/img/event.png'), heading: "Sponsor 21" },
-  { url: require('../assets/img/swargam.png'), heading: "Sponsor 22" },
+  { url: startupImg, heading: "Sponsor 1" },
+  { url: vanillaImg, heading: "Sponsor 2" },
+  { url: zippitImg, heading: "Sponsor 3" },
+  { url: defImg, heading: "Sponsor 4" },
+  { url: rogueImg, heading: "Sponsor 5" },
+  { url: mirchiImg, heading: "Sponsor 6" },
+  { url: swarnimImg, heading: "Sponsor 7" },
+  { url: gallopsImg, heading: "Sponsor 8" },
+  { url: chitraImg, heading: "Sponsor 9" },
+  { url: insightImg, heading: "Sponsor 10" },
+  { url: swenImg, heading: "Sponsor 11" },
+  { url: inocenImg, heading: "Sponsor 12" },
+  { url: gyanjyotImg, heading: "Sponsor 13" },
+  { url: dronaImg, heading: "Sponsor 14" },
+  { url: heritageImg, heading: "Sponsor 15" },
+  { url: amdavadImg, heading: "Sponsor 16" },
+  { url: gyaniImg, heading: "Sponsor 17" },
+  { url: mediaImg, heading: "Sponsor 18" },
+  { url: startupImg, heading: "Sponsor 19" },
+  { url: ssipImg, heading: "Sponsor 20" },
+  { url: eventImg, heading: "Sponsor 21" },
+  { url: swargamImg, heading: "Sponsor 22" },
 ];
 
 const Sponser = () => {
@@ -35,7 +59,7 @@ const Sponser = () => {
     <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 min-h-screen overflow-x-hidden">
       {/* Hero Banner */}
       <SponsorHeroBanner 
-        image={require('../assets/img/startup-banner.jpg')} 
+        image={startupBannerImg} 
         alt="Sponsors Banner" 
       />
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import SectionTitle from "../components/SectionTitle";
-import st from "../assets/img/st.webp";
-import st1 from "../assets/img/st-1 (1).JPG";
-import st2 from "../assets/img/st-1 (2).JPG";
-import st3 from "../assets/img/st-1 (3).JPG";
+import image1 from "../assets/img/shark-teen/image1.png"
+import image2 from "../assets/img/shark-teen/image2.png"
+import image3 from "../assets/img/shark-teen/image3.png"
+import image4 from "../assets/img/shark-teen/image4.png"
 // import user from "../assets/img/st-1.JPG";
 
 const Sharkteen = () => {
@@ -33,16 +33,16 @@ const Sharkteen = () => {
     // ===================== DATA =====================
     const sharkteens = [
         {
-            image: st1,
+            image: image1,
         },
         {
-            image: st2,
+            image: image2,
         },
         {
-            image: st3,
+            image: image3,
         },
         {
-            image: st,
+            image: image4,
         },
     ]
 
@@ -60,7 +60,7 @@ const Sharkteen = () => {
                     />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                     {sharkteens.map((item, index) => (
                         <div 
                             key={index}

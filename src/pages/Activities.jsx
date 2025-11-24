@@ -1,6 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import SectionTitle from '../components/SectionTitle';
 
+// Import activity images
+import activity1 from '../assets/img/Activities/1.png';
+import activity2 from '../assets/img/Activities/2.png';
+import activity3 from '../assets/img/Activities/3.png';
+import activity4 from '../assets/img/Activities/4.png';
+import activity5 from '../assets/img/Activities/5.png';
+import activity6 from '../assets/img/Activities/6.png';
+import activity7 from '../assets/img/Activities/7.png';
+import activity8 from '../assets/img/Activities/8.png';
+import activity9 from '../assets/img/Activities/9.png';
+import activity10 from '../assets/img/Activities/10.png';
+import activity11 from '../assets/img/Activities/11.png';
+import activity12 from '../assets/img/Activities/12.png';
+
 function Activites() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -23,18 +37,18 @@ function Activites() {
   }, []);
 
   const content = [
-    { url: require('../assets/img/Activities/1.png'), heading: "Panel Discussion", para: "Panels with diverse viewpoints on trending industry topics and informal fireside chats with successful entrepreneurs sharing their journey and lessons learned." },
-    { url: require('../assets/img/Activities/2.png'), heading: "Workshops", para: "Practical workshops on topics like digital marketing, growth hacking, and funding strategies." },
-    { url: require('../assets/img/Activities/3.png'), heading: "Storytelling Sessions", para: "Entrepreneurs share both their successes and failures." },
-    { url: require('../assets/img/Activities/4.png'), heading: "Open Mic", para: "An open mic platform for attendees to share their startup experiences." },
-    { url: require('../assets/img/Activities/5.png'), heading: "Business Simulations", para: "Business simulation games to test entrepreneurial skills." },
-    { url: require('../assets/img/Activities/6.png'), heading: "Startup Trivia", para: "Trivia sessions focused on startup knowledge and history." },
-    { url: require('../assets/img/Activities/7.png'), heading: "Launch Pads", para: "Platform for startups to unveil new products or services." },
-    { url: require('../assets/img/Activities/8.png'), heading: "Announcement Spots", para: "For startups to make significant announcements or updates." },
-    { url: require('../assets/img/Activities/9.png'), heading: "Real-Time Prototyping", para: "Set up spaces where startups can engage in live prototyping." },
-    { url: require('../assets/img/Activities/10.png'), heading: "Design Thinking Workshops", para: "Design sprints to tackle real-world challenges." },
-    { url: require('../assets/img/Activities/11.png'), heading: "Problem-Solving Challenges", para: "Hackathons focused on specific industry problems or themes." },
-    { url: require('../assets/img/Activities/12.png'), heading: "Innovation Sprints", para: "Short, intense innovation sprints with prizes for the best solutions" }
+    { url: activity1, heading: "Panel Discussion", para: "Panels with diverse viewpoints on trending industry topics and informal fireside chats with successful entrepreneurs sharing their journey and lessons learned." },
+    { url: activity2, heading: "Workshops", para: "Practical workshops on topics like digital marketing, growth hacking, and funding strategies." },
+    { url: activity3, heading: "Storytelling Sessions", para: "Entrepreneurs share both their successes and failures." },
+    { url: activity4, heading: "Open Mic", para: "An open mic platform for attendees to share their startup experiences." },
+    { url: activity5, heading: "Business Simulations", para: "Business simulation games to test entrepreneurial skills." },
+    { url: activity6, heading: "Startup Trivia", para: "Trivia sessions focused on startup knowledge and history." },
+    { url: activity7, heading: "Launch Pads", para: "Platform for startups to unveil new products or services." },
+    { url: activity8, heading: "Announcement Spots", para: "For startups to make significant announcements or updates." },
+    { url: activity9, heading: "Real-Time Prototyping", para: "Set up spaces where startups can engage in live prototyping." },
+    { url: activity10, heading: "Design Thinking Workshops", para: "Design sprints to tackle real-world challenges." },
+    { url: activity11, heading: "Problem-Solving Challenges", para: "Hackathons focused on specific industry problems or themes." },
+    { url: activity12, heading: "Innovation Sprints", para: "Short, intense innovation sprints with prizes for the best solutions" }
   ];
 
   return (

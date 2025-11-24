@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
-import axios from "axios";
 
 // Child Components
 import HeroBanner from "./HomeComponents/HeroBanner";
@@ -83,30 +81,30 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  // Media API calls
+  // Media API calls - COMMENTED OUT
   useEffect(() => {
-    const fetchMediaData = async () => {
-      try {
-        const response = await axios.get(`${process.env.REACT_APP_URL}/api/media`);
-        // Ensure response.data is an array
-        const data = Array.isArray(response.data) ? response.data : [];
-        setMediaData(data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching media data:', error);
-        // Set empty array on error
-        setMediaData([]);
-        setLoading(false);
-      }
-    };
+    // const fetchMediaData = async () => {
+    //   try {
+    //     const response = await axios.get(`${import.meta.env.VITE_APP_URL}/api/media`);
+    //     // Ensure response.data is an array
+    //     const data = Array.isArray(response.data) ? response.data : [];
+    //     setMediaData(data);
+    //     setLoading(false);
+    //   } catch (error) {
+    //     console.error('Error fetching media data:', error);
+    //     // Set empty array on error
+    //     setMediaData([]);
+    //     setLoading(false);
+    //   }
+    // };
 
-    // Only fetch if API URL is available
-    if (process.env.REACT_APP_URL) {
-      fetchMediaData();
-    } else {
+    // // Only fetch if API URL is available
+    // if (import.meta.env.VITE_APP_URL) {
+    //   fetchMediaData();
+    // } else {
       setMediaData([]);
       setLoading(false);
-    }
+    // }
   }, []);
 
   const handleLightboxClose = () => {
@@ -116,9 +114,10 @@ export default function Home() {
   };
 
   const handleMediaCardClick = (item) => {
-    setLightboxImage(`${process.env.REACT_APP_URL}/${item.image}`);
-    setLightboxTitle(item.title);
-    setLightboxShow(true);
+    // setLightboxImage(`${import.meta.env.VITE_APP_URL}/${item.image}`);
+    // setLightboxTitle(item.title);
+    // setLightboxShow(true);
+    console.log('Media card clicked:', item);
   };
 
   const getMediaSettings = () => {
@@ -248,21 +247,15 @@ export default function Home() {
                   {mediaData.length === 1 ? (
                     <div className="flex justify-center">
                       <div className="w-full max-w-md">
-                        <div
-                          className="group cursor-pointer animate-slide-up"
-                          onClick={() => handleMediaCardClick(mediaData[0])}
-                        >
+                        {/* Media card commented out - no API data */}
+                        <div className="group cursor-pointer animate-slide-up">
                           <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 overflow-hidden">
-                            <div className="aspect-video overflow-hidden">
-                              <img
-                                src={`${process.env.REACT_APP_URL}/${mediaData[0].image}`}
-                                alt={mediaData[0].title}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                              />
+                            <div className="aspect-video overflow-hidden bg-gray-200 flex items-center justify-center">
+                              <p className="text-gray-500">No media data available</p>
                             </div>
                             <div className="p-6">
-                              <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#003777] transition-colors duration-300">
-                                {mediaData[0].title}
+                              <h4 className="text-xl font-bold text-gray-900">
+                                Media Gallery
                               </h4>
                             </div>
                           </div>
@@ -271,6 +264,21 @@ export default function Home() {
                     </div>
                   ) : (
                     <div className="px-4">
+                      {/* Media slider commented out - no API data */}
+                      <div className="text-center py-8">
+                        <div className="bg-white rounded-2xl shadow-xl p-8">
+                          <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                            <p className="text-gray-500">Media gallery will load here</p>
+                          </div>
+                          <h4 className="text-xl font-bold text-gray-900">
+                            Media Gallery
+                          </h4>
+                          <p className="text-gray-600 mt-2">
+                            API integration required
+                          </p>
+                        </div>
+                      </div>
+                      {/* Original slider code commented out:
                       <Slider {...getMediaSettings()}>
                         {Array.isArray(mediaData) && mediaData.map((item, index) => (
                           <div key={index} className="px-2">
@@ -281,7 +289,7 @@ export default function Home() {
                               <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 overflow-hidden">
                                 <div className="aspect-video overflow-hidden">
                                   <img
-                                    src={`${process.env.REACT_APP_URL}/${item.image}`}
+                                    src={`${import.meta.env.VITE_APP_URL}/${item.image}`}
                                     alt={item.title}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                   />
@@ -296,6 +304,7 @@ export default function Home() {
                           </div>
                         ))}
                       </Slider>
+                      */}
                     </div>
                   )}
                 </div>

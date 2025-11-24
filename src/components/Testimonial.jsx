@@ -6,51 +6,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import SectionTitle from './SectionTitle';
+import testimonialsData from '../data/testimonialsData';
 
 const Testimonial = () => {
-    // Static testimonials data
-    const testimonials = [
-        {
-            id: "1",
-            title: "Harsh",
-            designation: "CTO",
-            description: "Very interesting event! The networking opportunities and innovative ideas showcased were truly inspiring. Startup Fest Gujarat has created an amazing platform for entrepreneurs to connect and grow.",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-            isActive: true
-        },
-        {
-            id: "2", 
-            title: "Vaishali",
-            designation: "CEO",
-            description: "An exceptional gathering of brilliant minds and groundbreaking startups. The event provided invaluable insights into the latest industry trends and fostered meaningful collaborations.",
-            image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-            isActive: true
-        },
-        {
-            id: "3",
-            title: "Harshal", 
-            designation: "CEO of Marwiz",
-            description: "Nice event with great organization and fantastic speakers. The startup ecosystem in Gujarat is thriving, and this fest perfectly captures that energy and innovation.",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-            isActive: true
-        },
-        {
-            id: "4",
-            title: "Priya Sharma",
-            designation: "Founder, TechVenture",
-            description: "Startup Fest Gujarat exceeded all my expectations. The quality of mentorship, investor connections, and peer learning opportunities were phenomenal.",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-            isActive: true
-        },
-        {
-            id: "5", 
-            title: "Rajesh Patel",
-            designation: "Angel Investor",
-            description: "As an investor, I was impressed by the caliber of startups presented. The event showcases Gujarat's potential as a major startup hub in India.",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
-            isActive: true
-        }
-    ];
 
     return (
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50">
@@ -66,12 +24,13 @@ const Testimonial = () => {
                     effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
-                    slidesPerView={'auto'}
+                    slidesPerView={3}
+                    spaceBetween={40}
                     coverflowEffect={{
-                        rotate: 50,
+                        rotate: 30,
                         stretch: 0,
-                        depth: 100,
-                        modifier: 1,
+                        depth: 200,
+                        modifier: 1.2,
                         slideShadows: true,
                     }}
                     pagination={{
@@ -83,19 +42,66 @@ const Testimonial = () => {
                         prevEl: '.testimonial-button-prev',
                     }}
                     autoplay={{
-                        delay: 5000,
+                        delay: 2500,
                         disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                        reverseDirection: false,
                     }}
                     loop={true}
+                    speed={800}
+                    slideToClickedSlide={true}
+                    watchSlidesProgress={true}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                            coverflowEffect: {
+                                rotate: 0,
+                                depth: 0,
+                                modifier: 1,
+                            }
+                        },
+                        640: {
+                            slidesPerView: 1.5,
+                            spaceBetween: 30,
+                            coverflowEffect: {
+                                rotate: 15,
+                                depth: 100,
+                                modifier: 1,
+                            }
+                        },
+                        768: {
+                            slidesPerView: 2.2,
+                            spaceBetween: 35,
+                            coverflowEffect: {
+                                rotate: 20,
+                                depth: 150,
+                                modifier: 1.1,
+                            }
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 40,
+                            coverflowEffect: {
+                                rotate: 30,
+                                depth: 200,
+                                modifier: 1.2,
+                            }
+                        },
+                        1280: {
+                            slidesPerView: 3.5,
+                            spaceBetween: 45,
+                        }
+                    }}
                     modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-                    className="pb-16"
+                    className="pb-16 testimonial-swiper"
                 >
-                    {testimonials.map((testimonial) => (
-                        <SwiperSlide key={testimonial.id} className="!w-80 md:!w-96">
-                            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 mx-4 text-center transform hover:scale-105 border border-gray-100">
+                    {testimonialsData.map((testimonial) => (
+                        <SwiperSlide key={testimonial.id} className="testimonial-slide">
+                            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 mx-2 text-center transform hover:scale-105 h-full">
                                 
                                 {/* Author Image */}
-                                <div className="mb-6">
+                                <div className="mb-4">
                                     <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-[#003777] shadow-lg">
                                         <img
                                             src={testimonial.image}
@@ -109,12 +115,15 @@ const Testimonial = () => {
                                 </div>
 
                                 {/* Author Info */}
-                                <div className="mb-6">
-                                    <h4 className="text-lg md:text-xl font-bold text-[#003777] mb-1">
-                                        {testimonial.title}
+                                <div className="mb-4">
+                                    <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-1">
+                                        {testimonial.name}
                                     </h4>
-                                    <p className="text-sm md:text-base text-gray-600 font-medium">
+                                    <p className="text-xs md:text-sm text-gray-600 font-medium">
                                         {testimonial.designation}
+                                    </p>
+                                    <p className="text-xs text-gray-500">
+                                        {testimonial.company}
                                     </p>
                                 </div>
 
@@ -125,8 +134,8 @@ const Testimonial = () => {
                                         "
                                     </div>
                                     
-                                    <p className="text-gray-700 italic leading-relaxed text-base md:text-lg relative z-10">
-                                        {testimonial.description}
+                                    <p className="text-gray-700 italic leading-snug text-sm md:text-base relative z-10 font-medium line-clamp-3">
+                                        {testimonial.testimonial}
                                     </p>
                                     
                                     {/* Quote Icon */}
@@ -136,53 +145,108 @@ const Testimonial = () => {
                                 </div>
 
                                 {/* Star Rating */}
-                                <div className="flex justify-center mt-6 space-x-1">
-                                    {[...Array(5)].map((_, i) => (
+                                <div className="flex justify-center mt-4 space-x-1">
+                                    {[...Array(testimonial.rating)].map((_, i) => (
                                         <svg 
                                             key={i} 
-                                            className="w-5 h-5 text-yellow-400 fill-current" 
+                                            className="w-4 h-4 text-[#003777] fill-current" 
                                             viewBox="0 0 20 20"
                                         >
                                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                         </svg>
                                     ))}
                                 </div>
+                                
+                                {/* Event Badge */}
+                                <div className="text-center mt-4">
+                                    <span className="inline-block bg-[#003777] text-white text-xs px-4 py-1 rounded-full font-medium shadow-md">
+                                        {testimonial.event}
+                                    </span>
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
 
-                {/* Custom Navigation Buttons */}
-                <div className="flex justify-center space-x-4 mt-8">
-                    <button className="testimonial-button-prev w-12 h-12 bg-[#003777] hover:bg-blue-900 text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </button>
-                    <button className="testimonial-button-next w-12 h-12 bg-[#003777] hover:bg-blue-900 text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </button>
-                </div>
+        
             </div>
 
             {/* Custom Swiper Pagination Styles */}
             <style>{`
+                .testimonial-swiper {
+                    padding: 0 20px;
+                    overflow: visible;
+                }
+                
+                .testimonial-slide {
+                    height: auto !important;
+                    min-height: 450px;
+                    display: flex !important;
+                    align-items: stretch;
+                }
+                
+                .testimonial-slide > div {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+                
                 .swiper-pagination-bullet {
                     background-color: #003777 !important;
                     opacity: 0.3 !important;
                     width: 12px !important;
                     height: 12px !important;
+                    margin: 0 8px !important;
+                    border-radius: 50% !important;
+                    transition: all 0.3s ease !important;
                 }
                 
                 .swiper-pagination-bullet-active {
                     opacity: 1 !important;
-                    transform: scale(1.2) !important;
+                    transform: scale(1.5) !important;
+                    background-color: #003777 !important;
                 }
                 
                 .swiper-slide {
-                    height: auto !important;
+                    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+                    transform-origin: center !important;
+                }
+                
+                .swiper-slide-active {
+                    transform: scale(1.1) !important;
+                    z-index: 2 !important;
+                }
+                
+                .swiper-slide-next,
+                .swiper-slide-prev {
+                    transform: scale(0.95) !important;
+                    opacity: 0.9 !important;
+                    z-index: 2 !important;
+                }
+                
+                .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev) {
+                    transform: scale(0.85) !important;
+                    opacity: 0.7 !important;
+                    z-index: 1 !important;
+                }
+                
+                @media (max-width: 768px) {
+                    .swiper-slide-active {
+                        transform: scale(1.02) !important;
+                    }
+                    
+                    .testimonial-swiper {
+                        padding: 0 10px;
+                    }
+                }
+                
+                .swiper-pagination {
+                    bottom: -10px !important;
+                }
+                
+                .swiper-wrapper {
+                    align-items: stretch !important;
                 }
             `}</style>
         </section>

@@ -77,7 +77,7 @@ const StatisticsSection = () => {
               <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black leading-tight animate-slide-up delay-500">
                 India Startup Revolution is Here and now! At Ahmedabad{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block mt-2">
-                  December 13 & 14, 2025
+                  December 13th & 14th, 2025
                 </span>
               </h3>
             </div>
