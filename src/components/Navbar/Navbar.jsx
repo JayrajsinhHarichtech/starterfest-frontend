@@ -119,11 +119,11 @@ const Navbar = ({ onMobileMenuToggle }) => {
       <nav className="fixed top-[0px] md:top-[32px] left-0 w-full bg-white shadow-md z-[1099] py-4">
         <div className="w-[90%] mx-auto h-full flex items-center justify-between">
           {/* Logo */}
-          <button onClick={() => handleNavigation('/')} className="block bg-transparent border-none">
+          <button onClick={() => handleNavigation('/')} className="bg-transparent border-none">
             <img
               src="/logo2.svg"
               alt="Startup Fest Gujarat Logo"
-              className="h-16 w-auto cursor-pointer" // Ya h-16 for bigger size
+              className="h-26 w-60 cursor-pointer" // Ya h-16 for bigger size
             />
           </button>
 
@@ -171,7 +171,7 @@ const Navbar = ({ onMobileMenuToggle }) => {
                       </span>
                     </button>
                     {high2024Open && (
-                      <div className="absolute left-full top-0 ml-1 bg-white shadow-lg rounded-lg min-w-[220px] animate-slideInRight">
+                      <div className="absolute left-full top-0 ml-1 bg-white shadow-lg rounded-lg min-w-[260px] animate-slideInRight">
                         <button onClick={() => handleNavigation('/speaker-2024')} className="block w-full text-left px-4 py-2 text-black hover:text-[#003777] hover:bg-gray-50 bg-transparent border-none cursor-pointer relative group transition-colors">
                           <span className="relative">
                             2024 Moderator & Mentors
@@ -221,7 +221,7 @@ const Navbar = ({ onMobileMenuToggle }) => {
                       </span>
                     </button>
                     {high2023Open && (
-                      <div className="absolute left-full top-0 ml-1 bg-white shadow-lg rounded-lg min-w-[200px] animate-slideInRight">
+                      <div className="absolute left-full top-0 ml-1 bg-white shadow-lg rounded-lg min-w-[240px] animate-slideInRight">
                         <button onClick={() => handleNavigation('/highlights')} className="block w-full text-left px-4 py-2 text-black hover:text-[#003777] hover:bg-gray-50 bg-transparent border-none cursor-pointer relative group transition-colors">
                           <span className="relative">
                             2023 Highlights

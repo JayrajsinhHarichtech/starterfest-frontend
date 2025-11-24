@@ -1,9 +1,8 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Navigation, Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import SectionTitle from './SectionTitle';
 import testimonialsData from '../data/testimonialsData';
@@ -32,10 +31,6 @@ const Testimonial = () => {
                         depth: 200,
                         modifier: 1.2,
                         slideShadows: true,
-                    }}
-                    pagination={{
-                        clickable: true,
-                        dynamicBullets: true,
                     }}
                     navigation={{
                         nextEl: '.testimonial-button-next',
@@ -93,8 +88,8 @@ const Testimonial = () => {
                             spaceBetween: 45,
                         }
                     }}
-                    modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-                    className="pb-16 testimonial-swiper"
+                    modules={[EffectCoverflow, Navigation, Autoplay]}
+                    className="testimonial-swiper"
                 >
                     {testimonialsData.map((testimonial) => (
                         <SwiperSlide key={testimonial.id} className="testimonial-slide">
@@ -131,7 +126,7 @@ const Testimonial = () => {
                                 <div className="relative">
                                     {/* Quote Icon */}
                                     <div className="absolute -top-2 -left-2 text-4xl text-[#003777] opacity-20">
-                                        "
+                                        &quot;
                                     </div>
                                     
                                     <p className="text-gray-700 italic leading-snug text-sm md:text-base relative z-10 font-medium line-clamp-3">
@@ -140,7 +135,7 @@ const Testimonial = () => {
                                     
                                     {/* Quote Icon */}
                                     <div className="absolute -bottom-4 -right-2 text-4xl text-[#003777] opacity-20 rotate-180">
-                                        "
+                                        &quot;
                                     </div>
                                 </div>
 
@@ -192,21 +187,7 @@ const Testimonial = () => {
                     justify-content: space-between;
                 }
                 
-                .swiper-pagination-bullet {
-                    background-color: #003777 !important;
-                    opacity: 0.3 !important;
-                    width: 12px !important;
-                    height: 12px !important;
-                    margin: 0 8px !important;
-                    border-radius: 50% !important;
-                    transition: all 0.3s ease !important;
-                }
-                
-                .swiper-pagination-bullet-active {
-                    opacity: 1 !important;
-                    transform: scale(1.5) !important;
-                    background-color: #003777 !important;
-                }
+
                 
                 .swiper-slide {
                     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
@@ -239,10 +220,6 @@ const Testimonial = () => {
                     .testimonial-swiper {
                         padding: 0 10px;
                     }
-                }
-                
-                .swiper-pagination {
-                    bottom: -10px !important;
                 }
                 
                 .swiper-wrapper {

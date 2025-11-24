@@ -10,7 +10,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../src/assets/css/style.css';
 import '../src/assets/css/responsive.css';
-import '../src/assets/css/fixes.css';
 
 // Immediate load components (above the fold)
 import Header from './components/Header';

@@ -205,35 +205,6 @@ function Contact() {
                     onLoad={() => setMapLoaded(true)}
                     onError={() => setMapLoaded(false)}
                   ></iframe>
-                  
-                  {/* Fallback Content */}
-                  <div className={`map-fallback absolute inset-0 bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center transition-opacity duration-300 ${mapLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                    <div className="text-center p-6 max-w-sm">
-                      <div className="w-16 h-16 bg-[#003777] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <FaMapMarkerAlt className="text-2xl text-white" />
-                      </div>
-                      <h6 className="text-lg font-bold mb-2" style={{ color: '#003777' }}>Gujarat University</h6>
-                      <p className="text-sm mb-4" style={{ color: '#003777', opacity: 0.8 }}>
-                        Atal Kalam Building<br />
-                        Navrangpura, Ahmedabad - 380009<br />
-                        Gujarat, India
-                      </p>
-                      <div className="space-y-2">
-                        <a 
-                          href="https://maps.google.com/?q=23.0405552791612,72.5400926750923" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center w-full bg-[#003777] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#002555] transition-colors"
-                        >
-                          <FaMapMarkerAlt className="mr-2" />
-                          Open in Google Maps
-                        </a>
-                        <p className="text-xs text-gray-600 mt-2">
-                          📍 Coordinates: 23.0406°N, 72.5401°E
-                        </p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
