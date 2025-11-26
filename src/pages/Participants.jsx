@@ -137,9 +137,16 @@ export default function Participants() {
                   <h3 className="text-3xl font-bold text-[#003777] mb-4">
                     ₹15,000
                   </h3>
-                  <h3 className="text-xl font-semibold text-gray-700">
+                  <h3 className="text-xl font-semibold text-gray-700 mb-4">
                     2X2 Meter Stall
                   </h3>
+                  <div className="mb-4">
+                    <img 
+                      src="/2x2.jpg"
+                      alt="2x2 Meter Stall Layout" 
+                      className="w-full h-auto rounded-lg mb-2"
+                    />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <p className="text-gray-600 font-semibold mb-4">This package includes:</p>
@@ -172,9 +179,17 @@ export default function Participants() {
                   <h3 className="text-3xl font-bold text-[#003777] mb-4">
                     ₹30,000
                   </h3>
+                 
                   <h3 className="text-xl font-semibold text-gray-700">
                     3x3 Meter Stall
                   </h3>
+                    <div className="mb-4">
+                    <img 
+                      src="/3x3.jpg"
+                      alt="3x3 Meter Stall Layout" 
+                      className="w-full h-auto rounded-lg  mb-2"
+                    />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <p className="text-gray-600 font-semibold mb-4">This package includes:</p>
@@ -211,6 +226,13 @@ export default function Participants() {
                   <h3 className="text-xl font-semibold text-gray-300">
                     Sponsorship Stall
                   </h3>
+                    <div className="mb-4">
+                    <img 
+                      src="/SponsorshipStall.jpg"
+                      alt="SponsorshipStall Layout" 
+                      className="w-full h-auto rounded-lg mb-2"
+                    />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <p className="text-gray-300 font-semibold mb-4">This package includes:</p>
