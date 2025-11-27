@@ -51,7 +51,7 @@ const Speakers2024 = () => {
     ];
 
     const moderator = {
-        name: "Ms. Deepali Chatwani",
+        name: "Ms. Deepali Chhatwani",
         image: Deepali,
         subtitle: "Business Journalist and Media Host",
     };

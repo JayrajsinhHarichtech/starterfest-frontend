@@ -49,7 +49,7 @@ const STFS2024 = () => {
         {
             image: devansh,
             subtitle: "Family Office, Urmin Group",
-            name: "Mr. Devansh Majetiya",
+            name: "Mr. Devansh Majithia",
         },
         {
             image: Ronak,
