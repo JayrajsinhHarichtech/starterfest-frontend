@@ -65,7 +65,7 @@ const Speakers = () => {
   // ===================== DATA =====================
   const speakers = [
     { image: chiranjiv, name: "Mr Chiranjiv Patel" ,role:"Managing director & vice chairman of PC Snehal Group"},
-    { image: snehal, name: "MD of PC Snehal Group, Entrepreneur, Change Maker & Motivation" },
+    { image: snehal, name: "Mr Chiranjiv Patel" ,role:"MD of PC Snehal Group, Entrepreneur, Change Maker & Motivation" },
     { image: sandip, name: "Mr Sandip Gajjar", role: "Solutions & Business Coach, NLP Master Trainer Consulting CEO at Sneh World" },
     { image: kuldip, name: "Mr Kuldipsingh Kaler (Positive Pajji)", role: "Influencer and Author" },
     { image: ccf, name:"Mr Parth Shah ",role: "CC- Founder & Director Marketing – Pitchvilla" },
