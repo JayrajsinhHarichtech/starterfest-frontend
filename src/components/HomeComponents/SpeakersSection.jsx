@@ -17,7 +17,7 @@ const SpeakersSection = () => {
     { img: raul, name: "Raul John Aju", role: "India's Young AI Innovator, CEO Project 47x, TEDx Speaker" },
     { img: naman, name: "Naman Anand", role: "Mentalist, Magician" },
     { img: abhijeet, name: "Mr. Abhijeet Satani", role: "Scientist" },
-    { img: tirth, name: "Mr. Tirth Patel", role: "CEO & Director – Anand Innovation Pvt Ltd" },
+    { img: tirth, name: "Mr. Tirth Patel", role: "CEO & Director – AIneno Innovation Private Limited" },
     { img: fenil, name: "CA. DR. CS. Fenil Shah", role: "WIRC Treasurer, Former ICAI Chairperson, CA-CS Professional" },
   ];
 

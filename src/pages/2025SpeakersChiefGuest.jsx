@@ -8,7 +8,7 @@ import naman from "../assets/img/2025-speaker/naman-anand.png";
 import neil from "../assets/img/2025-speaker/neil-nitin-sharma.png";
 import raul from "../assets/img/2025-speaker/raul-john.png";
 import sonu from "../assets/img/2025-speaker/sonu-sharma.png";
-import tirth from "../assets/img/2025-speaker/tirth.png";
+import tirth from "../assets/img/2025-speaker/Tirth.jpg";
 import azar from "../assets/img/2025-speaker/azhar-iqubal.png";
 
 const SpeakersChiefGuest = () => {
@@ -55,7 +55,7 @@ const SpeakersChiefGuest = () => {
         {
             img: tirth,
             name: "Mr. Tirth Patel",
-            role: "CEO & Director – Anand Innovation Pvt Ltd",
+            role: "CEO & Director – AIneno Innovation Private Limited",
         },
         {
             img: fenil,

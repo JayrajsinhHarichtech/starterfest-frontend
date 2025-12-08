@@ -19,7 +19,7 @@ import SectionTitle from "./SectionTitle";
 import SponsorSection from "./SponsorSection";
 
 // Helpers
-import { aboutImage, sponsorLogosS1, sponsorLogosS2, aboutText } from "../helpers/homepageHelper.ts";
+import { aboutImage, sponsorLogosS1, sponsorLogosS2, aboutText, sponsorLogosS3 } from "../helpers/homepageHelper.ts";
 
 export default function Home() {
   const [mediaData, setMediaData] = useState([]);
@@ -216,6 +216,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Sponsors of Season 2 */}
+      <SponsorSection 
+        title="Sponsors of Season 3" 
+        sponsors={sponsorLogosS3}
+        backgroundColor="bg-gradient-to-br from-white via-gray-50 to-blue-50"
+      />
       {/* Sponsors of Season 2 */}
       <SponsorSection 
         title="Sponsors of Season 2" 

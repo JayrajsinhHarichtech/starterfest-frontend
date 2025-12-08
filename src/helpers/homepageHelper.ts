@@ -77,7 +77,89 @@ export const sponsorLogosS2 = [
   { url: s2logo9 },
   { url: s2logo12 },
 ];
+import sponsor from "../assets/img/sponsor3/sponsor1.jpg";
+import sponsor312 from "../assets/img/sponsor3/sponsor3-2.png";
+import sponsor33 from "../assets/img/sponsor3/sponsor3-3.png";
+import sponsor44 from "../assets/img/sponsor3/sponsor3-4.png"; 
+import sponsor55 from "../assets/img/sponsor3/sponsor3-5.png";
+import sponsor66 from "../assets/img/sponsor3/sponsor3-6.png";
+// import sponsor77 from "../assets/img/sponsor3/sponsor3-7.png";
+import sponsor88 from "../assets/img/sponsor3/sponsor3-8.png";
+import sponsor99 from "../assets/img/sponsor3/sponsor3-9.jpg";
+import sponsor100 from "../assets/img/sponsor3/sponsor3-10.png";
+import sponsor111 from "../assets/img/sponsor3/sponsor3-11.jpg";
+import sponsor122 from "../assets/img/sponsor3/sponsor3-12.png";
+import sponsor133 from "../assets/img/sponsor3/sponsor3-13.png";
+import sponsor144 from "../assets/img/sponsor3/sponsor3-14.png";
+import sponsor155 from "../assets/img/sponsor3/sponsor3-15.png";
+import sponsor166 from "../assets/img/sponsor3/sponsor3-16.png";
+import sponsor177 from "../assets/img/sponsor3/sponsor3-17.png";
+import sponsor188 from "../assets/img/sponsor3/sponsor3-18.png";
+// import sponsor199 from "../assets/img/sponsor3/sponsor3-19.png";
+import sponsor200 from "../assets/img/sponsor3/sponsor3-20.png";
+import sponsor211 from "../assets/img/sponsor3/sponsor3-21.PNG";
+import sponsor222 from "../assets/img/sponsor3/sponsor3-22.JPEG";
+import sponsor233 from "../assets/img/sponsor3/sponsor3-23.PNG";
+import sponsor244 from "../assets/img/sponsor3/sponsor3-24.png";
+import sponsor255 from "../assets/img/sponsor3/sponsor3-25.jpeg";
+import sponsor266 from "../assets/img/sponsor3/sponsor3-26.jpg";
+import sponsor277 from "../assets/img/sponsor3/sponsor3-27.jpeg";
+import sponsor288 from "../assets/img/sponsor3/sponsor3-28.jpeg";
+import sponsor299 from "../assets/img/sponsor3/sponsor3-29.jpeg";
+import sponsor300 from "../assets/img/sponsor3/sponsor3-30.jpeg";
+import sponsor311 from "../assets/img/sponsor3/sponsor3-31.png";
+// import sponsor322 from "../assets/img/sponsor3/sponsor3-32.png";
+import sponsor333 from "../assets/img/sponsor3/sponsor3-33.png";
+import sponsor344 from "../assets/img/sponsor3/sponsor3-34.png";
+// import sponsor355 from "../assets/img/sponsor3/sponsor3-35.png";
+// import sponsor366 from "../assets/img/sponsor3/sponsor3-36.png";
+import sponsor377 from "../assets/img/sponsor3/sponsor3-37.png";
+import sponsor388 from "../assets/img/sponsor3/sponsor3-38.png";
 
+export const sponsorLogosS3 = [
+  { url: sponsor },
+  { url: sponsor312 }, 
+  { url: sponsor33 },
+  { url: sponsor44 },
+
+  { url: sponsor55 },
+  { url: sponsor66 },
+  // { url: sponsor77 },
+  { url: sponsor88 },
+  { url: sponsor99 },
+  { url: sponsor100 },
+  { url: sponsor111 },
+
+  { url: sponsor122 },
+
+  { url: sponsor133 },
+  { url: sponsor144 },
+  { url: sponsor155 },
+  { url: sponsor166 },
+  { url: sponsor177 },
+  { url: sponsor188 },
+  // { url: sponsor199 },
+  { url: sponsor200 },
+  { url: sponsor211 },
+  { url: sponsor222 },
+  { url: sponsor233 },
+  { url: sponsor244 },
+  { url: sponsor255 },      
+  { url: sponsor266 },
+  { url: sponsor277 },
+  { url: sponsor288 },
+
+  { url: sponsor299 },
+  { url: sponsor300 },
+  { url: sponsor311 },
+  // { url: sponsor322 },
+  { url: sponsor333 },
+  { url: sponsor344 },
+  // { url: sponsor355 },
+  // { url: sponsor366 },
+  { url: sponsor377 },
+  { url: sponsor388 },
+];
 
 // About Text Content
 export const aboutText = `<p class="para"> 
