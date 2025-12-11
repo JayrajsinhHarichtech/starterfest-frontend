@@ -105,6 +105,7 @@ import sponsor255 from "../assets/img/sponsor3/sponsor3-25.jpeg";
 import sponsor266 from "../assets/img/sponsor3/sponsor3-26.jpg";
 import sponsor277 from "../assets/img/sponsor3/sponsor3-27.jpeg";
 import sponsor288 from "../assets/img/sponsor3/sponsor3-28.jpeg";
+import sponsor555 from "../assets/img/sponsor3/sponsor3-55.svg";
 import sponsor299 from "../assets/img/sponsor3/sponsor3-29.jpeg";
 import sponsor300 from "../assets/img/sponsor3/sponsor3-30.jpeg";
 import sponsor311 from "../assets/img/sponsor3/sponsor3-31.png";
@@ -128,7 +129,6 @@ import sponsor511 from "../assets/img/sponsor3/sponsor3-51.jpeg";
 import sponsor522 from "../assets/img/sponsor3/sponsor3-52.jpg";
 import sponsor533 from "../assets/img/sponsor3/sponsor3-53.png";
 import sponsor544 from "../assets/img/sponsor3/sponsor3-54.png";
-// import sponsor555 from "../assets/img/sponsor3/sponsor3-55.png";
 // import sponsor566 from "../assets/img/sponsor3/sponsor3-56.png";
 // import sponsor577 from "../assets/img/sponsor3/sponsor3-57.png";
 // import sponsor588 from "../assets/img/sponsor3/sponsor3-58.png";
@@ -170,6 +170,8 @@ export const sponsorLogosS3 = [
   { url: sponsor244 },
   { url: sponsor255 },      
   { url: sponsor266 },
+  { url: sponsor555 },
+
   { url: sponsor277 },
   { url: sponsor288 },
 
@@ -196,7 +198,6 @@ export const sponsorLogosS3 = [
   { url: sponsor522 },
   { url: sponsor533 },
   { url: sponsor544 },
-  // { url: sponsor555 },
   // { url: sponsor566 },
   // { url: sponsor577 },
   // { url: sponsor588 },
