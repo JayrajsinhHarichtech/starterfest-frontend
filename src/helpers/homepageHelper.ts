@@ -108,13 +108,37 @@ import sponsor288 from "../assets/img/sponsor3/sponsor3-28.jpeg";
 import sponsor299 from "../assets/img/sponsor3/sponsor3-29.jpeg";
 import sponsor300 from "../assets/img/sponsor3/sponsor3-30.jpeg";
 import sponsor311 from "../assets/img/sponsor3/sponsor3-31.png";
-// import sponsor322 from "../assets/img/sponsor3/sponsor3-32.png";
 import sponsor333 from "../assets/img/sponsor3/sponsor3-33.png";
 import sponsor344 from "../assets/img/sponsor3/sponsor3-34.png";
-// import sponsor355 from "../assets/img/sponsor3/sponsor3-35.png";
-// import sponsor366 from "../assets/img/sponsor3/sponsor3-36.png";
 import sponsor377 from "../assets/img/sponsor3/sponsor3-37.png";
 import sponsor388 from "../assets/img/sponsor3/sponsor3-38.png";
+import sponsor399 from "../assets/img/sponsor3/sponsor3-39.png";    
+import sponsor400 from "../assets/img/sponsor3/sponsor3-40.png";    
+import sponsor411 from "../assets/img/sponsor3/sponsor3-41.png";
+import sponsor422 from "../assets/img/sponsor3/sponsor3-42.png";
+import sponsor433 from "../assets/img/sponsor3/sponsor3-43.jpeg";
+import sponsor444 from "../assets/img/sponsor3/sponsor3-44.png";  
+import sponsor455 from "../assets/img/sponsor3/sponsor3-45.png";
+import sponsor466 from "../assets/img/sponsor3/sponsor3-46.jpeg";
+import sponsor477 from "../assets/img/sponsor3/sponsor3-47.jpeg";
+import sponsor488 from "../assets/img/sponsor3/sponsor3-48.jpeg";
+import sponsor499 from "../assets/img/sponsor3/sponsor3-49.png";
+import sponsor500 from "../assets/img/sponsor3/sponsor3-50.png";
+import sponsor511 from "../assets/img/sponsor3/sponsor3-51.jpeg";
+import sponsor522 from "../assets/img/sponsor3/sponsor3-52.jpg";
+import sponsor533 from "../assets/img/sponsor3/sponsor3-53.png";
+import sponsor544 from "../assets/img/sponsor3/sponsor3-54.png";
+// import sponsor555 from "../assets/img/sponsor3/sponsor3-55.png";
+// import sponsor566 from "../assets/img/sponsor3/sponsor3-56.png";
+// import sponsor577 from "../assets/img/sponsor3/sponsor3-57.png";
+// import sponsor588 from "../assets/img/sponsor3/sponsor3-58.png";
+// import sponsor599 from "../assets/img/sponsor3/sponsor3-59.png";
+// import sponsor600 from "../assets/img/sponsor3/sponsor3-60.png";
+// import sponsor611 from "../assets/img/sponsor3/sponsor3-61.png";
+// import sponsor622 from "../assets/img/sponsor3/sponsor3-62.png";
+// import sponsor633 from "../assets/img/sponsor3/sponsor3-63.png";
+// import sponsor644 from "../assets/img/sponsor3/sponsor3-64.png";
+// import sponsor655 from "../assets/img/sponsor3/sponsor3-65.png";
 
 export const sponsorLogosS3 = [
   { url: sponsor },
@@ -152,13 +176,37 @@ export const sponsorLogosS3 = [
   { url: sponsor299 },
   { url: sponsor300 },
   { url: sponsor311 },
-  // { url: sponsor322 },
   { url: sponsor333 },
   { url: sponsor344 },
-  // { url: sponsor355 },
-  // { url: sponsor366 },
   { url: sponsor377 },
   { url: sponsor388 },
+  { url: sponsor399 },    
+  { url: sponsor400 },    
+  { url: sponsor411 },  
+  { url: sponsor422 },
+  { url: sponsor433 },
+  { url: sponsor444 },
+  { url: sponsor455 },
+  { url: sponsor466 },
+  { url: sponsor477 },
+  { url: sponsor488 },
+  { url: sponsor499 },
+  { url: sponsor500 },
+  { url: sponsor511 },
+  { url: sponsor522 },
+  { url: sponsor533 },
+  { url: sponsor544 },
+  // { url: sponsor555 },
+  // { url: sponsor566 },
+  // { url: sponsor577 },
+  // { url: sponsor588 },
+  // { url: sponsor599 },
+  // { url: sponsor600 },
+  // { url: sponsor611 },
+  // { url: sponsor622 },
+  // { url: sponsor633 },
+  // { url: sponsor644 },
+  // { url: sponsor655 },
 ];
 
 // About Text Content

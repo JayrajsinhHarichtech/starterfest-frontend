@@ -86,28 +86,7 @@ export default function Home() {
     const timer = setInterval(calculateTimeLeft, 1000);
     return () => clearInterval(timer);
   }, []);
-
-  // Media API calls - COMMENTED OUT
   useEffect(() => {
-    // const fetchMediaData = async () => {
-    //   try {
-    //     const response = await axios.get(`${import.meta.env.VITE_APP_URL}/api/media`);
-    //     // Ensure response.data is an array
-    //     const data = Array.isArray(response.data) ? response.data : [];
-    //     setMediaData(data);
-    //     setLoading(false);
-    //   } catch (error) {
-    //     console.error('Error fetching media data:', error);
-    //     // Set empty array on error
-    //     setMediaData([]);
-    //     setLoading(false);
-    //   }
-    // };
-
-    // // Only fetch if API URL is available
-    // if (import.meta.env.VITE_APP_URL) {
-    //   fetchMediaData();
-    // } else {
       setMediaData([]);
       setLoading(false);
     // }
@@ -120,9 +99,6 @@ export default function Home() {
   };
 
   const handleMediaCardClick = (item) => {
-    // setLightboxImage(`${import.meta.env.VITE_APP_URL}/${item.image}`);
-    // setLightboxTitle(item.title);
-    // setLightboxShow(true);
     console.log('Media card clicked:', item);
   };
 
@@ -222,7 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sponsors of Season 2 */}
+      {/* Sponsors of Season 3 */}
       <SponsorSection 
         title="Sponsors of Season 3" 
         sponsors={sponsorLogosS3}
