@@ -105,7 +105,7 @@ import sponsor255 from "../assets/img/sponsor3/sponsor3-25.jpeg";
 import sponsor266 from "../assets/img/sponsor3/sponsor3-26.jpg";
 import sponsor277 from "../assets/img/sponsor3/sponsor3-27.jpeg";
 import sponsor288 from "../assets/img/sponsor3/sponsor3-28.jpeg";
-import sponsor555 from "../assets/img/sponsor3/sponsor3-55.svg";
+import sponsor555 from "../assets/img/sponsor3/sponsor3-55.png";
 import sponsor299 from "../assets/img/sponsor3/sponsor3-29.jpeg";
 import sponsor300 from "../assets/img/sponsor3/sponsor3-30.jpeg";
 import sponsor311 from "../assets/img/sponsor3/sponsor3-31.png";
@@ -168,9 +168,10 @@ export const sponsorLogosS3 = [
   { url: sponsor222 },
   { url: sponsor233 },
   { url: sponsor244 },
+  { url: sponsor555 },
+
   { url: sponsor255 },      
   { url: sponsor266 },
-  { url: sponsor555 },
 
   { url: sponsor277 },
   { url: sponsor288 },
